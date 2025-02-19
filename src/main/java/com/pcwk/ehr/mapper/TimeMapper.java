@@ -5,10 +5,11 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface TimeMapper {
-	
-	public String getNewDateTime();
-	
-	@Select("SELECT SYSDATE FROM dual")
-	public String getDateTime();
+
+
+    public String getNewDateTime();
+
+    @Select("SELECT SYSDATE FROM dual")
+    public String getDateTime();
 
 }
