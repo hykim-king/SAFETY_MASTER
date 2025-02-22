@@ -62,30 +62,7 @@ def insert_data_to_db(connection, data):
 
 # URL 및 파라미터 설정
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-url = "https://www.safetydata.go.kr/V2/api/DSSP-IF-00247"
-serviceKey = "{serviceKey}"
-payloads = {
-    "serviceKey": serviceKey,
-    "returnType": "json",
-    "pageNo": "1",  # 페이지 번호
-    "numOfRows": "1000",  # 한 번에 가져올 데이터 개수
-    "crtDt": "20230916"  # 기준 날짜
-}
-
-# 페이지 번호를 1부터 25까지 반복
-for page_no in range(1, 26):
-    payloads["pageNo"] = str(page_no)  # 페이지 번호 설정
-    print(f"페이지 {page_no} 데이터")
-
-    # 데이터 받아오기
-    response = requests.get(url, params=payloads, verify=False)  # SSL 인증 경고 무시
-    if response.status_code == 200:
-        try:
-            # API에서 JSON 응답을 추출
-            json_response = response.json()
-            print("응답 데이터:", json_response)  # 응답 데이터 전체를 출력해봅니다.
-
-            # 응답에서 'body' 키가 데이터가 포함된 곳으로 보임
+url = "https://www.safetydata.go.kr/V2/api/DSS옴
             if 'body' in json_response and json_response['body'] is not None:
                 data = json_response['body']
                 print(f"가져온 데이터 개수: {len(data)}")  # 받은 데이터 개수를 확인
