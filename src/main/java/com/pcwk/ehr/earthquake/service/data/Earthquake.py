@@ -34,7 +34,7 @@ if response.status_code == 200:
             print("DB 연결 실패")
             exit()
 
-        # 데이터를 EARTHQUAKE2 테이블에 삽입
+        # 데이터를 EARTHQUAKE 테이블에 삽입
         cursor = conn.cursor()
 
         for line in lines:
@@ -44,16 +44,16 @@ if response.status_code == 200:
                 continue  # 데이터가 부족한 줄은 건너뛰기
 
             # ','로 데이터를 나누기 전에 필요한 값을 추출하여 변수에 저장
-            EQK_AREA__REGION = int(data[0])  # 첫 번째 항목: EQK_AREA__REGION
-            EQK_REPORT_TIME = data[1]  # 두 번째 항목: EQK_REPORT_TIME
-            EQK_ORIGIN_TIME = data[3]  # 네 번째 항목: EQK_ORIGIN_TIME
-            EQK_MT = float(data[4])  # 다섯 번째 항목: EQK_MT
-            EQK_LAT = float(data[5])  # 여섯 번째 항목: EQK_LAT
-            EQK_LON = float(data[6])  # 일곱 번째 항목: EQK_LON
-            EQK_LOC = data[7]  # 여덟 번째 항목: EQK_LOC
-            EQK_INTENSITY = None  # EQK_INTENSITY는 null로 설정
-            EQK_COMMENTS = data[9]  # EQK_COMMENTS
-            EQK_UPDATE = None  # EQK_UPDATE는 빈 값으로 설정
+            EQK_AREA__REGION = int(data[0])   EQK_AREA__REGION
+            EQK_REPORT_TIME = data[1]   EQK_REPORT_TIME
+            EQK_ORIGIN_TIME = data[3]   EQK_ORIGIN_TIME
+            EQK_MT = float(data[4])   EQK_MT
+            EQK_LAT = float(data[5])   EQK_LAT
+            EQK_LON = float(data[6])   EQK_LON
+            EQK_LOC = data[7]   EQK_LOC
+            EQK_INTENSITY = None   EQK_INTENSITY는 null로 설정
+            EQK_COMMENTS = data[9]  EQK_COMMENTS
+            EQK_UPDATE = None  EQK_UPDATE는 빈 값으로 설정
             EQK_ORIGIN_MSC = data[10]  # EQK_ORIGIN_MSC (API에서 데이터의 끝이라 가정)
 
             # 시퀀스를 사용하여 EQK_NUM 자동 생성
