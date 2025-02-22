@@ -54,10 +54,10 @@ if response.status_code == 200:
             EQK_INTENSITY = None   EQK_INTENSITY는 null로 설정
             EQK_COMMENTS = data[9]  EQK_COMMENTS
             EQK_UPDATE = None  EQK_UPDATE는 빈 값으로 설정
-            EQK_ORIGIN_MSC = data[10]  # EQK_ORIGIN_MSC (API에서 데이터의 끝이라 가정)
+            EQK_ORIGIN_MSC = data[10]  # EQK_ORIGIN_MSC 
 
-            # 시퀀스를 사용하여 EQK_NUM 자동 생성
-            cursor.execute("SELECT EQK_NUM_SEQ.NEXTVAL FROM DUAL")
+           
+            cursor.execute("SELECT EQK_NUM_SEQ.NEXTVAL FROM EARTHQUAKE")
             EQK_NUM = cursor.fetchone()[0]  # 시퀀스에서 다음 값을 가져옴
 
             # 삽입 쿼리 작성
@@ -94,10 +94,10 @@ if response.status_code == 200:
         cursor.close()
         conn.close()
 
-        print("데이터가 성공적으로 삽입되었습니다.")
+        print("데이터삽입.")
 
     except Exception as e:
         print("예외 발생:", e)
 
 else:
-    print(f"응답 실패! 상태 코드: {response.status_code}")
+    print(f"응답 실패: {response.status_code}")
