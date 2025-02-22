@@ -6,7 +6,6 @@ import json
 # Oracle DB 연결
 def get_oracle_connection():
     try:
-        # DSN을 makedsn을 통해 생성
         dsn = cx_Oracle.makedsn('192.168.100.30', '1522', service_name='XE')
         connection = cx_Oracle.connect(user='SAMA', password='SAMA1234', dsn=dsn)
         print("DB 연결 성공")
@@ -33,7 +32,6 @@ def insert_data_to_db(connection, data):
 
             # 'SN' 필드가 None 또는 비어있는 경우 처리
             if sn is None or sn == "":
-                print(f"잘못된 데이터: SN 값이 없습니다. 건너뜁니다.")
                 continue  # 데이터를 건너뛰고 다음 항목으로 진행
 
 
