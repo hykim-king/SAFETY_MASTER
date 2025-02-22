@@ -63,7 +63,7 @@ def insert_data_to_db(connection, data):
 # URL 및 파라미터 설정
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 url = "https://www.safetydata.go.kr/V2/api/DSSP-IF-00247"
-serviceKey = "N9CZ93UL56TDHH6B"
+serviceKey = "{serviceKey}"
 payloads = {
     "serviceKey": serviceKey,
     "returnType": "json",
