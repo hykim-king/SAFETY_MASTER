@@ -2,7 +2,7 @@ import requests
 import cx_Oracle
 
 # URL 문자열
-url = 'https://apihub.kma.go.kr/api/typ01/url/eqk_list.php?tm1=201511231215&tm2=202502211215&disp=1&help=1&authKey=X4kLr7YTTFWJC6-2E7xVYw'
+url = 'https://apihub.kma.go.kr/api/typ01/url/eqk_list.php?tm1=201511231215&tm2=202502211215&disp=1&help=1&authKey={API_KEY}'
 
 # GET 요청
 response = requests.get(url)
