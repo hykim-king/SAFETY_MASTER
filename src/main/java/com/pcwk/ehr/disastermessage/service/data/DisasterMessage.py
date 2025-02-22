@@ -11,7 +11,7 @@ def get_oracle_connection():
         print("DB 연결 성공")
         return connection
     except cx_Oracle.DatabaseError as e:
-        print("Database connection error:", e)
+        print("연결실패:", e)
         return None
 
 # 데이터베이스에 데이터 삽입
@@ -73,9 +73,9 @@ payloads = {
 }
 
 # 페이지 번호를 1부터 25까지 반복
-for page_no in range(26, 27):
+for page_no in range(1, 26):
     payloads["pageNo"] = str(page_no)  # 페이지 번호 설정
-    print(f"페이지 {page_no} 데이터 가져오기...")
+    print(f"페이지 {page_no} 데이터")
 
     # 데이터 받아오기
     response = requests.get(url, params=payloads, verify=False)  # SSL 인증 경고 무시
@@ -97,8 +97,8 @@ for page_no in range(26, 27):
                     insert_data_to_db(connection, data)  # 여기서 connection과 data를 인자로 전달
                     connection.close()
             else:
-                print("응답에 'body' 키가 존재하지 않거나 데이터가 없음.")
+                print("데이터가 없음")
         except json.JSONDecodeError:
             print("응답 데이터가 JSON 형식이 아닙니다.")
     else:
-        print(f"API 요청 실패. 상태 코드: {response.status_code}")
+        print(f"API 요청 실패 {response.status_code}")
