@@ -2,6 +2,73 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pcwk.ehr.disastermessage.mapper.DisasterMessageMapper">
 
+    <select id="getTotalCount" parameterType="SearchVO" resultType="int" resultMap="com.pcwk.ehr.cmn.SearchVO">
+        SELECT COUNT(*)
+        FROM DISASTER_MESSAGE
+        WHERE 1 = 1
+        <if test="searchDiv == '10'">
+            AND DIS_MES_AREA IN (SELECT user_id FROM DISASTER_MESSAGE WHERE DIS_MES_NUM LIKE '%' || #{searchWord} || '%')
+        </if>
+        <if test="searchDiv == '20'">
+            AND DIS_MES_CON LIKE '%' || #{searchWord} || '%'
+        </if>
+        <if test="searchDiv == '30'">
+            AND DIS_MES_AREA LIKE '%' || #{searchWord} || '%'
+        </if>
+    </select>
+
+
+    <sql id="doRetrieveWhere" >
+    <if test="'' != searchDiv">
+        <choose>
+            <when test="'10' == searchDiv">
+                AND title LIKE #{searchWord} || '%'
+            </when>
+            <when test="'20' == searchDiv">
+                AND contents LIKE #{searchWord} || '%'
+            </when>
+            <when test="'30' == searchDiv">
+                AND (title LIKE #{searchWord} || '%'
+                OR contents LIKE #{searchWord} || '%')
+            </when>
+        </choose>
+    </if>
+</sql>
+
+    <select id="getDisMes" parameterType="SearchVO" resultMap="com.pcwk.ehr.cmn.SearchVO">
+        SELECT
+        DIS_MES_NUM,
+        DIS_MES_DT,
+        DIS_MES_CON,
+        REGEXP_SUBSTR(DIS_MES_AREA, '[^,]+', 1, LEVEL) AS DIS_MES_AREA,
+        DIS_MES_LEVEL,
+        DIS_MES_TYPE,
+        CASE
+        WHEN DIS_MES_CREATE_DT LIKE '%/%' THEN TO_CHAR(TO_TIMESTAMP(DIS_MES_CREATE_DT, 'YYYY/MM/DD HH24:MI:SS.FF'), 'YYYY-MM-DD')
+        ELSE TO_CHAR(TO_DATE(DIS_MES_CREATE_DT, 'YYYY-MM-DD'), 'YYYY-MM-DD')
+        END AS DIS_MES_CREATE_DT,
+        DIS_MES_UPDATED_DT
+        FROM
+        DISASTER_MESSAGE
+        WHERE
+        1 = 1
+        <if test="searchDiv == '10'">
+            AND DIS_MES_NUM IN (SELECT user_id FROM GW_USER WHERE user_id LIKE '%' || #{searchWord} || '%')
+        </if>
+        <if test="searchDiv == '20'">
+            AND DIS_MES_CON LIKE '%' || #{searchWord} || '%'
+        </if>
+        <if test="searchDiv == '30'">
+            AND DIS_MES_AREA LIKE '%' || #{searchWord} || '%'
+        </if>
+        CONNECT BY NOCYCLE
+        PRIOR DIS_MES_NUM = DIS_MES_NUM
+        AND REGEXP_SUBSTR(DIS_MES_AREA, '[^,]+', 1, LEVEL) IS NOT NULL
+        ORDER BY
+        DIS_MES_DT DESC
+        OFFSET #{startRow} ROWS FETCH NEXT #{pageSize} ROWS ONLY
+    </select>
+
 
 
 </mapper>

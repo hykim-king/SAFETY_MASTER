@@ -1,0 +1,203 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.listWrap{
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center; /
+    align-items: center;
+    height: 100vh; /* 높이를 화면 크기에 맞게 설정 (필요시) */
+}
+
+
+#container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#state_sub{
+    background-image: url(https://i.pinimg.com/736x/ac/32/40/ac32405cdd2f238a61709713d6d43f02.jpg);
+    background-position: center;
+    background-size: 5000px;
+    background-position-y: 500px;
+}
+
+/* 재난문자, 과거 재난 기록 메뉴 */
+.stateWrap {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.stateWrap strong {
+    font-size: 1.5em;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stateWrap ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-flex;
+}
+
+.stateWrap ul li {
+    margin-right: 30px;
+    display: inline-block;
+}
+
+.stateWrap ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.1em;
+}
+
+.stateWrap ul li a:hover {
+    color: #218838;
+}
+
+.stateWrap ul li.active a {
+    font-weight: bold;
+    color: #333;
+}
+
+/* 검색 영역 */
+.searchArea {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    background: #f6f6f6;
+    box-sizing: border-box;
+}
+
+#smsAreaCd{
+    display: inline-block;
+    padding: 0 32px 0 20px;
+    position: relative;
+    width: 215px;
+    font-size: 18px;
+    font-weight: 300;
+    height: 48px;
+    line-height: 48px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: #eaeaea;
+}
+
+#smsDisasterCd{
+    display: inline-block;
+    padding: 0 32px 0 20px;
+    position: relative;
+    width: 215px;
+    font-size: 18px;
+    font-weight: 300;
+    height: 48px;
+    line-height: 48px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: #eaeaea;
+}
+
+.searchArea a {
+    margin: 0 10px;
+    font-size: 1em;
+    color: #000000;
+    text-decoration: none;
+}
+
+.searchArea a:hover {
+    color: #218838;
+}
+
+.searchArea input[type="text"] {
+    padding: 8px;
+    font-size: 1em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.searchArea input[type="text"]:focus {
+    border-color: #000000;
+}
+
+/* 테이블 스타일링 */
+.tableTypeE {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tableTypeE caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.tableTypeE th, .tableTypeE td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.tableTypeE th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+.tableTypeE td {
+    background-color: #fff;
+    color: #333;
+}
+
+.tableTypeE tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+.tableTypeE td a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.tableTypeE td a:hover {
+    color: #0056b3;
+}
+
+.tableTypeE td:last-child {
+    width: 140px;
+}
+
+/* 버튼 스타일링 */
+#search, #reset {
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#search:hover, #reset:hover {
+    background-color: #218838;
+}
+
+#reset {
+    background-color: #dc3545;
+}
+
+#reset:hover {
+    background-color: #c82333;
+}
