@@ -46,5 +46,18 @@ public class TimeController {
 		
 	}
 	
+	@GetMapping("/home")
+	public String home(Model model) {
+		
+		log.info("┌────────────────────┐");
+		log.info("│  getNewDateTime()  │");
+		log.info("└────────────────────┘");
+		
+		
+		return "template/main";
+		
+		
+	}
+	
 	
 }
