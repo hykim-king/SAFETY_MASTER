@@ -10,8 +10,7 @@ body {
     width: 70%;
     margin: 0 auto;
     justify-content: center; /
-    align-items: center;
-    height: 100vh; /* 높이를 화면 크기에 맞게 설정 (필요시) */
+align-items: center;
 }
 
 
@@ -133,9 +132,10 @@ body {
 
 /* 테이블 스타일링 */
 .tableTypeE {
-    width: 100%;
+    width: 75%;
     border-collapse: collapse;
     margin-top: 20px;
+    margin: auto;
 }
 
 .tableTypeE caption {
@@ -191,6 +191,99 @@ body {
 }
 
 #search:hover, #reset:hover {
+    background-color: #218838;
+}
+
+#reset {
+    background-color: #dc3545;
+}
+
+#reset:hover {
+    background-color: #c82333;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 16px;
+    gap: 5px;
+}
+
+.pagination  a{
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+.pagination a:hover{
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+}
+
+/* .pagination a.active{
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}  */
+
+.pagination a.disabled{
+    background-color: #f8f9fa;
+    color: #000;
+    pointer-events: none;
+    border-color: #dddddd;
+    cursor: not-allowed;
+}
+
+.search-group {
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    background: #f6f6f6;
+    box-sizing: border-box;
+}
+
+#searchDiv, #searchWord, #pageSize {
+    margin: 10px 0;
+}
+
+#searchDiv, #pageSize {
+    padding: 8px;
+    font-size: 1em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#searchWord {
+    padding: 8px;
+    font-size: 1em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#searchWord:focus, #searchDiv:focus, #pageSize:focus {
+    border-color: #000000;
+}
+#doRetrieveBtn, #reset {
+    font-size: 1em;
+    color: #fff;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#doRetrieveBtn:hover, #reset:hover {
     background-color: #218838;
 }
 

@@ -11,5 +11,5 @@ public interface DisasterMessageMapper {
 
     List<DisasterMessageVO> getDisMes(SearchVO searchVO);
     int getTotalCount(SearchVO searchVO);
-
+    int doRetrieveWhere();
 }

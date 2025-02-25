@@ -3,7 +3,7 @@ package com.pcwk.ehr.cmn;
 public class SearchVO extends DTO {
 
     // 검색 구분: 사용자ID(10), 이름(20), email(30)
-    private String searchDiv;
+    private int searchDiv;
     // 검색어:
     private String searchWord;
 
@@ -11,17 +11,17 @@ public class SearchVO extends DTO {
         super();
     }
 
-    public SearchVO(String searchDiv, String searchWord) {
+    public SearchVO(int searchDiv, String searchWord) {
         super();
         this.searchDiv = searchDiv;
         this.searchWord = searchWord;
     }
 
-    public String getSearchDiv() {
+    public int getSearchDiv() {
         return searchDiv;
     }
 
-    public void setSearchDiv(String searchDiv) {
+    public void setSearchDiv(int searchDiv) {
         this.searchDiv = searchDiv;
     }
 

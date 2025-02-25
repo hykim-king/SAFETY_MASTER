@@ -1,6 +1,8 @@
 package com.pcwk.ehr.disastermessage.domain;
 
-public class DisasterMessageVO {
+import com.pcwk.ehr.cmn.DTO;
+
+public class DisasterMessageVO extends DTO {
 
     private Long disMesNum;
     private String disMesDt;

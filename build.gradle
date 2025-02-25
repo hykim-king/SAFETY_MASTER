@@ -58,7 +58,11 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	
 	runtimeOnly 'com.h2database:h2'
-	
+
+	implementation 'com.google.guava:guava:31.1-jre'  // 최신 버전으로 변경 가능
+
+	implementation 'javax.servlet:javax.servlet-api:4.0.1'  // 최신 버전으로 업데이트 가능
+
 	//---------------------------------------------------------------------
 	
 	

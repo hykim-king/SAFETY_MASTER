@@ -1,6 +1,7 @@
 package com.pcwk.ehr.disastermessage.controller;
 
 import com.pcwk.ehr.cmn.SearchVO;
+import com.pcwk.ehr.cmn.StringUtil;
 import com.pcwk.ehr.disastermessage.domain.DisasterMessageVO;
 import com.pcwk.ehr.disastermessage.service.DisasterMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -17,40 +19,49 @@ import java.util.List;
 public class DisasterMessageController {
 
     @Autowired
-    DisasterMessageService disasterMessageService;
+    private DisasterMessageService disasterMessageService;
 
-    @GetMapping("view")
-    public String showDisasterMessage(@RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+    @GetMapping("/view")
+    public String showDisasterMessage(Model model,
+                                      @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
                                       @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,
-                                      @RequestParam(value = "searchDiv", defaultValue = "") String searchDiv,
-                                      @RequestParam(value = "searchWord", defaultValue = "") String searchWord,
-                                      Model model) {
+                                      @RequestParam(value = "searchDiv", defaultValue = "10") int searchDiv,
+                                      @RequestParam(value = "searchWord", defaultValue = "") String searchWord) {
 
+        // 기본 뷰 이름
         String viewName = "disastermessage/disastermessage";
 
+        // SearchVO 객체를 초기화하고 기본 파라미터 값 설정
+        SearchVO search = new SearchVO();
+        search.setPageNo(pageNo);
+        search.setPageSize(pageSize);
+        search.setSearchDiv(searchDiv);
+        search.setSearchWord(searchWord);
+
         try {
-            SearchVO searchVO = new SearchVO();
-            searchVO.setPageNo(pageNo);
-            searchVO.setPageSize(pageSize);
-            searchVO.setSearchDiv(searchDiv);
-            searchVO.setSearchWord(searchWord);
-            searchVO.setPaging();
+            // 서비스에서 데이터를 가져오기
+            List<DisasterMessageVO> list = disasterMessageService.getDisMes(search);
 
-            List<DisasterMessageVO> list = disasterMessageService.getDisMes(searchVO);
+            // 모델에 데이터 추가
             model.addAttribute("list", list);
-            model.addAttribute("searchDiv", searchDiv);
-            model.addAttribute("searchWord", searchWord);
 
-            // 총 글 수 조회하여 페이지네이션 계산
-            int totalCnt = disasterMessageService.getTotalCount(searchVO);
+            // 총 글 수 계산
+            int totalCnt = 0;
+            if (list != null && list.size() > 0) {
+                DisasterMessageVO vo = list.get(0);
+                totalCnt = vo.getTotalCnt();
+            }
+
+            // 총 글 수를 모델에 추가
             model.addAttribute("totalCnt", totalCnt);
-            model.addAttribute("totalPage", (int) Math.ceil((double) totalCnt / pageSize));
+            model.addAttribute("search", search);
 
         } catch (Exception e) {
+            // 예외 처리 (에러 로그 출력)
             e.printStackTrace();
         }
 
+        // 반환할 뷰 이름
         return viewName;
     }
-
 }
