@@ -1,0 +1,171 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* .historyTab 스타일 */
+.historyTab {
+    background-color: #2d3e50;
+    padding: 10px 0;
+}
+
+.historyTab ul {
+    display: flex;
+    justify-content: center;
+}
+
+.historyTab li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.historyTab a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.historyTab .on a {
+    font-weight: bold;
+    color: #f4c542;
+}
+
+/* .earthquakeList 스타일 */
+.earthquakeList {
+    display: flex;
+    margin: 20px;
+}
+
+/* 왼쪽 영역 스타일 */
+.leftArea {
+    width: 30%;
+    padding-right: 20px;
+    border-right: 2px solid #ccc;
+}
+
+.titArea {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.selectArea {
+    margin-top: 10px;
+}
+
+.selectTypeA {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 오른쪽 영역 스타일 */
+.rightArea {
+    width: 70%;
+    padding-left: 20px;
+}
+
+.topArea {
+    margin-bottom: 20px;
+}
+
+#sortList {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#sortList li {
+    list-style: none;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+#sortList li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#sortList .on a {
+    font-weight: bold;
+    color: #2d3e50;
+}
+
+/* 지진 목록 테이블 영역 */
+.tableArea {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.titArea .tableSet {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.titArea .tableSet span {
+    width: 24%;
+    text-align: center;
+}
+
+/* 지진 리스트 */
+.tableList {
+    list-style: none;
+    padding: 0;
+}
+
+.tableList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.tableList li:hover {
+    background-color: #f9f9f9;
+}
+
+.tableList li span {
+    width: 24%;
+    text-align: center;
+}
+
+/* 스크롤 영역 */
+.scr1 {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* .mapArea 스타일 */
+.mapArea {
+    height: 400px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+    .leftArea {
+        width: 100%;
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .rightArea {
+        width: 100%;
+        padding-left: 0;
+    }
+}
