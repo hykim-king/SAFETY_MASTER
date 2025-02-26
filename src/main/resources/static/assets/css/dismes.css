@@ -15,9 +15,8 @@ align-items: center;
 
 
 #container {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -130,6 +129,32 @@ align-items: center;
     border-color: #000000;
 }
 
+/* .historyTab 스타일 */
+.historyTab {
+    background-color: #2d3e50;
+    padding: 10px 0;
+}
+
+.historyTab ul {
+    display: flex;
+    justify-content: center;
+}
+
+.historyTab li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.historyTab a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.historyTab .on a {
+    font-weight: bold;
+    color: #f4c542;
+}
 /* 테이블 스타일링 */
 .tableTypeE {
     width: 75%;

@@ -25,4 +25,9 @@ public class DisasterMessageServiceImpl implements DisasterMessageService {
     public int getTotalCount(SearchVO searchVO) throws Exception {
         return disasterMessageMapper.getTotalCount(searchVO);
     }
+
+    @Override
+    public DisasterMessageVO getDisMesDetail(Long id) throws Exception {
+        return disasterMessageMapper.getDisMesDetail(id);
+    }
 }

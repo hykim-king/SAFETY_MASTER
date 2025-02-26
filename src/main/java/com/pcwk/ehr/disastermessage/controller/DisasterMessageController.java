@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -60,8 +62,25 @@ public class DisasterMessageController {
             // 예외 처리 (에러 로그 출력)
             e.printStackTrace();
         }
-
         // 반환할 뷰 이름
         return viewName;
     }
+
+    @RequestMapping("/Detail")
+    public String getAnnouncementDetail(@RequestParam("disMesNum") Long disMesNum, Model model) throws Exception {
+        String viewName = "disastermessage/disastermessage_detail";
+
+        try {
+            // 재난 문자 상세 정보를 가져옴
+            DisasterMessageVO disasterMessage = disasterMessageService.getDisMesDetail(disMesNum);
+
+            // 상세 정보 모델에 추가
+            model.addAttribute("disasterMessage", disasterMessage);
+        } catch (Exception e) {
+            throw new RuntimeException("상세 정보를 불러오는 중 오류가 발생했습니다.", e);
+        }
+
+        return viewName;
+    }
+
 }

@@ -51,11 +51,11 @@
 <body>
 <div id="container" class="message">
   <div id="state_sub">
-    <div class="stateWrap">
-      <strong>재난문자</strong>
+    <div class="historyTab">
       <ul>
-        <li class="active"><a><strong>재난문자</strong></a></li>
-        <li><a ><strong>과거재난기록</strong></a></li>
+        <li class="on"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
+        <li class="active"><a href="/earthquake/view">지진</a></li>
+        <li><a href="/typ/view">태풍</a></li>
       </ul>
     </div>
   </div>
@@ -116,12 +116,14 @@
 
         <tbody>
         <c:forEach var="list" items="${list}">
+
                 <td>${list.disMesNum}</td>
                 <td>${list.disMesArea}</td>
                 <td>${list.disMesType}</td>
-                <td>${list.disMesCon}</td>
+                <td><a href="/disastermessage/Detail?disMesNum=${list.disMesNum}">${list.disMesCon}</a></td>
                 <td>${list.disMesCreateDt}</td>
               </tr>
+
           </c:forEach>
         </tbody>
       </table>

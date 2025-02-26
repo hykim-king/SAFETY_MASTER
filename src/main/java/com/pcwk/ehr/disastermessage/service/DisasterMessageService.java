@@ -9,5 +9,6 @@ public interface DisasterMessageService {
 
     List<DisasterMessageVO> getDisMes(SearchVO searchVO) throws Exception;
     int getTotalCount(SearchVO searchVO) throws Exception;
+    DisasterMessageVO getDisMesDetail(Long id) throws Exception;
 
 }

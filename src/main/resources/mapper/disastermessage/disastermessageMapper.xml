@@ -77,4 +77,13 @@
         ORDER BY DIS_MES_DT DESC
     </select>
 
+    <select id="getDisMesDetail">
+        SELECT
+            REGEXP_SUBSTR(DIS_MES_AREA, '[^,]+', 1) AS DIS_MES_AREA,
+            DIS_MES_TYPE,
+            DIS_MES_CON
+        FROM DISASTER_MESSAGE
+        WHERE DIS_MES_NUM = #{disMesNum}
+    </select>
+
 </mapper>

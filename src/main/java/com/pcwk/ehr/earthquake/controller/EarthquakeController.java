@@ -18,7 +18,7 @@ public class EarthquakeController {
 
     @Autowired
     private EarthquakeService earthquakeService;
-
+    String viewName = "earthquake/earthquake";
     @GetMapping("view")
     public String viewEarthquake(Model model,
                                  @RequestParam(value = "searchWord", defaultValue = "2025")String searchWord,
