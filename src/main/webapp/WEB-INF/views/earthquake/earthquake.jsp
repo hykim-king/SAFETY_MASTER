@@ -4,6 +4,18 @@
 <head>
     <title>과거지진</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/eqk.css">
+    <style>
+        /* 차트의 스타일 */
+        #earthquakeChart {
+            width: 100%;
+            height: 700px !important;
+            margin: auto;
+            margin-top: 50px !important;
+        }
+
+    </style>
+
+
 </head>
 <body>
 <div class="historyTab">
@@ -172,15 +184,15 @@
                 </script>
             </div>
         </div>
-        <button onclick="changeLevel(12)">레벨 12로 변경</button>
-        <button onclick="changeLevel(13)">레벨 13으로 변경</button>
-        <button onclick="panTo()">지도 중심좌표 이동시키기</button>
     </div>
 
 
-    <div class="rightArea">
+    <div class="rightArea" style="margin-top: 45px">
 
         <div class="tableArea">
+            <!-- 차트가 그려질 캔버스 -->
+            <canvas id="earthquakeChart"></canvas>
+
             <div class="titArea">
                 <div class="tableSet">
 
@@ -193,7 +205,86 @@
     </div>
 </div>
 
-
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/assets/js/eqk/eqk_page.js"></script> <!-- 여기에 스크립트 파일 경로 -->
-</body>
-</html>
+<script>
+    // JSP에서 eqkByYear 데이터를 JSON 형태로 JavaScript로 전달하기
+    var earthquakeData = [];
+    <c:forEach var="eqkByYear" items="${eqkByYear}">
+    earthquakeData.push({
+        year: '${eqkByYear.earthquakeYear}',
+        magnitudeRange: '${eqkByYear.magnitudeRange}',
+        count: ${eqkByYear.eqkCount}
+    });
+    </c:forEach>
+
+    console.log(earthquakeData);  // 확인용 로그
+
+    /// 고유 연도 리스트
+    var years = [...new Set(earthquakeData.map(item => item.year))];
+
+    // 규모 범위 설정
+    var magnitudeRanges = ['3.0 - 3.9', '4.0 - 4.9', '5.0~'];
+
+    // 각 연도별 규모 범위별 지진 수량을 합산
+    var dataset = magnitudeRanges.map(range => {
+        return {
+            label: range,
+            data: years.map(year => {
+                return earthquakeData.filter(item => item.year === year && item.magnitudeRange === range)
+                    .reduce((sum, item) => sum + item.count, 0);
+            })
+
+            ,
+            backgroundColor:
+                range === '3.0 - 3.9' ? 'rgb(69,100,237)' :
+                    range === '4.0 - 4.9' ? 'rgb(241,189,58)' : 'rgb(239,43,43)',
+            borderColor: 'black',
+            borderWidth: 1,
+            borderRadius: 8,  // 여기서 radius를 설정
+        };
+    });
+
+    // 차트 그리기
+    var ctx = document.getElementById('earthquakeChart').getContext('2d');
+    var earthquakeChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: years, // X축 레이블: 연도
+            datasets: dataset // Y축 데이터: 규모별 데이터셋
+        },
+        options: {
+            maxBarThickness: 20,
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: {
+                        display: true
+                    },
+                    stacked: true,  // 막대가 쌓이는 차트
+                    grid: {
+                        offset: true
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    stacked: true, // 막대가 쌓이는 차트
+                    title: {
+                        display: true
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                }
+            },
+        },
+    });
+
+
+</script>
+    </body>
+    </html>

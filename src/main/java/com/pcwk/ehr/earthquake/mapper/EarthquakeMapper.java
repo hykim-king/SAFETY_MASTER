@@ -1,5 +1,6 @@
 package com.pcwk.ehr.earthquake.mapper;
 
+import com.pcwk.ehr.cmn.EQK_DTO;
 import com.pcwk.ehr.cmn.SearchVO;
 import com.pcwk.ehr.disastermessage.domain.DisasterMessageVO;
 import com.pcwk.ehr.earthquake.domain.EarthquakeVO;
@@ -12,4 +13,5 @@ import java.util.List;
 public interface EarthquakeMapper {
 
     List<EarthquakeVO> getEQK (SearchVO searchVO);
+    List<EQK_DTO> eqkByYear ();
 }
