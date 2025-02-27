@@ -1,6 +1,5 @@
 package com.pcwk.ehr.earthquake.service;
 
-import com.pcwk.ehr.cmn.EQK_DTO;
 import com.pcwk.ehr.cmn.SearchVO;
 import com.pcwk.ehr.earthquake.domain.EarthquakeVO;
 import com.pcwk.ehr.earthquake.mapper.EarthquakeMapper;
@@ -21,7 +20,12 @@ public class EartaquakeServiceImpl implements EarthquakeService {
     }
 
     @Override
-    public List<EQK_DTO> eqkByYear() {
+    public List<EarthquakeVO> eqkByYear() {
         return earthquakeMapper.eqkByYear();
+    }
+
+    @Override
+    public List<EarthquakeVO> eqkOccurrence(SearchVO searchVO) throws Exception {
+        return earthquakeMapper.eqkOccurrence(searchVO);
     }
 }

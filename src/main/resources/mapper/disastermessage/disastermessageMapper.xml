@@ -33,7 +33,7 @@
                     WHERE title LIKE #{searchWord} || '%'
                 </when>-->
                 <when test="20 == searchDiv">
-                    WHERE DIS_MES_AREA LIKE '%' || #{searchWord} || '%'
+                    WHERE REGEXP_SUBSTR(DIS_MES_AREA, '[^,]+', 1) LIKE '%' || #{searchWord} || '%'
                 </when>
                 <when test="30 == searchDiv">
                     WHERE DIS_MES_TYPE LIKE '%' || #{searchWord} || '%'

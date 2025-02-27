@@ -16,7 +16,35 @@ public class EarthquakeVO {
     private String eqkUpdate;
     private String eqkOriginMsc;
 
-    // Getter와 Setter 메서드들
+
+    private String earthquakeYear;
+    private String magnitudeRange;
+    private int eqkCount;
+
+    public String getEarthquakeYear() {
+        return earthquakeYear;
+    }
+
+    public void setEarthquakeYear(String earthquakeYear) {
+        this.earthquakeYear = earthquakeYear;
+    }
+
+    public String getMagnitudeRange() {
+        return magnitudeRange;
+    }
+
+    public void setMagnitudeRange(String magnitudeRange) {
+        this.magnitudeRange = magnitudeRange;
+    }
+
+    public int getEqkCount() {
+        return eqkCount;
+    }
+
+    public void setEqkCount(int eqkCount) {
+        this.eqkCount = eqkCount;
+    }
+// Getter와 Setter 메서드들
 
     public int getEqkNum() {
         return eqkNum;
@@ -114,7 +142,6 @@ public class EarthquakeVO {
         this.eqkOriginMsc = eqkOriginMsc;
     }
 
-    // toString 메서드 (객체를 문자열로 출력하기 위한 용도)
     @Override
     public String toString() {
         return "EarthquakeVO{" +
@@ -130,6 +157,9 @@ public class EarthquakeVO {
                 ", eqkComments='" + eqkComments + '\'' +
                 ", eqkUpdate='" + eqkUpdate + '\'' +
                 ", eqkOriginMsc='" + eqkOriginMsc + '\'' +
+                ", earthquakeYear='" + earthquakeYear + '\'' +
+                ", magnitudeRange='" + magnitudeRange + '\'' +
+                ", eqkCount=" + eqkCount +
                 '}';
     }
 }

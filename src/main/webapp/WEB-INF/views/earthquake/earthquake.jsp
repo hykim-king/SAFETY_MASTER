@@ -145,61 +145,103 @@
 
 
 
-
 <div class="earthquakeList">
-    <div class="leftArea">
-
-
+    <div class="leftArea" style="margin-top: 30px">
         <div class="titArea">
-            <div class="selectArea">
-                <select class="selectTypeA" style="width:170px;" name="year" onchange="changeYear()">
-                    <option value="">선택</option>
-                    <option value="2025" ${searchWord == '2025' ? 'selected' : ''}>2025</option>
-                    <option value="2024" ${searchWord == '2024' ? 'selected' : ''}>2024</option>
-                    <option value="2023" ${searchWord == '2023' ? 'selected' : ''}>2023</option>
-                    <option value="2022" ${searchWord == '2022' ? 'selected' : ''}>2022</option>
-                    <option value="2021" ${searchWord == '2021' ? 'selected' : ''}>2021</option>
-                    <option value="2020" ${searchWord == '2020' ? 'selected' : ''}>2020</option>
-                    <option value="2019" ${searchWord == '2019' ? 'selected' : ''}>2019</option>
-                    <option value="2018" ${searchWord == '2018' ? 'selected' : ''}>2018</option>
-                    <option value="2017" ${searchWord == '2017' ? 'selected' : ''}>2017</option>
-                    <option value="2016" ${searchWord == '2016' ? 'selected' : ''}>2016</option>
-                </select>
-            </div>
+
         </div>
 
 
-
-
         <div class="tableArea">
-            <div id="map1" class="mapArea">
+            <div id="map1" class="mapArea" >
                 <!-- 여기서 지진 발생지도를 표시할 수 있습니다. -->
                 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3175384932ff101a4e21ba1cf4377df"></script>
                 <script type="text/javascript">
-                    var container1 = document.getElementById('map1'); //지도를 담을 영역의 DOM 레퍼런스
+                    var container1 = document.getElementById('map1'); // 지도를 담을 영역의 DOM 레퍼런스
+                    var options1 = {
+                        center: new kakao.maps.LatLng(37.5665, 126.9780), // 초기 지도 중심
+                        level: 14 // 지도의 확대 수준
+                    };
+                    var map1 = new kakao.maps.Map(container1, options1); // 지도 생성 및 객체 리턴
 
+                    // 마커를 표시할 위치와 title 객체 배열입니다
+                    var positions = [
+                        // 서버에서 받은 데이터를 바탕으로 마커 위치를 설정합니다
+                        <c:forEach var="earthquake" items="${eqkOccurrence}">
+                        {
+                            title: '지진 발생 (' + '${earthquake.earthquakeYear}' + '년 ' + '${earthquake.magnitudeRange}' + ')',
+                            latlng: new kakao.maps.LatLng(${earthquake.eqkLat}, ${earthquake.eqkLon}),
+                            count: ${earthquake.eqkCount},
+                            eqkMt: '${earthquake.magnitudeRange}'  // 지진의 규모 추가
+                        },
+                        </c:forEach>
+                    ];
 
-                    var map1 = new kakao.maps.Map(container1, options); //지도 생성 및 객체 리턴
+                    // 마커 이미지의 URL을 지진 규모에 따라 동적으로 설정
+                    function getMarkerImage(eqkMt) {
+                        // eqkMt가 문자열 형태로 되어있다면, 숫자로 변환하여 비교하는 것이 안전합니다.
+                        var eqkMtValue = eqkMt;
+                            console.log(eqkMtValue);
+                        if (eqkMtValue >= '5.0~') {
+                            return "/assets/images/red.png"; // 5.0 이상 마커 (빨간색)
+                        } else if (eqkMtValue >= '4.0 - 4.9') {
+                            return "/assets/images/orange.png"; // 4.0 ~ 4.9 마커 (주황색)
+                        } else if (eqkMtValue >= '3.0 - 3.9') {
+                            return "/assets/images/blue.png"; // 3.0 ~ 3.9 마커 (파란색)
+                        } else {
+                            return "/assets/images/green.png"; // 2.9 이하 마커 (초록색)
+                        }
+                    }
 
+                    // 마커를 생성하여 지도에 표시합니다
+                    for (var i = 0; i < positions.length; i++) {
+                        // 마커 이미지의 크기 설정
+                        var imageSize1 = new kakao.maps.Size(24, 35);
+
+                        // 마커 이미지 URL 동적으로 설정
+                        var markerImage1 = new kakao.maps.MarkerImage(getMarkerImage(positions[i].eqkMt), imageSize1);
+
+                        // 마커를 생성합니다
+                        var marker1 = new kakao.maps.Marker({
+                            map: map1, // 마커를 표시할 지도
+                            position: positions[i].latlng, // 마커를 표시할 위치
+                            title: positions[i].title, // 마커의 타이틀
+                            image: markerImage1 // 마커 이미지
+                        });
+
+                        // 마커에 클릭 이벤트를 추가하여, 클릭 시 정보 창을 띄웁니다
+                        kakao.maps.event.addListener(marker1, 'click', (function(marker, i) {
+                            return function() {
+                                var content = '<div style="padding:5px;">' +
+                                    '지진 발생 연도: ' + positions[i].title + '<br>' +
+                                    '지진 횟수: ' + positions[i].count + '</div>';
+
+                                var infowindow = new kakao.maps.InfoWindow({
+                                    content: content
+                                });
+                                infowindow.open(map1, marker);
+                            };
+                        })(marker1, i));
+                    }
                 </script>
+
+
+
             </div>
+
         </div>
     </div>
 
 
     <div class="rightArea" style="margin-top: 45px">
-
         <div class="tableArea">
             <!-- 차트가 그려질 캔버스 -->
             <canvas id="earthquakeChart"></canvas>
-
             <div class="titArea">
                 <div class="tableSet">
-
                 </div>
             </div>
             <ul class="tableList scr1" id="">
-
             </ul>
         </div>
     </div>
@@ -207,7 +249,7 @@
 
 <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="/assets/js/eqk/eqk_page.js"></script> <!-- 여기에 스크립트 파일 경로 -->
+<script src="/assets/js/eqk/eqk_page.js"></script>
 <script>
     // JSP에서 eqkByYear 데이터를 JSON 형태로 JavaScript로 전달하기
     var earthquakeData = [];
@@ -218,8 +260,6 @@
         count: ${eqkByYear.eqkCount}
     });
     </c:forEach>
-
-    console.log(earthquakeData);  // 확인용 로그
 
     /// 고유 연도 리스트
     var years = [...new Set(earthquakeData.map(item => item.year))];
@@ -235,7 +275,6 @@
                 return earthquakeData.filter(item => item.year === year && item.magnitudeRange === range)
                     .reduce((sum, item) => sum + item.count, 0);
             })
-
             ,
             backgroundColor:
                 range === '3.0 - 3.9' ? 'rgb(69,100,237)' :
@@ -245,7 +284,6 @@
             borderRadius: 8,  // 여기서 radius를 설정
         };
     });
-
     // 차트 그리기
     var ctx = document.getElementById('earthquakeChart').getContext('2d');
     var earthquakeChart = new Chart(ctx, {
@@ -283,8 +321,6 @@
             },
         },
     });
-
-
 </script>
     </body>
     </html>
