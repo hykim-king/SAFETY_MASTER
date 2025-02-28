@@ -18,11 +18,11 @@ public class EarthquakeController {
 
     @Autowired
     private EarthquakeService earthquakeService;
-    String viewName = "earthquake/earthquake";
+
     @GetMapping("view")
     public String viewEarthquake(Model model,
                                  @RequestParam(value = "searchWord", defaultValue = "2025")String searchWord,
-                                 @RequestParam(value = "searchDiv", defaultValue = "10") int searchDiv) {
+                                 @RequestParam(value = "searchDiv", defaultValue = "10") int searchDiv) throws Exception {
 
         String viewName = "earthquake/earthquake";
 

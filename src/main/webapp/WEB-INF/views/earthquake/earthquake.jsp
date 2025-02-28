@@ -44,7 +44,7 @@
                 </select>
             </div>
         </div>
-        <div class="tableArea">
+        <div class="tableArea" style="margin-top: 35px">
             <div id="map" class="mapArea" id="tmpMapArea">
                 <!-- 여기서 지진 발생지도를 표시할 수 있습니다. -->
                 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3175384932ff101a4e21ba1cf4377df"></script>
@@ -129,6 +129,7 @@
                 </div>
             </div>
             <ul class="tableList scr1" id="getEarthquakeList">
+
                 <c:forEach var="earthquake" items="${list}">
                     <li onclick="updateMarkerPosition(${earthquake.eqkLat}, ${earthquake.eqkLon})">
                         <span>${earthquake.eqkReportTime}</span>
@@ -177,6 +178,7 @@
                         </c:forEach>
                     ];
 
+                    var currentContent = null;
                     // 마커 이미지의 URL을 지진 규모에 따라 동적으로 설정
                     function getMarkerImage(eqkMt) {
                         // eqkMt가 문자열 형태로 되어있다면, 숫자로 변환하여 비교하는 것이 안전합니다.
