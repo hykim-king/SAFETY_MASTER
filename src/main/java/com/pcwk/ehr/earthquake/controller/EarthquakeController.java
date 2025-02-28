@@ -37,9 +37,11 @@ public class EarthquakeController {
             List<EarthquakeVO> list = earthquakeService.getDisMes(search);
             List<EarthquakeVO> eqkOccurrence = earthquakeService.eqkOccurrence(search1);
             List<EarthquakeVO> eqkByYear = earthquakeService.eqkByYear();
+            List<EarthquakeVO> eqkByYearAll = earthquakeService.eqkByYearAll(search1);
             model.addAttribute("list", list);
             model.addAttribute("eqkOccurrence", eqkOccurrence);
             model.addAttribute("eqkByYear", eqkByYear);
+            model.addAttribute("eqkByYearAll", eqkByYearAll);
             System.out.println(list);
             System.out.println(eqkByYear);
         } catch (Exception e) {

@@ -14,4 +14,5 @@ public interface EarthquakeMapper {
     List<EarthquakeVO> getEQK (SearchVO searchVO);
     List<EarthquakeVO> eqkByYear ();
     List<EarthquakeVO> eqkOccurrence (SearchVO searchVO);
+    List<EarthquakeVO> eqkByYearAll (SearchVO searchVO);
 }

@@ -225,7 +225,32 @@
                     }
                 </script>
 
-
+                <!-- 연도별 및 규모별 지진 횟수 표시 -->
+                <div id="eqkStats" class="eqkStats">
+                    <h3>연도별 규모별 지진 횟수</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>규모</th>
+                            <th><img src="/assets/images/green.png" style="width: 20px"></th>
+                            <th><img src="/assets/images/blue.png" style="width: 20px"></th>
+                            <th><img src="/assets/images/orange.png" style="width: 20px"></th>
+                            <th><img src="/assets/images/red.png" style="width: 20px"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="earthquake" items="${eqkByYearAll}">
+                            <tr>
+                                <td>${earthquake.magnitudeRange}</td>
+                                <td>${earthquake.magnitudeRange == '2.0 - 2.9' ? earthquake.eqkCount : 0}</td>
+                                <td>${earthquake.magnitudeRange == '3.0 - 3.9' ? earthquake.eqkCount : 0}</td>
+                                <td>${earthquake.magnitudeRange == '4.0 - 4.9' ? earthquake.eqkCount : 0}</td>
+                                <td>${earthquake.magnitudeRange == '5.0~' ? earthquake.eqkCount : 0}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
 

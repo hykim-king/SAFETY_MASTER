@@ -11,4 +11,5 @@ public interface EarthquakeService {
     List<EarthquakeVO> getDisMes(SearchVO searchVO) throws Exception;
     List<EarthquakeVO> eqkByYear ();
     List<EarthquakeVO> eqkOccurrence (SearchVO searchVO) throws Exception;
+    List<EarthquakeVO> eqkByYearAll (SearchVO searchVO) throws Exception;
 }

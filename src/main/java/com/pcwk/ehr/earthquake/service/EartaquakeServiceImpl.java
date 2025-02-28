@@ -28,4 +28,9 @@ public class EartaquakeServiceImpl implements EarthquakeService {
     public List<EarthquakeVO> eqkOccurrence(SearchVO searchVO) throws Exception {
         return earthquakeMapper.eqkOccurrence(searchVO);
     }
+
+    @Override
+    public List<EarthquakeVO> eqkByYearAll(SearchVO searchVO) throws Exception {
+        return earthquakeMapper.eqkByYearAll(searchVO);
+    }
 }
