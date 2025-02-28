@@ -22,13 +22,6 @@ align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#state_sub{
-    background-image: url(https://i.pinimg.com/736x/ac/32/40/ac32405cdd2f238a61709713d6d43f02.jpg);
-    background-position: center;
-    background-size: 5000px;
-    background-position-y: 500px;
-}
-
 /* 재난문자, 과거 재난 기록 메뉴 */
 .stateWrap {
     margin-bottom: 20px;

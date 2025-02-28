@@ -5,14 +5,12 @@
     <title>과거지진</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/eqk.css">
     <style>
-        /* 차트의 스타일 */
         #earthquakeChart {
             width: 100%;
             height: 700px !important;
             margin: auto;
             margin-top: 50px !important;
         }
-
     </style>
 
 
@@ -22,7 +20,9 @@
     <ul>
         <li class="active"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
         <li class="on"><a href="/earthquake/view">지진</a></li>
-        <li><a href="/typ/view">태풍</a></li>
+        <li class="active"><a href="/typ/view">태풍</a></li>
+        <li class="active"><a href="/disasterguide/natural">자연재난 행동요령</a></li>
+        <li class="active"><a href="/disasterguide/social">사회재난 행동요령</a></li>
     </ul>
 </div>
 <div class="earthquakeList">

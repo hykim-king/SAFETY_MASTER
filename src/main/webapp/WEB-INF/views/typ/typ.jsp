@@ -13,6 +13,8 @@
     <li class="active"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
     <li class="active"><a href="/earthquake/view">지진</a></li>
     <li class="on"><a href="/typ/view">태풍</a></li>
+    <li class="active"><a href="/disasterguide/natural">자연재난 행동요령</a></li>
+    <li class="active"><a href="/disasterguide/social">사회재난 행동요령</a></li>
   </ul>
 </div>
 
