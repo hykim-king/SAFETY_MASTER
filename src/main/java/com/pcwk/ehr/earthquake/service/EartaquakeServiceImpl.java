@@ -15,7 +15,7 @@ public class EartaquakeServiceImpl implements EarthquakeService {
     EarthquakeMapper earthquakeMapper;
 
     @Override
-    public List<EarthquakeVO> getDisMes(SearchVO searchVO) throws Exception {
+    public List<EarthquakeVO> getEQK(SearchVO searchVO) throws Exception {
         return earthquakeMapper.getEQK(searchVO);
     }
 

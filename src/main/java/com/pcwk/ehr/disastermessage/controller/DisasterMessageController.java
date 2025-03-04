@@ -25,8 +25,12 @@ public class DisasterMessageController {
 
     @GetMapping("/view")
     public String showDisasterMessage(Model model,
+                                      //pageNo, pageSize 의 기본값을 각각 1,10 으로 설정하여 한페이지당 10줄씩 나오도록 설정
                                       @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
                                       @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,
+
+                                      //searchDiv를 10(없음),20(지역),30(검색어) , searchWord를 각각 10,"" 값으로 설정하여
+                                      // 검색구분,검색어 없이 날짜순으로 올라오도록 설정
                                       @RequestParam(value = "searchDiv", defaultValue = "10") int searchDiv,
                                       @RequestParam(value = "searchWord", defaultValue = "") String searchWord) {
 
@@ -41,7 +45,7 @@ public class DisasterMessageController {
         search.setSearchWord(searchWord);
 
         try {
-            // 서비스에서 데이터를 가져오기
+            // 서비스에서 DisasterMessageVO 데이터를 가져오기
             List<DisasterMessageVO> list = disasterMessageService.getDisMes(search);
 
             // 모델에 데이터 추가
@@ -59,7 +63,6 @@ public class DisasterMessageController {
             model.addAttribute("search", search);
 
         } catch (Exception e) {
-            // 예외 처리 (에러 로그 출력)
             e.printStackTrace();
         }
         // 반환할 뷰 이름
@@ -71,10 +74,10 @@ public class DisasterMessageController {
         String viewName = "disastermessage/disastermessage_detail";
 
         try {
-            // 재난 문자 상세 정보를 가져옴
+            // 선택한 재난문자의 disMesNum 으로 단건검색
             DisasterMessageVO disasterMessage = disasterMessageService.getDisMesDetail(disMesNum);
 
-            // 상세 정보 모델에 추가
+            // 재난문자 단건 정보 모델에 추가
             model.addAttribute("disasterMessage", disasterMessage);
         } catch (Exception e) {
             throw new RuntimeException("상세 정보를 불러오는 중 오류가 발생했습니다.", e);

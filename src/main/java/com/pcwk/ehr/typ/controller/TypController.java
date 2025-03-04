@@ -22,16 +22,22 @@ public class TypController {
 
     @GetMapping("view")
     public String showTYP(Model model,
+                          // searchWord(연도), searchDiv( (10)전체, (20)한반도 상률 (30)한반도에 직접 영향 ) 기본값을 각각 2023, 와 10 으로 줌
                           @RequestParam(value = "searchDiv", defaultValue = "10") int searchDiv,
                           @RequestParam(value = "searchWord", defaultValue = "2023")String searchWord) {
         String viewName = "typ/typ";
 
         try {
+            // 연도와 최신순 규모순으로 분류하는 첫번째 지도에서의 SearchVO 객체를 search로 생성
             SearchVO searchVO = new SearchVO();
             searchVO.setSearchDiv(searchDiv);
             searchVO.setSearchWord(searchWord);
 
+            
+            // 선택한 연도의 태풍 데이터를 불러옴
             List<TypVO> typ = typService.getTyp(searchVO);
+            
+            // 모델에 데이터 추가 
             model.addAttribute("typ", typ);
 
         } catch (Exception e) {

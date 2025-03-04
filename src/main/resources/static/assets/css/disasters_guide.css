@@ -153,3 +153,7 @@ ul {
 ::marker {
     color: whitesmoke;
 }
+
+.card-img{
+    width: auto !important;
+}

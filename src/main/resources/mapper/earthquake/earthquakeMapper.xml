@@ -36,28 +36,31 @@
 
     <select id="eqkByYear" resultType="com.pcwk.ehr.earthquake.domain.EarthquakeVO">
         SELECT
-        TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY') AS EARTHQUAKE_YEAR,
-        CASE
-        WHEN EQK_MT >= 3.0 AND  4.0 > EQK_MT THEN '3.0 - 3.9'
-        WHEN EQK_MT >= 4.0 AND  5.0 > EQK_MT  THEN '4.0 - 4.9'
-        WHEN EQK_MT >= 5.0 THEN '5.0~'
-        END AS MAGNITUDE_RANGE,
-        COUNT(*) AS EQK_COUNT
+            TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY') AS EARTHQUAKE_YEAR,
+            CASE
+                WHEN EQK_MT >= 2.0 AND 3.0 > EQK_MT THEN '2.0 - 2.9'
+                WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
+                WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
+                WHEN EQK_MT >= 5.0 THEN '5.0~'
+                END AS MAGNITUDE_RANGE,
+            COUNT(*) AS EQK_COUNT
         FROM
-        EARTHQUAKE
+            EARTHQUAKE
         WHERE
-        EQK_AREA__REGION = 3
-        AND SUBSTR(EQK_ORIGIN_TIME, 1, 4) > 2015
-        AND EQK_MT >= 3.0
+            EQK_AREA__REGION = 3
+          AND SUBSTR(EQK_ORIGIN_TIME, 1, 4) > 2015
+          AND EQK_MT >= 2.0
+          AND EQK_REPORT_TIME LIKE #{searchWord} || '%'
         GROUP BY
-        TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY'),
-        CASE
-        WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
-        WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
-        WHEN EQK_MT >= 5.0 THEN '5.0~'
-        END
+            TO_CHAR(TO_DATE(SUBSTR(EQK_ORIGIN_TIME, 1, 4), 'YYYY'), 'YYYY'),
+            CASE
+                WHEN EQK_MT >= 2.0 AND 3.0 > EQK_MT THEN '2.0 - 2.9'
+                WHEN EQK_MT >= 3.0 AND 4.0 > EQK_MT THEN '3.0 - 3.9'
+                WHEN EQK_MT >= 4.0 AND 5.0 > EQK_MT THEN '4.0 - 4.9'
+                WHEN EQK_MT >= 5.0 THEN '5.0~'
+                END
         ORDER BY
-        EARTHQUAKE_YEAR DESC , MAGNITUDE_RANGE
+            EARTHQUAKE_YEAR DESC, MAGNITUDE_RANGE
     </select>
 
     <select id="eqkOccurrence" resultType="com.pcwk.ehr.earthquake.domain.EarthquakeVO" parameterType="com.pcwk.ehr.cmn.SearchVO">

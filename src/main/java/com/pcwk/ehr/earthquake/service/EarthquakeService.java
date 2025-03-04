@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface EarthquakeService {
 
-    List<EarthquakeVO> getDisMes(SearchVO searchVO) throws Exception;
+    List<EarthquakeVO> getEQK(SearchVO searchVO) throws Exception;
     List<EarthquakeVO> eqkByYear ();
     List<EarthquakeVO> eqkOccurrence (SearchVO searchVO) throws Exception;
     List<EarthquakeVO> eqkByYearAll (SearchVO searchVO) throws Exception;
