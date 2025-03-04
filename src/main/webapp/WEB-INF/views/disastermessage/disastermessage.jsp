@@ -43,6 +43,8 @@
                   cp+"/disastermessage/view", "pageDoRetrieve");
 
 %>
+<%@ include file="../../template/footer.jsp" %>
+<%@ include file="../../template/header.jsp" %>
 <html>
 <head>
     <title>재난문자</title>
@@ -56,8 +58,8 @@
         <li class="on"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
         <li class="active"><a href="/earthquake/view">지진</a></li>
         <li class="active"><a href="/typ/view">태풍</a></li>
-        <li class="active"><a href="/disasterguide/natural">자연재난 행동요령</a></li>
-        <li class="active"><a href="/disasterguide/social">사회재난 행동요령</a></li>
+        <li class="active"><a href="/disasterguide/finedust">자연재난 행동요령</a></li>
+        <li class="active"><a href="/disasterguide/fire">사회재난 행동요령</a></li>
       </ul>
     </div>
   </div>

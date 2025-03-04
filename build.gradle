@@ -48,7 +48,10 @@ dependencies {
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'	
 	providedRuntime 'javax.servlet:javax.servlet-api:4.0.1'
-	
+
+	implementation("org.springframework.boot:spring-boot-starter-web")
+
+
 	// 내장 Tomcat
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	
