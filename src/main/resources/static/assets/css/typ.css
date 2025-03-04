@@ -1,12 +1,12 @@
 .noneData {
-    font-size: 16px;           /* Adjust the font size */
-    color: #ff0000;            /* Red text color */
-    text-align: center;        /* Center align the text */
-    padding: 20px;             /* Add padding for spacing */
-    background-color: #f8d7da; /* Light red background */
-    border: 1px solid #f5c6cb; /* Border color matching the background */
-    border-radius: 5px;        /* Rounded corners */
-    margin-top: 20px;          /* Space above the message */
+    font-size: 16px;
+    color: #ff0000;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 /* 기본 스타일 */
 * {
@@ -181,49 +181,43 @@ body {
     padding-left: 0;
 }
 
-/* Overall container styling */
 .topArea {
-    background-color: #f4f4f4; /* Light background color */
     padding: 20px 0;
-    text-align: center; /* Center align the text */
+    text-align: center;
 }
 
-/* Styling for the unordered list */
+
 .topArea ul {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none;
     padding: 0;
     margin-top: -10px;
-    display: flex; /* Use flexbox to align the items in a row */
-    justify-content: right; /* Center the list items */
+    display: flex;
+    justify-content: right;
 }
 
-/* Styling for list items */
 .topArea ul li {
-    margin: 0 20px; /* Add horizontal space between the items */
-    display: inline-block; /* Ensure items are horizontally aligned */
+    margin: 0 20px;
+    display: inline-block;
 }
 
-/* Styling for the links inside list items */
 .topArea ul li a {
     font-size: 16px;
-    color: #333; /* Default text color */
-    text-decoration: none; /* Remove underline */
+    color: #333;
+    text-decoration: none;
     font-weight: bold;
-    padding: 10px 20px; /* Add some padding for the clickable area */
-    display: inline-block; /* Make the anchor tag a block-level element */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Default link styling on hover */
 .topArea ul li a:hover {
-    background-color: #007bff; /* Blue background on hover */
-    color: white; /* Change text color to white */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
 }
 
-/* Active state for the selected link (optional) */
 .topArea ul li a.active {
-    background-color: #0056b3; /* Darker blue for the active link */
+    background-color: #0056b3;
     color: white;
     border-radius: 5px;
 }

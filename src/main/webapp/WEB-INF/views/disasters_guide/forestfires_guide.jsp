@@ -5,24 +5,17 @@
   Time: PM 4:52
   To change this template use File | Settings | File Templates.
 --%>
+<%@ include file="../../template/header.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>사회재난 행동요령</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/disasters_guide.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
 <div id="container" class="message">
     <div id="state_sub">
-        <div class="historyTab">
-            <ul>
-                <li class="active"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
-                <li class="active"><a href="/earthquake/view">지진</a></li>
-                <li class="active"><a href="/typ/view">태풍</a></li>
-                <li class="active"><a href="/disasterguide/finedust">자연재난 행동요령</a></li>
-                <li class="on"><a href="/disasterguide/fire">사회재난 행동요령</a></li>
-            </ul>
-        </div>
         <div id="sidebar">
             <ul>
                 <li><a href="/disasterguide/fire">화재</a></li>
@@ -70,3 +63,4 @@
 </div>
 </body>
 </html>
+<%@ include file="../../template/footer.jsp" %>

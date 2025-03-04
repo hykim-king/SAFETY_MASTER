@@ -43,26 +43,17 @@
                   cp+"/disastermessage/view", "pageDoRetrieve");
 
 %>
-<%@ include file="../../template/footer.jsp" %>
+
 <%@ include file="../../template/header.jsp" %>
 <html>
 <head>
     <title>재난문자</title>
   <link rel="stylesheet" type="text/css" href="/assets/css/dismes.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
 <div id="container" class="message">
-  <div id="state_sub">
-    <div class="historyTab">
-      <ul>
-        <li class="on"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
-        <li class="active"><a href="/earthquake/view">지진</a></li>
-        <li class="active"><a href="/typ/view">태풍</a></li>
-        <li class="active"><a href="/disasterguide/finedust">자연재난 행동요령</a></li>
-        <li class="active"><a href="/disasterguide/fire">사회재난 행동요령</a></li>
-      </ul>
-    </div>
-  </div>
+
   <div>
 
     <div class="listWrap">
@@ -138,4 +129,5 @@
   </div>
   <script src="/assets/js/dismes/dismes_page.js"></script> <!-- 여기에 스크립트 파일 경로 -->
 </body>
+<%@ include file="../../template/footer.jsp" %>
 </html>

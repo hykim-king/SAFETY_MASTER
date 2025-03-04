@@ -19,9 +19,9 @@
                                                      href="#" id="disasterDropdown" role="button"> 재난현황 </a>
                         <ul class="dropdown-menu" aria-labelledby="disasterDropdown">
                             <li><a class="dropdown-item" href="#">홍수</a></li>
-                            <li><a class="dropdown-item" href="#">지진</a></li>
-                            <li><a class="dropdown-item" href="#">태풍</a></li>
-                            <li><a class="dropdown-item" href="#">재난문자</a></li>
+                            <li><a class="dropdown-item" href="/earthquake/view">지진</a></li>
+                            <li><a class="dropdown-item" href="/typ/view">태풍</a></li>
+                            <li><a class="dropdown-item" href="/disastermessage/view">재난문자</a></li>
                             <li><a class="dropdown-item" href="#">재난안전통계</a></li>
                         </ul></li>
 
@@ -52,7 +52,8 @@
                             <li><a class="dropdown-item" href="#">안전점검 퀴즈</a></li>
                             <li><a class="dropdown-item" href="#">생존 필수품 추천 및 체크리스트</a></li>
                             <li><a class="dropdown-item" href="#">재난 훈련 영상</a></li>
-                            <li><a class="dropdown-item" href="#">자연재난 행동 요령 및 예방법</a></li>
+                            <li><a class="dropdown-item" href="/disasterguide/finedust">자연재난 행동 요령 및 예방법</a></li>
+                            <li><a class="dropdown-item" href="/disasterguide/fire">사회재난 행동 요령 및 예방법</a></li>
                         </ul></li>
 
                     <!-- 시민안전보험 메뉴 드롭다운 -->

@@ -1,9 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="../../template/header.jsp" %>
 <html>
 <head>
     <title>과거지진</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/eqk.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <style>
         #earthquakeChart {
             width: 100%;
@@ -16,15 +18,6 @@
 
 </head>
 <body>
-<div class="historyTab">
-    <ul>
-        <li class="active"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
-        <li class="on"><a href="/earthquake/view">지진</a></li>
-        <li class="active"><a href="/typ/view">태풍</a></li>
-        <li class="active"><a href="/disasterguide/finedust">자연재난 행동요령</a></li>
-        <li class="active"><a href="/disasterguide/fire">사회재난 행동요령</a></li>
-    </ul>
-</div>
 <div class="earthquakeList">
     <div class="leftArea">
         <div class="titArea">
@@ -132,7 +125,7 @@
 
                 <c:forEach var="earthquake" items="${list}">
                     <li onclick="updateMarkerPosition(${earthquake.eqkLat}, ${earthquake.eqkLon})">
-                        <span>${earthquake.eqkReportTime}</span>
+                        <span id="formattedTime">${earthquake.eqkReportTime}</span>
                         <span>${earthquake.eqkMt}</span>
                         <span>${earthquake.eqkLat}, ${earthquake.eqkLon}</span>
                         <span>${earthquake.eqkLoc}</span>
@@ -348,6 +341,24 @@
             },
         },
     });
+    document.addEventListener("DOMContentLoaded", function() {
+        // 모든 "formattedTime" span 요소 가져오기
+        let timeElements = document.querySelectorAll("#formattedTime");
+
+        timeElements.forEach(function(element) {
+            let timeStr = element.innerText.trim();
+            if (timeStr.length === 12) {
+                let formattedTime = timeStr.substring(0, 4) + "-" +
+                    timeStr.substring(4, 6) + "-" +
+                    timeStr.substring(6, 8) + " " +
+                    timeStr.substring(8, 10) + ":" +
+                    timeStr.substring(10, 12);
+                element.innerText = formattedTime;
+            }
+        });
+    });
+
 </script>
     </body>
     </html>
+<%@ include file="../../template/footer.jsp" %>

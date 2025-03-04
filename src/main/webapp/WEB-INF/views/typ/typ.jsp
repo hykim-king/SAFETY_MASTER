@@ -1,22 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ include file="../../template/header.jsp" %>
 <html>
 <head>
   <title>태풍</title>
   <link rel="stylesheet" type="text/css" href="/assets/css/typ.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
-<div class="historyTab">
-  <ul>
-    <li class="active"><a href="/disastermessage/view"><strong>재난문자</strong></a></li>
-    <li class="active"><a href="/earthquake/view">지진</a></li>
-    <li class="on"><a href="/typ/view">태풍</a></li>
-    <li class="active"><a href="/disasterguide/finedust">자연재난 행동요령</a></li>
-    <li class="active"><a href="/disasterguide/fire">사회재난 행동요령</a></li>
-  </ul>
-</div>
 
 <div class="earthquakeList">
   <div class="leftArea" style="margin-top: 45px">
@@ -33,9 +25,9 @@
         <option value="2016" ${searchWord == '2016' ? 'selected' : ''}>2016</option>
       </select>
     </div>
-    <div class="tableArea" style="margin-top: 30px;">
+    <div class="tableArea" style="margin-top: 44px;">
       <!-- 차트가 그려질 캔버스 -->
-      <canvas id="typhoonChart" width="400" height="400"></canvas>
+      <canvas id="typhoonChart" width="400" height="300"></canvas>
     </div>
   </div>
 
@@ -65,10 +57,10 @@
         <c:forEach var="typ" items="${typ}">
           <li onclick="displayTyphoonData('${typ.typKorName}', '${typ.typSt}', '${typ.typEd}', ${typ.typMinPressure}, ${typ.typMaxWind})">
             <span>${typ.typKorName}</span>
-            <span>${typ.typSt}</span>
-            <span>${typ.typEd}</span>
+            <span id="formattedDate1">${typ.typSt}</span>
+            <span id="formattedDate2">${typ.typEd}</span>
             <span>${typ.typEff}</span>
-            <span>${fn:substring(typ.typSt, 0, 10)} - ${fn:substring(typ.typEd, 0, 10)}</span>
+            <span id="formattedDateRange">${fn:substring(typ.typSt, 0, 10)} - ${fn:substring(typ.typEd, 0, 10)}</span>
           </li>
         </c:forEach>
       </ul>
@@ -117,7 +109,7 @@
         x: {
           title: {
             display: true,
-            text: '시작일시 - 종료일시'
+            text: '태풍 최소 기압 - 태풍 최대 풍속 - 태풍 존재일'
           }
         },
         y: {
@@ -152,6 +144,68 @@
 
     typhoonChart.update();
   }
+  document.addEventListener("DOMContentLoaded", function() {
+    // 모든 "formattedDate" ID를 가진 요소 가져오기
+    let dateElements = document.querySelectorAll("#formattedDate1");
+
+    dateElements.forEach(function(element) {
+      let dateStr = element.innerText.trim();
+
+      // 8자리 숫자인 경우만 변환
+      if (dateStr.length === 8 && !isNaN(dateStr)) {
+        let formattedDate = dateStr.substring(0, 4) + "-" +
+                dateStr.substring(4, 6) + "-" +
+                dateStr.substring(6, 8);
+        element.innerText = formattedDate;
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // 모든 "formattedDate" ID를 가진 요소 가져오기
+    let dateElements = document.querySelectorAll("#formattedDate2");
+
+    dateElements.forEach(function(element) {
+      let dateStr = element.innerText.trim();
+
+      // 8자리 숫자인 경우만 변환
+      if (dateStr.length === 8 && !isNaN(dateStr)) {
+        let formattedDate = dateStr.substring(0, 4) + "-" +
+                dateStr.substring(4, 6) + "-" +
+                dateStr.substring(6, 8);
+        element.innerText = formattedDate;
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // 모든 "formattedDateRange" ID를 가진 요소 가져오기
+    let dateRangeElements = document.querySelectorAll("#formattedDateRange");
+
+    dateRangeElements.forEach(function(element) {
+      let dateStr = element.innerText.trim();
+
+      // "YYYYMMDD - YYYYMMDD" 패턴인지 확인
+      let match = dateStr.match(/^(\d{8})\s*-\s*(\d{8})$/);
+      if (match) {
+        let startDate = match[1]; // 시작 날짜 (YYYYMMDD)
+        let endDate = match[2];   // 종료 날짜 (YYYYMMDD)
+
+        // 변환된 날짜 포맷
+        let formattedStartDate = startDate.substring(0, 4) + "-" +
+                startDate.substring(4, 6) + "-" +
+                startDate.substring(6, 8);
+
+        let formattedEndDate = endDate.substring(0, 4) + "-" +
+                endDate.substring(4, 6) + "-" +
+                endDate.substring(6, 8);
+
+        // 변환된 날짜 적용
+        element.innerText = formattedStartDate + " - " + formattedEndDate;
+      }
+    });
+  });
+
 </script>
 
 
@@ -161,3 +215,4 @@
 
 </body>
 </html>
+<%@ include file="../../template/footer.jsp" %>
