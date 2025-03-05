@@ -15,15 +15,9 @@ document.addEventListener('DOMContentLoaded',function(){
     const userForm        = document.querySelector("#userForm");
     doRetrieveButton.addEventListener('click',function(event){
         event.preventDefault(); //버블링 방지
-        console.log("doRetrieveButton click");
 
         userForm.pageNo.value = 1;
         userForm.action = "/disastermessage/view";
-
-        console.log("pageSizeSelect.value: ", pageSizeSelect.value);
-        console.log("searchDivSelect.value: ", searchDivSelect.value);
-        console.log("searchWordInput.value: ", searchWordInput.value);
-        console.log("pageNo.value: ", userForm.pageNo.value);
 
         userForm.submit();
 
@@ -34,12 +28,9 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 
 function pageDoRetrieve (url, pageNo) {
-    console.log("pageDoRetrieve click");
-
     let userForm = document.userForm;
     userForm.pageNo.value = pageNo;
     userForm.action = url;
-
     userForm.submit();
 }
 

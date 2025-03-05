@@ -15,6 +15,8 @@
     <div class="selectArea">
       <select class="selectTypeA" style="width:170px;" name="year" id="year" onchange="changeYear()">
         <option value="">선택</option>
+        <%--searchWord 값이 비교값과 동일하다면 선택한 옵션을 출력하고 그값과 동일하지 않다면 빈값 출력
+         그값으로 js의 changeYear 함수를 사용해 연도별로 분류--%>
         <option value="2023" ${searchWord == '2023' ? 'selected' : ''}>2023</option>
         <option value="2022" ${searchWord == '2022' ? 'selected' : ''}>2022</option>
         <option value="2021" ${searchWord == '2021' ? 'selected' : ''}>2021</option>
@@ -25,45 +27,55 @@
         <option value="2016" ${searchWord == '2016' ? 'selected' : ''}>2016</option>
       </select>
     </div>
+
     <div class="tableArea" style="margin-top: 44px;">
       <!-- 차트가 그려질 캔버스 -->
-      <canvas id="typhoonChart" width="400" height="300"></canvas>
+      <canvas id="typhoonChart" width="400" height="400"></canvas>
     </div>
+
   </div>
 
   <div class="rightArea">
+
     <div class="topArea">
       <ul>
+        <%--controller에서 설정한 searchWord를 li 안에 있는 값으로 설정하여 js로 넘기고 다시 controller로 넘긴다--%>
         <li><a id="all" href="#" onclick="changeSelection('10')">전체</a></li>
         <li><a id="landing" href="#" onclick="changeSelection('20')">상륙</a></li>
         <li><a id="directly" href="#" onclick="changeSelection('30')">직접</a></li>
       </ul>
     </div>
+
     <div class="tableArea">
+
       <div class="titArea">
         <div class="tableSet">
           <span>태풍명</span>
           <span>시작일시</span>
           <span>종료일시</span>
           <span>한반도 영향</span>
-          <span>지속시간</span> <!-- Add a new column for duration -->
         </div>
       </div>
+
       <ul class="tableList scr1">
+        <%--만약 분류한값의 태풍 데이터가 없다면 표시--%>
         <c:if test="${empty typ}">
           <div class="noneData">데이터가 없습니다</div>
         </c:if>
-        <!-- 태풍 정보 출력 -->
+
+        <!-- controller에서 typVO타입의 데이터를 typ에 담아서 뿌려줌 -->
         <c:forEach var="typ" items="${typ}">
           <li onclick="displayTyphoonData('${typ.typKorName}', '${typ.typSt}', '${typ.typEd}', ${typ.typMinPressure}, ${typ.typMaxWind})">
             <span>${typ.typKorName}</span>
+
+            <%--태풍의 날짜 형식을 맞춰줌--%>
             <span id="formattedDate1">${typ.typSt}</span>
             <span id="formattedDate2">${typ.typEd}</span>
             <span>${typ.typEff}</span>
-            <span id="formattedDateRange">${fn:substring(typ.typSt, 0, 10)} - ${fn:substring(typ.typEd, 0, 10)}</span>
           </li>
         </c:forEach>
       </ul>
+
     </div>
   </div>
 </div>

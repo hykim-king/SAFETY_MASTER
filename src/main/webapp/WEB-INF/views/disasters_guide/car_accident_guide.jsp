@@ -17,7 +17,7 @@
 
     <style>
         #sidebar{
-            height: 154.9%;
+            height: 172.2% !important;
         }
     </style>
 </head>

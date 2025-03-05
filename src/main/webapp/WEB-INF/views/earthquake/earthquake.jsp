@@ -22,6 +22,8 @@
     <div class="leftArea">
         <div class="titArea">
             <div class="selectArea">
+                <%--controller에서 지정한 searchDiv와 searchWord를 js 파일로 전달함
+                js에서 전달받은 searchDiv를 cotroller로 전달하고 맞는 searchWord의 바인드변수를 myBatis에서 사용--%>
                 <select class="selectTypeA" style="width:170px;" name="year" id="year" onchange="changeYear()">
                     <option value="">선택</option>
                     <option value="2025" ${searchWord == '2025' ? 'selected' : ''}>2025</option>
@@ -59,22 +61,23 @@
                         map.setCenter(new kakao.maps.LatLng(37.5665, 126.9780)); // 서울 중심으로 다시 설정
                     }
 
+                        // 선택한 지역의 위도 경도로 이동함
                     function panTo() {
-                        // 이동할 위도 경도 위치를 생성합니다
-                        var moveLatLon = new kakao.maps.LatLng(37.5665, 126.9780); // 예시로 제주도 방향으로 이동
-
-                        // 지도 중심을 부드럽게 이동시킵니다
-                        // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+                        // 이동할 위도 경도 위치를 생성함
+                        var moveLatLon = new kakao.maps.LatLng(37.5665, 126.9780); // 예시로 제주도 방향으로 이동함
+                        // 지도 중심을 부드럽게 이동함
+                        // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동함
                         map.panTo(moveLatLon);
                     }
+                        //마커 이미지를 불러옴
+                    var imageSrc = '/assets/images/dropBlueBold.png',
+                        imageSize = new kakao.maps.Size(24, 29), // 마커이미지의 크기 지정
+                        imageOption = {offset: new kakao.maps.Point(17, 29)}; // 마커이미지의 옵션 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정
 
-                    var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다
-                        imageSize = new kakao.maps.Size(24, 29), // 마커이미지의 크기입니다
-                        imageOption = {offset: new kakao.maps.Point(17, 29)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-
-                    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+                    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성
                     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
                         markerPosition = new kakao.maps.LatLng(37.54699, 127.09598); // 마커가 표시될 위치입니다
+
 
                     // 마커를 생성합니다
                     var marker = new kakao.maps.Marker({
@@ -82,11 +85,14 @@
                         image: markerImage // 마커이미지 설정
                     });
 
+
                     // 마커가 지도 위에 표시되도록 설정합니다
                     marker.setMap(map);
 
+
                     // 마커 위치 업데이트 함수
                     function updateMarkerPosition(lat, lon) {
+
                         // 새로운 마커 위치 설정
                         var newPosition = new kakao.maps.LatLng(lat, lon);
 
@@ -108,6 +114,8 @@
     <div class="rightArea">
         <div class="topArea">
             <ul id="sortList">
+                <%--controller에서 지정한 searchDiv와 searchWord를 js 파일로 전달함
+                js에서 전달받은 searchDiv를 cotroller로 전달하고 맞는 searchDiv의 공용sql을 myBatis에서 사용--%>
                 <li id="listDate"><a href="#" onclick="changeSelection('10')">최신순</a></li>
                 <li id="listMng"><a href="#" onclick="changeSelection('20')">규모순</a></li>
             </ul>
@@ -122,7 +130,7 @@
                 </div>
             </div>
             <ul class="tableList scr1" id="getEarthquakeList">
-
+                    <%--controller에서 가져온 earthquakeVO타입의 데이터를 뿌려줌--%>
                 <c:forEach var="earthquake" items="${list}">
                     <li onclick="updateMarkerPosition(${earthquake.eqkLat}, ${earthquake.eqkLon})">
                         <span id="formattedTime">${earthquake.eqkReportTime}</span>
@@ -158,15 +166,15 @@
                     };
                     var map1 = new kakao.maps.Map(container1, options1); // 지도 생성 및 객체 리턴
 
-                    // 마커를 표시할 위치와 title 객체 배열입니다
+                    // 마커를 표시할 위치와 title 객체 배열
                     var positions = [
-                        // 서버에서 받은 데이터를 바탕으로 마커 위치를 설정합니다
+                        // 서버에서 받은 데이터를 바탕으로 마커 위치를 설정
                         <c:forEach var="earthquake" items="${eqkOccurrence}">
                         {
                             title: '지진 발생 (' + '${earthquake.earthquakeYear}' + '년 ' + '${earthquake.magnitudeRange}' + ')',
                             latlng: new kakao.maps.LatLng(${earthquake.eqkLat}, ${earthquake.eqkLon}),
                             count: ${earthquake.eqkCount},
-                            eqkMt: '${earthquake.magnitudeRange}'  // 지진의 규모 추가
+                            eqkMt: '${earthquake.magnitudeRange}'
                         },
                         </c:forEach>
                     ];
@@ -174,7 +182,8 @@
                     var currentContent = null;
                     // 마커 이미지의 URL을 지진 규모에 따라 동적으로 설정
                     function getMarkerImage(eqkMt) {
-                        // eqkMt가 문자열 형태로 되어있다면, 숫자로 변환하여 비교하는 것이 안전합니다.
+                        // eqkMt 비교하여 해당 마커로 표시
+                        // 쿼리문에서 해당값을 만들어 그값교 비교함
                         var eqkMtValue = eqkMt;
                             console.log(eqkMtValue);
                         if (eqkMtValue >= '5.0~') {
@@ -188,39 +197,45 @@
                         }
                     }
 
+                    var infowindow = new kakao.maps.InfoWindow(); // 하나의 정보 창을 전역 변수로 생성
+
                     // 마커를 생성하여 지도에 표시합니다
                     for (var i = 0; i < positions.length; i++) {
-                        // 마커 이미지의 크기 설정
                         var imageSize1 = new kakao.maps.Size(24, 35);
-
-                        // 마커 이미지 URL 동적으로 설정
                         var markerImage1 = new kakao.maps.MarkerImage(getMarkerImage(positions[i].eqkMt), imageSize1);
-
-                        // 마커를 생성합니다
                         var marker1 = new kakao.maps.Marker({
-                            map: map1, // 마커를 표시할 지도
-                            position: positions[i].latlng, // 마커를 표시할 위치
-                            title: positions[i].title, // 마커의 타이틀
-                            image: markerImage1 // 마커 이미지
+                            map: map1,
+                            position: positions[i].latlng,
+                            title: positions[i].title,
+                            image: markerImage1
                         });
 
-                        // 마커에 클릭 이벤트를 추가하여, 클릭 시 정보 창을 띄웁니다
+                        // 마커에 클릭 이벤트를 추가하여 정보 창을 띄웁니다
                         kakao.maps.event.addListener(marker1, 'click', (function(marker, i) {
                             return function() {
+                                // 기존 정보 창 닫기
+                                infowindow.close();
+
+                                // 모달창에 보여줄 정보 표시
                                 var content = '<div style="padding:5px;">' +
                                     '지진 발생 연도: ' + positions[i].title + '<br>' +
                                     '지진 횟수: ' + positions[i].count + '</div>';
 
-                                var infowindow = new kakao.maps.InfoWindow({
-                                    content: content
-                                });
+                                // 정보 창 내용 업데이트
+                                infowindow.setContent(content);
                                 infowindow.open(map1, marker);
                             };
                         })(marker1, i));
                     }
+
+                    // 지도 클릭 시 정보 창 닫기
+                    kakao.maps.event.addListener(map1, 'click', function() {
+                        infowindow.close();
+                    });
+
                 </script>
 
-                <!-- 연도별 및 규모별 지진 횟수 표시 -->
+                <!-- 연도별 및 규모별 지진 횟수를 지도안에 표형태로 표시 -->
                 <div id="eqkStats" class="eqkStats">
                     <h3>연도별 규모별 지진 횟수</h3>
                     <table>
@@ -237,6 +252,7 @@
                         <c:forEach var="earthquake" items="${eqkByYearAll}">
                             <tr>
                                 <td>${earthquake.magnitudeRange}</td>
+                                <%--earthquake.magnitudeRange 값이 비교값과 동일하다면 earthquake.eqkCount를 출력하고 그값과 동일하지 않다면 0을 출력--%>
                                 <td>${earthquake.magnitudeRange == '2.0 - 2.9' ? earthquake.eqkCount : 0}</td>
                                 <td>${earthquake.magnitudeRange == '3.0 - 3.9' ? earthquake.eqkCount : 0}</td>
                                 <td>${earthquake.magnitudeRange == '4.0 - 4.9' ? earthquake.eqkCount : 0}</td>
@@ -267,7 +283,7 @@
     </div>
 </div>
 
-<!-- Chart.js CDN -->
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/assets/js/eqk/eqk_page.js"></script>
 <script>

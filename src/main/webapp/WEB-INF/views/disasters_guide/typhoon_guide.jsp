@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <style>
         #sidebar{
-            height: 682.9%;
+            height: 468.3%!important;
         }
     </style>
 </head>

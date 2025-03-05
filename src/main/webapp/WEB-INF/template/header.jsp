@@ -41,7 +41,7 @@
                             <li><a class="dropdown-item" href="#">지진 옥외 대피 장소</a></li>
                             <li><a class="dropdown-item" href="#">한파 응급 대피소</a></li>
                             <li><a class="dropdown-item" href="#">비상 대피 시설</a></li>
-                            <li><a class="dropdown-item" href="#">급수 시설</a></li>
+                            <li><a class="dropdown-item" href="/ewsf/view">급수 시설</a></li>
                         </ul></li>
 
                     <!-- 재난대비 메뉴 드롭다운 -->

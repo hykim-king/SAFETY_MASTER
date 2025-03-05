@@ -58,16 +58,22 @@
 
     <div class="listWrap">
       <form action = "#" class="search-form" name = "userForm" id = "userForm" method = "get" enctype="application/x-www-form-urlencoded">
-        <input type ="hidden" name = "pageNo" id = "pageNo"> <!-- 히든할 것들은 form 바로 밑에 주는 게 암묵적 약속 -->
+        <input type ="hidden" name = "pageNo" id = "pageNo">
+
+
         <div class="search-group">
+
+            <%--controller 에서 지정한 searchVO 타입의 search.searchDiv에 값을 줌--%>
           <select name="searchDiv" id="searchDiv">
             <option id="" value="10" <c:if test="${10 == search.searchDiv}">selected</c:if>>검색 항목을 선택하세요</option>
             <option value="20" <c:if test="${20 == search.searchDiv}">selected</c:if>>지역</option>
             <option value="30" <c:if test="${30 == search.searchDiv}">selected</c:if>>재난종류</option>
           </select>
 
-
+                <%--controller 에서 지정한 searchVO 타입의 search.searchWord에 값을 줌--%>
           <input type="search" name="searchWord" id="searchWord" value="${search.searchWord}" placeholder="검색어를 입력하세요">
+
+              <%--controller에서 @RequestParam pageSize를 화면에서 값을 주도록 함--%>
           <select name = "pageSize" id = "pageSize">
             <option value = "10" <c:if test = "${10 == search.pageSize}">selected</c:if> >10</option>
             <option value = "20" <c:if test = "${20 == search.pageSize}">selected</c:if> >20</option>
@@ -76,28 +82,17 @@
             <option value = "50" <c:if test = "${50 == search.pageSize}">selected</c:if> >50</option>
             <option value = "100"<c:if test = "${100 == search.pageSize}">selected</c:if> >100</option>
           </select>
+
           <input type="button" value="조회" id="doRetrieveBtn">
           <input type="button" value="검색초기화" id="reset">
+
         </div>
       </form>
-<%--      <form name="searchForm" id="searchForm" method="get">--%>
-<%--        <input type="hidden" id="sidoCds" name="sidoCds" value="">--%>
-<%--        <input type="hidden" id="dtypes" name="dtypes" value="">--%>
-<%--        <input type="hidden" id="page" name="page" value="1">--%>
-
-<%--        <div class="searchArea">--%>
-<%--          <a onclick="areaSelect()" id="smsAreaCd" data-code="">지역</a>--%>
-<%--          <a id="smsDisasterCd" data-code="">재난종류</a>--%>
-<%--          <input type="text" id="areaNm" name="areaNm" placeholder="지역검색" value="">--%>
-<%--          <a  id="search">검색</a>--%>
-<%--          <a id="reset">검색초기화</a>--%>
         </div>
       </form>
 
       <table class="tableTypeE">
-        <colgroup>
-          <col width="80"><col width="300"><col width="127"><col width="533"><col width="140">
-        </colgroup>
+
         <thead>
         <tr>
           <th>번호</th>
@@ -110,22 +105,26 @@
 
 
         <tbody>
+          <%--controller에서 DisasterMessageVO타입의 데이터를 list에 담아서 반복문을 돌려 뿌려줌--%>
         <c:forEach var="list" items="${list}">
-
                 <td>${list.disMesNum}</td>
                 <td>${list.disMesArea}</td>
                 <td>${list.disMesType}</td>
+                <%--controller에서 @Requestparam으로 disMesNum을 받아와 해당 disMesNum의 데이터를 단건검색함--%>
                 <td><a href="/disastermessage/Detail?disMesNum=${list.disMesNum}">${list.disMesCon}</a></td>
                 <td>${list.disMesCreateDt}</td>
               </tr>
-
           </c:forEach>
         </tbody>
+
       </table>
     </div>
 
+
     <br>
+    <%--pagination--%>
     <% out.print(pageHtml); %>
+
   </div>
   <script src="/assets/js/dismes/dismes_page.js"></script> <!-- 여기에 스크립트 파일 경로 -->
 </body>
