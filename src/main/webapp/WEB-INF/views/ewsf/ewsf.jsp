@@ -3,7 +3,7 @@
 <%@ include file="../../template/header.jsp" %>
 <html>
 <head>
-    <title>EWSF 데이터 차트</title>
+    <title>급수시설</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/ewsf.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
