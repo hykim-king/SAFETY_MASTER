@@ -4,50 +4,50 @@ import java.util.Objects;
 
 public class Weather_ForecastVO {
 
-	private long fcst_Id;
-	private String gu_Cd;
-	private String fcst_Dt;
+	private long fcstId;
+	private String guCd;
+	private String fcstDt;
 	private double temp;
-	private double min_Temp;
-	private double max_Temp;
-	private double feels_Like_Temp;
-	private String weather_Desc;
-	private String weather_Icon_Id;
+	private double minTemp;
+	private double maxTemp;
+	private double feelsLikeTemp;
+	private String weatherDesc;
+	private String weatherIconId;
 	private int humidity;
-	private double wind_Speed;
+	private double windSpeed;
 	private double pop;
-	private int crt_By;
-	private String crt_Dt;
-	private int mod_By;
-	private String mod_Dt;
+	private int crtBy;
+	private String crtDt;
+	private int modBy;
+	private String modDt;
 	private String week;
 
 	public Weather_ForecastVO() {
 		super();
 	}
 
-	public long getFcst_Id() {
-		return fcst_Id;
+	public long getFcstId() {
+		return fcstId;
 	}
 
-	public void setFcst_Id(long fcst_Id) {
-		this.fcst_Id = fcst_Id;
+	public void setFcstId(long fcstId) {
+		this.fcstId = fcstId;
 	}
 
-	public String getGu_Cd() {
-		return gu_Cd;
+	public String getGuCd() {
+		return guCd;
 	}
 
-	public void setGu_Cd(String gu_Cd) {
-		this.gu_Cd = gu_Cd;
+	public void setGuCd(String guCd) {
+		this.guCd = guCd;
 	}
 
-	public String getFcst_Dt() {
-		return fcst_Dt;
+	public String getFcstDt() {
+		return fcstDt;
 	}
 
-	public void setFcst_Dt(String fcst_Dt) {
-		this.fcst_Dt = fcst_Dt;
+	public void setFcstDt(String fcstDt) {
+		this.fcstDt = fcstDt;
 	}
 
 	public double getTemp() {
@@ -58,44 +58,44 @@ public class Weather_ForecastVO {
 		this.temp = temp;
 	}
 
-	public double getMin_Temp() {
-		return min_Temp;
+	public double getMinTemp() {
+		return minTemp;
 	}
 
-	public void setMin_Temp(double min_Temp) {
-		this.min_Temp = min_Temp;
+	public void setMinTemp(double minTemp) {
+		this.minTemp = minTemp;
 	}
 
-	public double getMax_Temp() {
-		return max_Temp;
+	public double getMaxTemp() {
+		return maxTemp;
 	}
 
-	public void setMax_Temp(double max_Temp) {
-		this.max_Temp = max_Temp;
+	public void setMaxTemp(double maxTemp) {
+		this.maxTemp = maxTemp;
 	}
 
-	public double getFeels_Like_Temp() {
-		return feels_Like_Temp;
+	public double getFeelsLikeTemp() {
+		return feelsLikeTemp;
 	}
 
-	public void setFeels_Like_Temp(double feels_Like_Temp) {
-		this.feels_Like_Temp = feels_Like_Temp;
+	public void setFeelsLikeTemp(double feelsLikeTemp) {
+		this.feelsLikeTemp = feelsLikeTemp;
 	}
 
-	public String getWeather_Desc() {
-		return weather_Desc;
+	public String getWeatherDesc() {
+		return weatherDesc;
 	}
 
-	public void setWeather_Desc(String weather_Desc) {
-		this.weather_Desc = weather_Desc;
+	public void setWeatherDesc(String weatherDesc) {
+		this.weatherDesc = weatherDesc;
 	}
 
-	public String getWeather_Icon_Id() {
-		return weather_Icon_Id;
+	public String getWeatherIconId() {
+		return weatherIconId;
 	}
 
-	public void setWeather_Icon_Id(String weather_Icon_Id) {
-		this.weather_Icon_Id = weather_Icon_Id;
+	public void setWeatherIconId(String weatherIconId) {
+		this.weatherIconId = weatherIconId;
 	}
 
 	public int getHumidity() {
@@ -106,12 +106,12 @@ public class Weather_ForecastVO {
 		this.humidity = humidity;
 	}
 
-	public double getWind_Speed() {
-		return wind_Speed;
+	public double getWindSpeed() {
+		return windSpeed;
 	}
 
-	public void setWind_Speed(double wind_Speed) {
-		this.wind_Speed = wind_Speed;
+	public void setWindSpeed(double windSpeed) {
+		this.windSpeed = windSpeed;
 	}
 
 	public double getPop() {
@@ -122,36 +122,36 @@ public class Weather_ForecastVO {
 		this.pop = pop;
 	}
 
-	public int getCrt_By() {
-		return crt_By;
+	public int getCrtBy() {
+		return crtBy;
 	}
 
-	public void setCrt_By(int crt_By) {
-		this.crt_By = crt_By;
+	public void setCrtBy(int crtBy) {
+		this.crtBy = crtBy;
 	}
 
-	public String getCrt_Dt() {
-		return crt_Dt;
+	public String getCrtDt() {
+		return crtDt;
 	}
 
-	public void setCrt_Dt(String crt_Dt) {
-		this.crt_Dt = crt_Dt;
+	public void setCrtDt(String crtDt) {
+		this.crtDt = crtDt;
 	}
 
-	public int getMod_By() {
-		return mod_By;
+	public int getModBy() {
+		return modBy;
 	}
 
-	public void setMod_By(int mod_By) {
-		this.mod_By = mod_By;
+	public void setModBy(int modBy) {
+		this.modBy = modBy;
 	}
 
-	public String getMod_Dt() {
-		return mod_Dt;
+	public String getModDt() {
+		return modDt;
 	}
 
-	public void setMod_Dt(String mod_Dt) {
-		this.mod_Dt = mod_Dt;
+	public void setModDt(String modDt) {
+		this.modDt = modDt;
 	}
 
 	public String getWeek() {
@@ -164,7 +164,7 @@ public class Weather_ForecastVO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(fcst_Id);
+		return Objects.hash(fcstId);
 	}
 
 	@Override
@@ -176,16 +176,16 @@ public class Weather_ForecastVO {
 		if (getClass() != obj.getClass())
 			return false;
 		Weather_ForecastVO other = (Weather_ForecastVO) obj;
-		return fcst_Id == other.fcst_Id;
+		return fcstId == other.fcstId;
 	}
 
 	@Override
 	public String toString() {
-		return "Weather_ForecastVO [fcst_Id=" + fcst_Id + ", gu_Cd=" + gu_Cd + ", fcst_Dt=" + fcst_Dt + ", temp=" + temp
-				+ ", min_Temp=" + min_Temp + ", max_Temp=" + max_Temp + ", feels_Like_Temp=" + feels_Like_Temp
-				+ ", weather_Desc=" + weather_Desc + ", weather_Icon_Id=" + weather_Icon_Id + ", humidity=" + humidity
-				+ ", wind_Speed=" + wind_Speed + ", pop=" + pop + ", crt_By=" + crt_By + ", crt_Dt=" + crt_Dt
-				+ ", mod_By=" + mod_By + ", mod_Dt=" + mod_Dt + ", week=" + week + "]";
+		return "Weather_ForecastVO [fcstId=" + fcstId + ", guCd=" + guCd + ", fcstDt=" + fcstDt + ", temp=" + temp
+				+ ", minTemp=" + minTemp + ", maxTemp=" + maxTemp + ", feelsLikeTemp=" + feelsLikeTemp
+				+ ", weatherDesc=" + weatherDesc + ", weatherIconId=" + weatherIconId + ", humidity=" + humidity
+				+ ", windSpeed=" + windSpeed + ", pop=" + pop + ", crtBy=" + crtBy + ", crtDt=" + crtDt + ", modBy="
+				+ modBy + ", modDt=" + modDt + ", week=" + week + "]";
 	}
 
 }

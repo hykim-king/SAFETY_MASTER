@@ -91,26 +91,26 @@
 					<div class="card border-secondary h-100">
 						<img style="cursor: pointer;"
 							src="/assets/images/er_medi_inst/${emi_Info.hpid}.jpg"
-							class="card-img-top" alt="${emi_Info.duty_Nm} 이미지"
+							class="card-img-top" alt="${emi_Info.dutyNm} 이미지"
 							height="539.125.px"
-							onclick="window.open('https://map.kakao.com/link/search/${emi_Info.duty_Nm}')">
+							onclick="window.open('https://map.kakao.com/link/search/${emi_Info.dutyNm}')">
 						<div class="card-body">
 							<h5 style="font-size: 24px; cursor: pointer;"
 								class="card-title fw-bolder"
-								onclick="window.open('https://map.kakao.com/link/search/${emi_Info.duty_Nm}')">${emi_Info.duty_Nm}</h5>
+								onclick="window.open('https://map.kakao.com/link/search/${emi_Info.dutyNm}')">${emi_Info.dutyNm}</h5>
 							<p style="font-size: 17px; color: #616161;"
-								class="card-text mb-2">${emi_Info.duty_Addr}</p>
+								class="card-text mb-2">${emi_Info.dutyAddr}</p>
 							<div class="d-flex">
 								<p style="font-size: 17px; color: #616161;"
 									class="card-text mb-0">대표전화&nbsp;:&nbsp;</p>
 								<p style="font-size: 17px;"
-									class="card-text mb-0 text-decoration-underline text-primary">${emi_Info.duty_Tel}</p>
+									class="card-text mb-0 text-decoration-underline text-primary">${emi_Info.dutyTel}</p>
 							</div>
 							<div class="d-flex">
 								<p style="font-size: 17px; color: #616161;"
 									class="card-text mb-0">응급실전화&nbsp;:&nbsp;</p>
 								<p style="font-size: 17px;"
-									class="card-text mb-0 text-decoration-underline text-primary">${emi_Info.er_Tel}</p>
+									class="card-text mb-0 text-decoration-underline text-primary">${emi_Info.erTel}</p>
 							</div>
 						</div>
 					</div>
@@ -161,7 +161,7 @@
 							<tbody>
 								<tr>
 									<th class="ps-3" scope="row">입력일자</th>
-									<td class="ps-3">${emi_Info.hvi_Dt}</td>
+									<td class="ps-3">${emi_Info.hviDt}</td>
 								</tr>
 								<tr>
 									<th class="ps-3" scope="row">응급실</th>
@@ -233,11 +233,11 @@
 								</tr>
 								<tr>
 									<th class="ps-3" scope="row">CT가용(가/부)</th>
-									<td class="ps-3">${emi_Info.hvct_Yn}</td>
+									<td class="ps-3">${emi_Info.hvctYn}</td>
 								</tr>
 								<tr>
 									<th class="ps-3" scope="row">MRI가용(가/부)</th>
-									<td class="ps-3">${emi_Info.hvmri_Yn}</td>
+									<td class="ps-3">${emi_Info.hvmriYn}</td>
 								</tr>
 
 							</tbody>
@@ -337,7 +337,7 @@
 		// 주소로 좌표를 검색합니다
 		geocoder
 				.addressSearch(
-						"${emi_Info.duty_Addr}",
+						"${emi_Info.dutyAddr}",
 						async function(result, status) {
 							// 정상적으로 검색이 완료됐으면 
 							if (status === kakao.maps.services.Status.OK) {
@@ -377,8 +377,8 @@
 								// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 								const content =`
 								    <div class="customoverlay">
-							        <a href="https://map.kakao.com/link/search/${emi_Info.duty_Nm}" target="_blank">
-							            <span class="title">${emi_Info.duty_Nm}</span>
+							        <a href="https://map.kakao.com/link/search/${emi_Info.dutyNm}" target="_blank">
+							            <span class="title">${emi_Info.dutyNm}</span>
 							        </a>
 							    </div>
 							`;

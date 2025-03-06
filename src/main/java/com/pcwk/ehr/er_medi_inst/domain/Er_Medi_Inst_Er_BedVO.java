@@ -5,18 +5,18 @@ import java.util.Objects;
 public class Er_Medi_Inst_Er_BedVO {
 
 	private String hpid;
-	private String gu_Cd;
-	private String duty_Nm;
-	private String duty_Addr;
-	private String duty_Tel;
-	private String er_Tel;
-	private int crt_By;
-	private String crt_Dt;
-	private int mod_By;
-	private String mod_Dt;
+	private String guCd;
+	private String dutyNm;
+	private String dutyAddr;
+	private String dutyTel;
+	private String erTel;
+	private int crtBy;
+	private String crtDt;
+	private int modBy;
+	private String modDt;
 
-	private String ebi_Id;
-	private String hvi_Dt;
+	private String ebiId;
+	private String hviDt;
 	private String hvec;
 	private String hvoc;
 	private String hvcc;
@@ -34,12 +34,12 @@ public class Er_Medi_Inst_Er_BedVO {
 	private String hv9;
 	private String hv10;
 	private String hv11;
-	private String hvct_Yn;
-	private String hvmri_Yn;
-	private int ebi_Crt_By;
-	private String ebi_Crt_Dt;
-	private int ebi_Mod_By;
-	private String ebi_Mod_Dt;
+	private String hvctYn;
+	private String hvmriYn;
+	private int ebiCrtBy;
+	private String ebiCrtDt;
+	private int ebiModBy;
+	private String ebiModDt;
 
 	public Er_Medi_Inst_Er_BedVO() {
 		super();
@@ -53,92 +53,92 @@ public class Er_Medi_Inst_Er_BedVO {
 		this.hpid = hpid;
 	}
 
-	public String getGu_Cd() {
-		return gu_Cd;
+	public String getGuCd() {
+		return guCd;
 	}
 
-	public void setGu_Cd(String gu_Cd) {
-		this.gu_Cd = gu_Cd;
+	public void setGuCd(String guCd) {
+		this.guCd = guCd;
 	}
 
-	public String getDuty_Nm() {
-		return duty_Nm;
+	public String getDutyNm() {
+		return dutyNm;
 	}
 
-	public void setDuty_Nm(String duty_Nm) {
-		this.duty_Nm = duty_Nm;
+	public void setDutyNm(String dutyNm) {
+		this.dutyNm = dutyNm;
 	}
 
-	public String getDuty_Addr() {
-		return duty_Addr;
+	public String getDutyAddr() {
+		return dutyAddr;
 	}
 
-	public void setDuty_Addr(String duty_Addr) {
-		this.duty_Addr = duty_Addr;
+	public void setDutyAddr(String dutyAddr) {
+		this.dutyAddr = dutyAddr;
 	}
 
-	public String getDuty_Tel() {
-		return duty_Tel;
+	public String getDutyTel() {
+		return dutyTel;
 	}
 
-	public void setDuty_Tel(String duty_Tel) {
-		this.duty_Tel = duty_Tel;
+	public void setDutyTel(String dutyTel) {
+		this.dutyTel = dutyTel;
 	}
 
-	public String getEr_Tel() {
-		return er_Tel;
+	public String getErTel() {
+		return erTel;
 	}
 
-	public void setEr_Tel(String er_Tel) {
-		this.er_Tel = er_Tel;
+	public void setErTel(String erTel) {
+		this.erTel = erTel;
 	}
 
-	public int getCrt_By() {
-		return crt_By;
+	public int getCrtBy() {
+		return crtBy;
 	}
 
-	public void setCrt_By(int crt_By) {
-		this.crt_By = crt_By;
+	public void setCrtBy(int crtBy) {
+		this.crtBy = crtBy;
 	}
 
-	public String getCrt_Dt() {
-		return crt_Dt;
+	public String getCrtDt() {
+		return crtDt;
 	}
 
-	public void setCrt_Dt(String crt_Dt) {
-		this.crt_Dt = crt_Dt;
+	public void setCrtDt(String crtDt) {
+		this.crtDt = crtDt;
 	}
 
-	public int getMod_By() {
-		return mod_By;
+	public int getModBy() {
+		return modBy;
 	}
 
-	public void setMod_By(int mod_By) {
-		this.mod_By = mod_By;
+	public void setModBy(int modBy) {
+		this.modBy = modBy;
 	}
 
-	public String getMod_Dt() {
-		return mod_Dt;
+	public String getModDt() {
+		return modDt;
 	}
 
-	public void setMod_Dt(String mod_Dt) {
-		this.mod_Dt = mod_Dt;
+	public void setModDt(String modDt) {
+		this.modDt = modDt;
 	}
 
-	public String getEbi_Id() {
-		return ebi_Id;
+	public String getEbiId() {
+		return ebiId;
 	}
 
-	public void setEbi_Id(String ebi_Id) {
-		this.ebi_Id = ebi_Id;
+	public void setEbiId(String ebiId) {
+		this.ebiId = ebiId;
 	}
 
-	public String getHvi_Dt() {
-		return hvi_Dt;
+	public String getHviDt() {
+		return hviDt;
 	}
 
-	public void setHvi_Dt(String hvi_Dt) {
-		this.hvi_Dt = hvi_Dt;
+	public void setHviDt(String hviDt) {
+		this.hviDt = hviDt;
 	}
 
 	public String getHvec() {
@@ -277,57 +277,57 @@ public class Er_Medi_Inst_Er_BedVO {
 		this.hv11 = hv11;
 	}
 
-	public String getHvct_Yn() {
-		return hvct_Yn;
+	public String getHvctYn() {
+		return hvctYn;
 	}
 
-	public void setHvct_Yn(String hvct_Yn) {
-		this.hvct_Yn = hvct_Yn;
+	public void setHvctYn(String hvctYn) {
+		this.hvctYn = hvctYn;
 	}
 
-	public String getHvmri_Yn() {
-		return hvmri_Yn;
+	public String getHvmriYn() {
+		return hvmriYn;
 	}
 
-	public void setHvmri_Yn(String hvmri_Yn) {
-		this.hvmri_Yn = hvmri_Yn;
+	public void setHvmriYn(String hvmriYn) {
+		this.hvmriYn = hvmriYn;
 	}
 
-	public int getEbi_Crt_By() {
-		return ebi_Crt_By;
+	public int getEbiCrtBy() {
+		return ebiCrtBy;
 	}
 
-	public void setEbi_Crt_By(int ebi_Crt_By) {
-		this.ebi_Crt_By = ebi_Crt_By;
+	public void setEbiCrtBy(int ebiCrtBy) {
+		this.ebiCrtBy = ebiCrtBy;
 	}
 
-	public String getEbi_Crt_Dt() {
-		return ebi_Crt_Dt;
+	public String getEbiCrtDt() {
+		return ebiCrtDt;
 	}
 
-	public void setEbi_Crt_Dt(String ebi_Crt_Dt) {
-		this.ebi_Crt_Dt = ebi_Crt_Dt;
+	public void setEbiCrtDt(String ebiCrtDt) {
+		this.ebiCrtDt = ebiCrtDt;
 	}
 
-	public int getEbi_Mod_By() {
-		return ebi_Mod_By;
+	public int getEbiModBy() {
+		return ebiModBy;
 	}
 
-	public void setEbi_Mod_By(int ebi_Mod_By) {
-		this.ebi_Mod_By = ebi_Mod_By;
+	public void setEbiModBy(int ebiModBy) {
+		this.ebiModBy = ebiModBy;
 	}
 
-	public String getEbi_Mod_Dt() {
-		return ebi_Mod_Dt;
+	public String getEbiModDt() {
+		return ebiModDt;
 	}
 
-	public void setEbi_Mod_Dt(String ebi_Mod_Dt) {
-		this.ebi_Mod_Dt = ebi_Mod_Dt;
+	public void setEbiModDt(String ebiModDt) {
+		this.ebiModDt = ebiModDt;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ebi_Id, hpid);
+		return Objects.hash(ebiId, hpid);
 	}
 
 	@Override
@@ -339,19 +339,19 @@ public class Er_Medi_Inst_Er_BedVO {
 		if (getClass() != obj.getClass())
 			return false;
 		Er_Medi_Inst_Er_BedVO other = (Er_Medi_Inst_Er_BedVO) obj;
-		return Objects.equals(ebi_Id, other.ebi_Id) && Objects.equals(hpid, other.hpid);
+		return Objects.equals(ebiId, other.ebiId) && Objects.equals(hpid, other.hpid);
 	}
 
 	@Override
 	public String toString() {
-		return "Er_Medi_Inst_Er_BedVO [hpid=" + hpid + ", gu_Cd=" + gu_Cd + ", duty_Nm=" + duty_Nm + ", duty_Addr="
-				+ duty_Addr + ", duty_Tel=" + duty_Tel + ", er_Tel=" + er_Tel + ", crt_By=" + crt_By + ", crt_Dt="
-				+ crt_Dt + ", mod_By=" + mod_By + ", mod_Dt=" + mod_Dt + ", ebi_Id=" + ebi_Id + ", hvi_Dt=" + hvi_Dt
-				+ ", hvec=" + hvec + ", hvoc=" + hvoc + ", hvcc=" + hvcc + ", hvncc=" + hvncc + ", hvccc=" + hvccc
-				+ ", hvicc=" + hvicc + ", hvgc=" + hvgc + ", hv2=" + hv2 + ", hv3=" + hv3 + ", hv4=" + hv4 + ", hv5="
-				+ hv5 + ", hv6=" + hv6 + ", hv7=" + hv7 + ", hv8=" + hv8 + ", hv9=" + hv9 + ", hv10=" + hv10 + ", hv11="
-				+ hv11 + ", hvct_Yn=" + hvct_Yn + ", hvmri_Yn=" + hvmri_Yn + ", ebi_Crt_By=" + ebi_Crt_By
-				+ ", ebi_Crt_Dt=" + ebi_Crt_Dt + ", ebi_Mod_By=" + ebi_Mod_By + ", ebi_Mod_Dt=" + ebi_Mod_Dt + "]";
+		return "Er_Medi_Inst_Er_BedVO [hpid=" + hpid + ", guCd=" + guCd + ", dutyNm=" + dutyNm + ", dutyAddr="
+				+ dutyAddr + ", dutyTel=" + dutyTel + ", erTel=" + erTel + ", crtBy=" + crtBy + ", crtDt=" + crtDt
+				+ ", modBy=" + modBy + ", modDt=" + modDt + ", ebiId=" + ebiId + ", hviDt=" + hviDt + ", hvec=" + hvec
+				+ ", hvoc=" + hvoc + ", hvcc=" + hvcc + ", hvncc=" + hvncc + ", hvccc=" + hvccc + ", hvicc=" + hvicc
+				+ ", hvgc=" + hvgc + ", hv2=" + hv2 + ", hv3=" + hv3 + ", hv4=" + hv4 + ", hv5=" + hv5 + ", hv6=" + hv6
+				+ ", hv7=" + hv7 + ", hv8=" + hv8 + ", hv9=" + hv9 + ", hv10=" + hv10 + ", hv11=" + hv11 + ", hvctYn="
+				+ hvctYn + ", hvmriYn=" + hvmriYn + ", ebiCrtBy=" + ebiCrtBy + ", ebiCrtDt=" + ebiCrtDt + ", ebiModBy="
+				+ ebiModBy + ", ebiModDt=" + ebiModDt + "]";
 	}
 
 }

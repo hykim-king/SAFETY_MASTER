@@ -44,7 +44,7 @@
 							<div class="dropdown mb-1">
 								<button class="btn btn-dark dropdown-toggle text-dark"
 									type="button" id="dropdownMenuButton1"
-									data-bs-toggle="dropdown" aria-expanded="false">${wc.gu_Nm}</button>
+									data-bs-toggle="dropdown" aria-expanded="false">${wc.guNm}</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 									<li><a class="dropdown-item" href="${CP}/index/111123">종로구</a></li>
 									<li><a class="dropdown-item" href="${CP}/index/111121">중구</a></li>
@@ -83,21 +83,21 @@
 							<div class="card p-4 text-end">
 								<p class="text-start">발표일 : ${wc_Dt}</p>
 								<img class="rounded mx-auto d-block"
-									src="https://openweathermap.org/img/wn/${wc.weather_Icon_Id}@2x.png"
+									src="https://openweathermap.org/img/wn/${wc.weatherIconId}@2x.png"
 									height="130" width="130">
-								<p class="text-center fs-4 fw-bolder">${wc.weather_Desc}</p>
+								<p class="text-center fs-4 fw-bolder">${wc.weatherDesc}</p>
 								<div
 									class="d-flex justify-content-center align-items-center gap-2">
 									<h1 class="pe-2 display-4">${wc.temp}°</h1>
-									<p class="fs-5 text-danger">${wc.max_Temp}°</p>
+									<p class="fs-5 text-danger">${wc.maxTemp}°</p>
 									<p class="fs-5">/</p>
-									<p class="fs-5 text-primary">${wc.min_Temp}°</p>
+									<p class="fs-5 text-primary">${wc.minTemp}°</p>
 								</div>
 								<div
 									class="d-flex justify-content-center align-items-center gap-2 mt-2">
-									<small>체감 <span class="fw-bolder">${wc.feels_Like_Temp}°</span></small>
+									<small>체감 <span class="fw-bolder">${wc.feelsLikeTemp}°</span></small>
 									<small>습도 <span class="fw-bolder">${wc.humidity}%</span>
-									</small> <small>풍속 <span class="fw-bolder">${wc.wind_Speed}m/s</span></small>
+									</small> <small>풍속 <span class="fw-bolder">${wc.windSpeed}m/s</span></small>
 								</div>
 							</div>
 						</div>
@@ -109,27 +109,27 @@
 									<div class="col-6 mt-4">
 										<p class="fw-lighter">통합대기환경지수</p>
 										<c:choose>
-											<c:when test='${aqc.cai_Grade.equals("좋음")}'>
+											<c:when test='${aqc.caiGrade.equals("좋음")}'>
 												<div class="border border-primary border-5 rounded-pill">
-													<p class="mb-0 mt-1 pt-2 text-primary fw-bolder">${aqc.cai_Grade}</p>
+													<p class="mb-0 mt-1 pt-2 text-primary fw-bolder">${aqc.caiGrade}</p>
 													<p class="fw-bolder">${aqc.cai}</p>
 												</div>
 											</c:when>
-											<c:when test='${aqc.cai_Grade.equals("보통")}'>
+											<c:when test='${aqc.caiGrade.equals("보통")}'>
 												<div class="border border-success border-5 rounded-pill">
-													<p class="mb-0 mt-1 pt-2 text-success fw-bolder">${aqc.cai_Grade}</p>
+													<p class="mb-0 mt-1 pt-2 text-success fw-bolder">${aqc.caiGrade}</p>
 													<p class="fw-bolder">${aqc.cai}</p>
 												</div>
 											</c:when>
-											<c:when test='${aqc.cai_Grade.equals("나쁨")}'>
+											<c:when test='${aqc.caiGrade.equals("나쁨")}'>
 												<div class="border border-warning border-5 rounded-pill">
-													<p class="mb-0 mt-1 pt-2 text-warning fw-bolder">${aqc.cai_Grade}</p>
+													<p class="mb-0 mt-1 pt-2 text-warning fw-bolder">${aqc.caiGrade}</p>
 													<p class="fw-bolder">${aqc.cai}</p>
 												</div>
 											</c:when>
-											<c:when test='${aqc.cai_Grade.equals("매우나쁨")}'>
+											<c:when test='${aqc.caiGrade.equals("매우나쁨")}'>
 												<div class="border border-danger border-5 rounded-pill">
-													<p class="mb-0 mt-1 pt-2 text-danger fw-bolder">${aqc.cai_Grade}</p>
+													<p class="mb-0 mt-1 pt-2 text-danger fw-bolder">${aqc.caiGrade}</p>
 													<p class="fw-bolder">${aqc.cai}</p>
 												</div>
 											</c:when>
@@ -146,28 +146,28 @@
 									<div class="col-6 mt-4">
 										<p class="fw-lighter">미세먼지</p>
 										<c:choose>
-											<c:when test="${0 <= aqc.pm10_Conc && aqc.pm10_Conc <= 30}">
+											<c:when test="${0 <= aqc.pm10Conc && aqc.pm10Conc <= 30}">
 												<div class="border border-primary border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-primary fw-bolder">좋음</p>
-													<p class="fw-bolder">${aqc.pm10_Conc}</p>
+													<p class="fw-bolder">${aqc.pm10Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${30 < aqc.pm10_Conc && aqc.pm10_Conc <= 80}">
+											<c:when test="${30 < aqc.pm10Conc && aqc.pm10Conc <= 80}">
 												<div class="border border-success border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-success fw-bolder">보통</p>
-													<p class="fw-bolder">${aqc.pm10_Conc}</p>
+													<p class="fw-bolder">${aqc.pm10Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${80 < aqc.pm10_Conc && aqc.pm10_Conc <= 150}">
+											<c:when test="${80 < aqc.pm10Conc && aqc.pm10Conc <= 150}">
 												<div class="border border-warning border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-warning fw-bolder">나쁨</p>
-													<p class="fw-bolder">${aqc.pm10_Conc}</p>
+													<p class="fw-bolder">${aqc.pm10Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${aqc.pm10_Conc > 150}">
+											<c:when test="${aqc.pm10Conc > 150}">
 												<div class="border border-danger border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-danger fw-bolder">매우나쁨</p>
-													<p class="fw-bolder">${aqc.pm10_Conc}</p>
+													<p class="fw-bolder">${aqc.pm10Conc}</p>
 												</div>
 											</c:when>
 											<c:otherwise>
@@ -181,28 +181,28 @@
 									<div class="col-6 mt-4">
 										<p class="fw-lighter">초미세먼지</p>
 										<c:choose>
-											<c:when test="${0 <= aqc.pm25_Conc && aqc.pm25_Conc <= 15}">
+											<c:when test="${0 <= aqc.pm25Conc && aqc.pm25Conc <= 15}">
 												<div class="border border-primary border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-primary fw-bolder">좋음</p>
-													<p class="fw-bolder">${aqc.pm25_Conc}</p>
+													<p class="fw-bolder">${aqc.pm25Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${15 < aqc.pm25_Conc && aqc.pm25_Conc <= 35}">
+											<c:when test="${15 < aqc.pm25Conc && aqc.pm25Conc <= 35}">
 												<div class="border border-success border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-success fw-bolder">보통</p>
-													<p class="fw-bolder">${aqc.pm25_Conc}</p>
+													<p class="fw-bolder">${aqc.pm25Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${35 < aqc.pm25_Conc && aqc.pm25_Conc <= 75}">
+											<c:when test="${35 < aqc.pm25Conc && aqc.pm25Conc <= 75}">
 												<div class="border border-warning border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-warning fw-bolder">나쁨</p>
-													<p class="fw-bolder">${aqc.pm25_Conc}</p>
+													<p class="fw-bolder">${aqc.pm25Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${aqc.pm25_Conc > 75}">
+											<c:when test="${aqc.pm25Conc > 75}">
 												<div class="border border-danger border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-danger fw-bolder">매우나쁨</p>
-													<p class="fw-bolder">${aqc.pm25_Conc}</p>
+													<p class="fw-bolder">${aqc.pm25Conc}</p>
 												</div>
 											</c:when>
 											<c:otherwise>
@@ -216,28 +216,28 @@
 									<div class="col-6 mt-4">
 										<p class="fw-lighter">오존</p>
 										<c:choose>
-											<c:when test="${0 <= aqc.o3_Conc && aqc.o3_Conc <= 0.030}">
+											<c:when test="${0 <= aqc.o3Conc && aqc.o3Conc <= 0.030}">
 												<div class="border border-primary border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-primary fw-bolder">좋음</p>
-													<p class="fw-bolder">${aqc.o3_Conc}</p>
+													<p class="fw-bolder">${aqc.o3Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${0.030 < aqc.o3_Conc && aqc.o3_Conc <= 0.090}">
+											<c:when test="${0.030 < aqc.o3Conc && aqc.o3Conc <= 0.090}">
 												<div class="border border-success border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-success fw-bolder">보통</p>
-													<p class="fw-bolder">${aqc.o3_Conc}</p>
+													<p class="fw-bolder">${aqc.o3Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${0.090 < aqc.o3_Conc && aqc.o3_Conc <= 0.150}">
+											<c:when test="${0.090 < aqc.o3Conc && aqc.o3Conc <= 0.150}">
 												<div class="border border-warning border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-warning fw-bolder">나쁨</p>
-													<p class="fw-bolder">${aqc.o3_Conc}</p>
+													<p class="fw-bolder">${aqc.o3Conc}</p>
 												</div>
 											</c:when>
-											<c:when test="${aqc.o3_Conc > 0.150}">
+											<c:when test="${aqc.o3Conc > 0.150}">
 												<div class="border border-danger border-5 rounded-pill">
 													<p class="mb-0 pt-2 text-danger fw-bolder">매우나쁨</p>
-													<p class="fw-bolder">${aqc.o3_Conc}</p>
+													<p class="fw-bolder">${aqc.o3Conc}</p>
 												</div>
 											</c:when>
 											<c:otherwise>
@@ -260,14 +260,14 @@
 							<div class="col-md-2 forecast-card">
 								<div class="card text-center p-3">
 									<p class="mb-0">${wf.week}</p>
-									<p class="mt-1 mb-1">${wf.fcst_Dt}</p>
+									<p class="mt-1 mb-1">${wf.fcstDt}</p>
 									<img class="rounded mx-auto d-block"
-										src="https://openweathermap.org/img/wn/${wf.weather_Icon_Id}@2x.png" height="70"
+										src="https://openweathermap.org/img/wn/${wf.weatherIconId}@2x.png" height="70"
 										width="70">
 									<div class="d-flex justify-content-center mt-0 mb-0 gap-1">
-										<p class="fs-5 text-danger">${wf.max_Temp}°</p>
+										<p class="fs-5 text-danger">${wf.maxTemp}°</p>
 										<p class="fs-5">/</p>
-										<p class="fs-5 text-primary">${wf.min_Temp}°</p>
+										<p class="fs-5 text-primary">${wf.minTemp}°</p>
 									</div>
 								</div>
 							</div>

@@ -183,25 +183,25 @@
 						<div class="tab-pane fade show active" id="cai" role="tabpanel"
 							aria-labelledby="cai-tab">
 							<p style="font-size: 14px; color: #888;"
-								class="text-end pt-3 me-5">발표일 : ${aq_List[0].ms_Dt}</p>
+								class="text-end pt-3 me-5">발표일 : ${aq_List[0].msDt}</p>
 							<div class="row">
 								<div class="col-6 mt-0 ps-5 pe-2">
 									<table class="table table-bordered fw-normal text-center mt-0">
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="0" end="12">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test='${aq.cai_Grade.equals("좋음")}'>
+														<c:when test='${aq.caiGrade.equals("좋음")}'>
 															<th class="text-primary fw-normal w-50">${aq.cai}</th>
 														</c:when>
-														<c:when test='${aq.cai_Grade.equals("보통")}'>
+														<c:when test='${aq.caiGrade.equals("보통")}'>
 															<th class="text-success fw-normal w-50">${aq.cai}</th>
 														</c:when>
-														<c:when test='${aq.cai_Grade.equals("나쁨")}'>
+														<c:when test='${aq.caiGrade.equals("나쁨")}'>
 															<th class="text-warning fw-normal w-50">${aq.cai}</th>
 														</c:when>
-														<c:when test='${aq.cai_Grade.equals("매우나쁨")}'>
+														<c:when test='${aq.caiGrade.equals("매우나쁨")}'>
 															<th class="text-danger fw-normal w-50">${aq.cai}</th>
 														</c:when>
 														<c:otherwise>
@@ -218,18 +218,18 @@
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="13">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test='${aq.cai_Grade.equals("좋음")}'>
+														<c:when test='${aq.caiGrade.equals("좋음")}'>
 															<th class="text-primary fw-normal w-50">${aq.cai}</th>
 														</c:when>
-														<c:when test='${aq.cai_Grade.equals("보통")}'>
+														<c:when test='${aq.caiGrade.equals("보통")}'>
 															<th class="text-success fw-normal w-50">${aq.cai}</th>
 														</c:when>
-														<c:when test='${aq.cai_Grade.equals("나쁨")}'>
+														<c:when test='${aq.caiGrade.equals("나쁨")}'>
 															<th class="text-warning fw-normal w-50">${aq.cai}</th>
 														</c:when>
-														<c:when test='${aq.cai_Grade.equals("매우나쁨")}'>
+														<c:when test='${aq.caiGrade.equals("매우나쁨")}'>
 															<th class="text-danger fw-normal w-50">${aq.cai}</th>
 														</c:when>
 														<c:otherwise>
@@ -247,26 +247,26 @@
 						<div class="tab-pane fade" id="pm10" role="tabpanel"
 							aria-labelledby="pm10-tab">
 							<p style="font-size: 14px; color: #888;"
-								class="text-end pt-3 me-5">발표일 : ${aq_List[0].ms_Dt}</p>
+								class="text-end pt-3 me-5">발표일 : ${aq_List[0].msDt}</p>
 							<div class="row">
 								<div class="col-6 mt-0 ps-5 pe-2">
 									<table class="table table-bordered fw-normal text-center mt-0">
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="0" end="12">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test='${0 <= aq.pm10_Conc && aq.pm10_Conc <= 30}'>
-															<th class="text-primary fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${0 <= aq.pm10Conc && aq.pm10Conc <= 30}'>
+															<th class="text-primary fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
-														<c:when test='${30 < aq.pm10_Conc && aq.pm10_Conc <= 80}'>
-															<th class="text-success fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${30 < aq.pm10Conc && aq.pm10Conc <= 80}'>
+															<th class="text-success fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
-														<c:when test='${80 < aq.pm10_Conc && aq.pm10_Conc <= 150}'>
-															<th class="text-warning fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${80 < aq.pm10Conc && aq.pm10Conc <= 150}'>
+															<th class="text-warning fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
-														<c:when test='${aq.pm10_Conc > 150}'>
-															<th class="text-danger fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${aq.pm10Conc > 150}'>
+															<th class="text-danger fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
 														<c:otherwise>
 															<th class="text-dark fw-normal w-50">점검중</th>
@@ -282,19 +282,19 @@
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="13">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test='${0 <= aq.pm10_Conc && aq.pm10_Conc <= 30}'>
-															<th class="text-primary fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${0 <= aq.pm10Conc && aq.pm10Conc <= 30}'>
+															<th class="text-primary fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
-														<c:when test='${30 < aq.pm10_Conc && aq.pm10_Conc <= 80}'>
-															<th class="text-success fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${30 < aq.pm10Conc && aq.pm10Conc <= 80}'>
+															<th class="text-success fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
-														<c:when test='${80 < aq.pm10_Conc && aq.pm10_Conc <= 150}'>
-															<th class="text-warning fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${80 < aq.pm10Conc && aq.pm10Conc <= 150}'>
+															<th class="text-warning fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
-														<c:when test='${aq.pm10_Conc > 150}'>
-															<th class="text-danger fw-normal w-50">${aq.pm10_Conc}</th>
+														<c:when test='${aq.pm10Conc > 150}'>
+															<th class="text-danger fw-normal w-50">${aq.pm10Conc}</th>
 														</c:when>
 														<c:otherwise>
 															<th class="text-dark fw-normal w-50">점검중</th>
@@ -310,26 +310,26 @@
 						<div class="tab-pane fade" id="pm25" role="tabpanel"
 							aria-labelledby="pm25-tab">
 							<p style="font-size: 14px; color: #888;"
-								class="text-end pt-3 me-5">발표일 : ${aq_List[0].ms_Dt}</p>
+								class="text-end pt-3 me-5">발표일 : ${aq_List[0].msDt}</p>
 							<div class="row">
 								<div class="col-6 mt-0 ps-5 pe-2">
 									<table class="table table-bordered fw-normal text-center mt-0">
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="0" end="12">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test="${0 <= aq.pm25_Conc && aq.pm25_Conc <= 15}">
-															<th class="text-primary fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${0 <= aq.pm25Conc && aq.pm25Conc <= 15}">
+															<th class="text-primary fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
-														<c:when test="${15 < aq.pm25_Conc && aq.pm25_Conc <= 35}">
-															<th class="text-success fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${15 < aq.pm25Conc && aq.pm25Conc <= 35}">
+															<th class="text-success fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
-														<c:when test="${35 < aq.pm25_Conc && aq.pm25_Conc <= 75}">
-															<th class="text-warning fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${35 < aq.pm25Conc && aq.pm25Conc <= 75}">
+															<th class="text-warning fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
-														<c:when test="${aq.pm25_Conc > 75}">
-															<th class="text-danger fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${aq.pm25Conc > 75}">
+															<th class="text-danger fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
 														<c:otherwise>
 															<th class="text-dark fw-normal w-50">점검중</th>
@@ -345,19 +345,19 @@
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="13">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test="${0 <= aq.pm25_Conc && aq.pm25_Conc <= 15}">
-															<th class="text-primary fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${0 <= aq.pm25Conc && aq.pm25Conc <= 15}">
+															<th class="text-primary fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
-														<c:when test="${15 < aq.pm25_Conc && aq.pm25_Conc <= 35}">
-															<th class="text-success fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${15 < aq.pm25Conc && aq.pm25Conc <= 35}">
+															<th class="text-success fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
-														<c:when test="${35 < aq.pm25_Conc && aq.pm25_Conc <= 75}">
-															<th class="text-warning fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${35 < aq.pm25Conc && aq.pm25Conc <= 75}">
+															<th class="text-warning fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
-														<c:when test="${aq.pm25_Conc > 75}">
-															<th class="text-danger fw-normal w-50">${aq.pm25_Conc}</th>
+														<c:when test="${aq.pm25Conc > 75}">
+															<th class="text-danger fw-normal w-50">${aq.pm25Conc}</th>
 														</c:when>
 														<c:otherwise>
 															<th class="text-dark fw-normal w-50">점검중</th>
@@ -373,28 +373,28 @@
 						<div class="tab-pane fade" id="o3" role="tabpanel"
 							aria-labelledby="o3-tab">
 							<p style="font-size: 14px; color: #888;"
-								class="text-end pt-3 me-5">발표일 : ${aq_List[0].ms_Dt}</p>
+								class="text-end pt-3 me-5">발표일 : ${aq_List[0].msDt}</p>
 							<div class="row">
 								<div class="col-6 mt-0 ps-5 pe-2">
 									<table class="table table-bordered fw-normal text-center mt-0">
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="0" end="12">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test='${0 <= aq.o3_Conc && aq.o3_Conc <= 0.030}'>
-															<th class="text-primary fw-normal w-50">${aq.o3_Conc}</th>
+														<c:when test='${0 <= aq.o3Conc && aq.o3Conc <= 0.030}'>
+															<th class="text-primary fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
 														<c:when
-															test='${0.030 < aq.o3_Conc && aq.o3_Conc <= 0.090}'>
-															<th class="text-success fw-normal w-50">${aq.o3_Conc}</th>
+															test='${0.030 < aq.o3Conc && aq.o3Conc <= 0.090}'>
+															<th class="text-success fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
 														<c:when
-															test='${0.090 < aq.o3_Conc && aq.o3_Conc <= 0.150}'>
-															<th class="text-warning fw-normal w-50">${aq.o3_Conc}</th>
+															test='${0.090 < aq.o3Conc && aq.o3Conc <= 0.150}'>
+															<th class="text-warning fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
-														<c:when test='${aq.o3_Conc > 0.150}'>
-															<th class="text-danger fw-normal w-50">${aq.o3_Conc}</th>
+														<c:when test='${aq.o3Conc > 0.150}'>
+															<th class="text-danger fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
 														<c:otherwise>
 															<th class="text-dark fw-normal w-50">점검중</th>
@@ -410,21 +410,21 @@
 										<thead>
 											<c:forEach var="aq" items="${aq_List}" begin="13">
 												<tr>
-													<th class="bg-light">${aq.gu_Nm}</th>
+													<th class="bg-light">${aq.guNm}</th>
 													<c:choose>
-														<c:when test='${0 <= aq.o3_Conc && aq.o3_Conc <= 0.030}'>
-															<th class="text-primary fw-normal w-50">${aq.o3_Conc}</th>
+														<c:when test='${0 <= aq.o3Conc && aq.o3Conc <= 0.030}'>
+															<th class="text-primary fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
 														<c:when
-															test='${0.030 < aq.o3_Conc && aq.o3_Conc <= 0.090}'>
-															<th class="text-success fw-normal w-50">${aq.o3_Conc}</th>
+															test='${0.030 < aq.o3Conc && aq.o3Conc <= 0.090}'>
+															<th class="text-success fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
 														<c:when
-															test='${0.090 < aq.o3_Conc && aq.o3_Conc <= 0.150}'>
-															<th class="text-warning fw-normal w-50">${aq.o3_Conc}</th>
+															test='${0.090 < aq.o3Conc && aq.o3Conc <= 0.150}'>
+															<th class="text-warning fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
-														<c:when test='${aq.o3_Conc > 0.150}'>
-															<th class="text-danger fw-normal w-50">${aq.o3_Conc}</th>
+														<c:when test='${aq.o3Conc > 0.150}'>
+															<th class="text-danger fw-normal w-50">${aq.o3Conc}</th>
 														</c:when>
 														<c:otherwise>
 															<th class="text-dark fw-normal w-50">점검중</th>
@@ -464,20 +464,20 @@
 					<c:forEach var="pm_Warning" items="${pm_Warning_List}">
 						<tr>
 							<th class="table-success" scope="row">${count+1}</th>
-							<td>${pm_Warning.dist_Nm}</td>
-							<td>${pm_Warning.move_Nm}</td>
+							<td>${pm_Warning.distNm}</td>
+							<td>${pm_Warning.moveNm}</td>
 							<c:choose>
-								<c:when test='${pm_Warning.issue_Item.equals("PM25")}'>
+								<c:when test='${pm_Warning.issueItem.equals("PM25")}'>
 									<td>PM2.5</td>
 								</c:when>
 								<c:otherwise>
-									<td>${pm_Warning.issue_Item}</td>
+									<td>${pm_Warning.issueItem}</td>
 								</c:otherwise>
 							</c:choose>
-							<td>${pm_Warning.issue_Gbn}</td>
-							<td>${pm_Warning.issue_Conc}</td>
-							<td>${pm_Warning.issue_Dt}</td>
-							<td>${pm_Warning.clear_Dt}</td>
+							<td>${pm_Warning.issueGbn}</td>
+							<td>${pm_Warning.issueConc}</td>
+							<td>${pm_Warning.issueDt}</td>
+							<td>${pm_Warning.clearDt}</td>
 						</tr>
 						<c:set var="count" value="${count + 1}" />
 					</c:forEach>
@@ -614,50 +614,50 @@
 				{
 			        imageSrc:
 			       	<c:choose>
-				    	<c:when test='${aq.cai_Grade.equals("좋음")}'>
+				    	<c:when test='${aq.caiGrade.equals("좋음")}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level1.png"
 				    	</c:when>
-				    	<c:when test='${aq.cai_Grade.equals("보통")}'>
+				    	<c:when test='${aq.caiGrade.equals("보통")}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level2.png"
 				    	</c:when>
-				    	<c:when test='${aq.cai_Grade.equals("나쁨")}'>
+				    	<c:when test='${aq.caiGrade.equals("나쁨")}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level3.png"
 				    	</c:when>
-				    	<c:when test='${aq.cai_Grade.equals("매우나쁨")}'>
+				    	<c:when test='${aq.caiGrade.equals("매우나쁨")}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
 				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
-			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),
+			        latlng: new kakao.maps.LatLng(${aq.msLat}, ${aq.msLon}),
 					content: '<div class="wrap">' + 
 		            '    <div class="info">' + 
 		            '        <div class="title">' + 
-		            '             ${aq.gu_Nm}' + 
+		            '             ${aq.guNm}' + 
 		            '        </div>' + 
 		            '        <div class="body">' + 
 		            '            <div class="img">' +
 		            '           </div>' + 
 		            '            <div class="desc">' + 
 		            '                <div class="ellipsis">위치</div>' + 
-		            '                <div class="jibun ellipsis">${aq.ms_Addr}</div>' +
+		            '                <div class="jibun ellipsis">${aq.msAddr}</div>' +
 		            '        	   <div class="table-wrap mt-1 px-1">' + 
 		            '				  <table class="table table-bordered text-center">'+
 		            '           	 	<thead>'+
 		            '               	 	<tr>'+
 		            '                   		<th class="w-25 fw-bolder table-secondary border">통합대기지수</th>'+
 									            <c:choose>
-										        	<c:when test="${aq.cai_Grade.equals(\"좋음\")}">
+										        	<c:when test="${aq.caiGrade.equals(\"좋음\")}">
 										        		'<th class="w-25 fw-normal text-primary">좋음</th>' +
 										        	</c:when>
-										        	<c:when test="${aq.cai_Grade.equals(\"보통\")}">
+										        	<c:when test="${aq.caiGrade.equals(\"보통\")}">
 										        		'<th class="w-25 fw-normal text-success">보통</th>' +
 										        	</c:when>
-										        	<c:when test="${aq.cai_Grade.equals(\"나쁨\")}">
+										        	<c:when test="${aq.caiGrade.equals(\"나쁨\")}">
 										        		'<th class="w-25 fw-normal text-warning">나쁨</th>' +
 										        	</c:when>
-										        	<c:when test="${aq.cai_Grade.equals(\"매우나쁨\")}">
+										        	<c:when test="${aq.caiGrade.equals(\"매우나쁨\")}">
 										        		'<th class="w-25 fw-normal text-danger">매우나쁨</th>' +
 										        	</c:when>
 										        	<c:otherwise>
@@ -680,8 +680,8 @@
 		            '        </div>' + 
 		            '    </div>' +    
 		            '</div>',				
-		            lat: ${aq.ms_Lat},
-		            lon: ${aq.ms_Lon}
+		            lat: ${aq.msLat},
+		            lon: ${aq.msLon}
 			        
 			    }<c:if test="${!status.last}">,</c:if>
 				</c:forEach>
@@ -711,50 +711,50 @@
 				{
 			        imageSrc:
 			       	<c:choose>
-				    	<c:when test='${0 <= aq.pm10_Conc && aq.pm10_Conc <= 30}'>
+				    	<c:when test='${0 <= aq.pm10Conc && aq.pm10Conc <= 30}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level1.png"
 				    	</c:when>
-				    	<c:when test='${30 < aq.pm10_Conc && aq.pm10_Conc <= 80}'>
+				    	<c:when test='${30 < aq.pm10Conc && aq.pm10Conc <= 80}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level2.png"
 				    	</c:when>
-				    	<c:when test='${80 < aq.pm10_Conc && aq.pm10_Conc <= 150}'>
+				    	<c:when test='${80 < aq.pm10Conc && aq.pm10Conc <= 150}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level3.png"
 				    	</c:when>
-				    	<c:when test='${aq.pm10_Conc > 150}'>
+				    	<c:when test='${aq.pm10Conc > 150}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
 				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
-			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),
+			        latlng: new kakao.maps.LatLng(${aq.msLat}, ${aq.msLon}),
 					content: '<div class="wrap">' + 
 		            '    <div class="info">' + 
 		            '        <div class="title">' + 
-		            '             ${aq.gu_Nm}' + 
+		            '             ${aq.guNm}' + 
 		            '        </div>' + 
 		            '        <div class="body">' + 
 		            '            <div class="img">' +
 		            '           </div>' + 
 		            '            <div class="desc">' + 
 		            '                <div class="ellipsis">위치</div>' + 
-		            '                <div class="jibun ellipsis">${aq.ms_Addr}</div>' +
+		            '                <div class="jibun ellipsis">${aq.msAddr}</div>' +
 		            '        	   <div class="table-wrap mt-1 px-1">' + 
 		            '				  <table class="table table-bordered text-center">'+
 		            '           	 	<thead>'+
 		            '               	 	<tr>'+
 		            '                   		<th class="w-25 fw-bolder table-secondary border">미세먼지</th>'+
 									            <c:choose>
-										        	<c:when test="${0 <= aq.pm10_Conc && aq.pm10_Conc <= 30}">
+										        	<c:when test="${0 <= aq.pm10Conc && aq.pm10Conc <= 30}">
 										        		'<th class="w-25 fw-normal text-primary">좋음</th>' +
 										        	</c:when>
-										        	<c:when test="${30 < aq.pm10_Conc && aq.pm10_Conc <= 80}">
+										        	<c:when test="${30 < aq.pm10Conc && aq.pm10Conc <= 80}">
 										        		'<th class="w-25 fw-normal text-success">보통</th>' +
 										        	</c:when>
-										        	<c:when test="${80 < aq.pm10_Conc && aq.pm10_Conc <= 150}">
+										        	<c:when test="${80 < aq.pm10Conc && aq.pm10Conc <= 150}">
 										        		'<th class="w-25 fw-normal text-warning">나쁨</th>' +
 										        	</c:when>
-										        	<c:when test="${aq.pm10_Conc > 150}">
+										        	<c:when test="${aq.pm10Conc > 150}">
 										        		'<th class="w-25 fw-normal text-danger">매우나쁨</th>' +
 										        	</c:when>
 										        	<c:otherwise>
@@ -762,8 +762,8 @@
 										        	</c:otherwise>
 									        	</c:choose>
 										        	<c:choose>
-										        	<c:when test="${aq.pm10_Conc != -1}">
-										        		'<th class="w-25 fw-normal">${aq.pm10_Conc}㎍/m³</th>' +
+										        	<c:when test="${aq.pm10Conc != -1}">
+										        		'<th class="w-25 fw-normal">${aq.pm10Conc}㎍/m³</th>' +
 										        	</c:when>
 										        	<c:otherwise>
 										        		'<th class="w-25 fw-normal">점검중</th>' +
@@ -777,8 +777,8 @@
 		            '        </div>' + 
 		            '    </div>' +    
 		            '</div>',				
-		            lat: ${aq.ms_Lat},
-		            lon: ${aq.ms_Lon}
+		            lat: ${aq.msLat},
+		            lon: ${aq.msLon}
 			        
 			    }<c:if test="${!status.last}">,</c:if>
 				</c:forEach>
@@ -808,50 +808,50 @@
 				{
 			        imageSrc:
 			       	<c:choose>
-				    	<c:when test='${0 <= aq.pm25_Conc && aq.pm25_Conc <= 15}'>
+				    	<c:when test='${0 <= aq.pm25Conc && aq.pm25Conc <= 15}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level1.png"
 				    	</c:when>
-				    	<c:when test='${15 < aq.pm25_Conc && aq.pm25_Conc <= 35}'>
+				    	<c:when test='${15 < aq.pm25Conc && aq.pm25Conc <= 35}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level2.png"
 				    	</c:when>
-				    	<c:when test='${35 < aq.pm25_Conc && aq.pm25_Conc <= 75}'>
+				    	<c:when test='${35 < aq.pm25Conc && aq.pm25Conc <= 75}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level3.png"
 				    	</c:when>
-				    	<c:when test='${aq.pm25_Conc > 75}'>
+				    	<c:when test='${aq.pm25Conc > 75}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
 				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
-			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),
+			        latlng: new kakao.maps.LatLng(${aq.msLat}, ${aq.msLon}),
 					content: '<div class="wrap">' + 
 		            '    <div class="info">' + 
 		            '        <div class="title">' + 
-		            '             ${aq.gu_Nm}' + 
+		            '             ${aq.guNm}' + 
 		            '        </div>' + 
 		            '        <div class="body">' + 
 		            '            <div class="img">' +
 		            '           </div>' + 
 		            '            <div class="desc">' + 
 		            '                <div class="ellipsis">위치</div>' + 
-		            '                <div class="jibun ellipsis">${aq.ms_Addr}</div>' +
+		            '                <div class="jibun ellipsis">${aq.msAddr}</div>' +
 		            '        	   <div class="table-wrap mt-1 px-1">' + 
 		            '				  <table class="table table-bordered text-center">'+
 		            '           	 	<thead>'+
 		            '               	 	<tr>'+
 		            '                   		<th class="w-25 fw-bolder table-secondary border">초미세먼지</th>'+
 									            <c:choose>
-										        	<c:when test="${0 <= aq.pm25_Conc && aq.pm25_Conc <= 15}">
+										        	<c:when test="${0 <= aq.pm25Conc && aq.pm25Conc <= 15}">
 										        		'<th class="w-25 fw-normal text-primary">좋음</th>' +
 										        	</c:when>
-										        	<c:when test="${15 < aq.pm25_Conc && aq.pm25_Conc <= 35}">
+										        	<c:when test="${15 < aq.pm25Conc && aq.pm25Conc <= 35}">
 										        		'<th class="w-25 fw-normal text-success">보통</th>' +
 										        	</c:when>
-										        	<c:when test="${35 < aq.pm25_Conc && aq.pm25_Conc <= 75}">
+										        	<c:when test="${35 < aq.pm25Conc && aq.pm25Conc <= 75}">
 										        		'<th class="w-25 fw-normal text-warning">나쁨</th>' +
 										        	</c:when>
-										        	<c:when test="${aq.pm25_Conc > 75}">
+										        	<c:when test="${aq.pm25Conc > 75}">
 										        		'<th class="w-25 fw-normal text-danger">매우나쁨</th>' +
 										        	</c:when>
 										        	<c:otherwise>
@@ -859,8 +859,8 @@
 										        	</c:otherwise>
 									        	</c:choose>
 										        	<c:choose>
-										        	<c:when test="${aq.pm25_Conc != -1}">
-										        		'<th class="w-25 fw-normal">${aq.pm25_Conc}㎍/m³</th>' +
+										        	<c:when test="${aq.pm25Conc != -1}">
+										        		'<th class="w-25 fw-normal">${aq.pm25Conc}㎍/m³</th>' +
 										        	</c:when>
 										        	<c:otherwise>
 										        		'<th class="w-25 fw-normal">점검중</th>' +
@@ -874,8 +874,8 @@
 		            '        </div>' + 
 		            '    </div>' +    
 		            '</div>',				
-		            lat: ${aq.ms_Lat},
-		            lon: ${aq.ms_Lon}
+		            lat: ${aq.msLat},
+		            lon: ${aq.msLon}
 			        
 			    }<c:if test="${!status.last}">,</c:if>
 				</c:forEach>
@@ -905,50 +905,50 @@
 				{
 			        imageSrc:
 			       	<c:choose>
-				    	<c:when test='${0 <= aq.o3_Conc && aq.o3_Conc <= 0.030}'>
+				    	<c:when test='${0 <= aq.o3Conc && aq.o3Conc <= 0.030}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level1.png"
 				    	</c:when>
-				    	<c:when test='${0.030 < aq.o3_Conc && aq.o3_Conc <= 0.090}'>
+				    	<c:when test='${0.030 < aq.o3Conc && aq.o3Conc <= 0.090}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level2.png"
 				    	</c:when>
-				    	<c:when test='${0.090 < aq.o3_Conc && aq.o3_Conc <= 0.150}'>
+				    	<c:when test='${0.090 < aq.o3Conc && aq.o3Conc <= 0.150}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level3.png"
 				    	</c:when>
-				    	<c:when test='${aq.o3_Conc > 0.150}'>
+				    	<c:when test='${aq.o3Conc > 0.150}'>
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
 				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
-			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),
+			        latlng: new kakao.maps.LatLng(${aq.msLat}, ${aq.msLon}),
 					content: '<div class="wrap">' + 
 		            '    <div class="info">' + 
 		            '        <div class="title">' + 
-		            '             ${aq.gu_Nm}' + 
+		            '             ${aq.guNm}' + 
 		            '        </div>' + 
 		            '        <div class="body">' + 
 		            '            <div class="img">' +
 		            '           </div>' + 
 		            '            <div class="desc">' + 
 		            '                <div class="ellipsis">위치</div>' + 
-		            '                <div class="jibun ellipsis">${aq.ms_Addr}</div>' +
+		            '                <div class="jibun ellipsis">${aq.msAddr}</div>' +
 		            '        	   <div class="table-wrap mt-1 px-1">' + 
 		            '				  <table class="table table-bordered text-center">'+
 		            '           	 	<thead>'+
 		            '               	 	<tr>'+
 		            '                   		<th class="w-25 fw-bolder table-secondary border">오존</th>'+
 									            <c:choose>
-										        	<c:when test="${0 <= aq.o3_Conc && aq.o3_Conc <= 0.030}">
+										        	<c:when test="${0 <= aq.o3Conc && aq.o3Conc <= 0.030}">
 										        		'<th class="w-25 fw-normal text-primary">좋음</th>' +
 										        	</c:when>
-										        	<c:when test="${0.030 < aq.o3_Conc && aq.o3_Conc <= 0.090}">
+										        	<c:when test="${0.030 < aq.o3Conc && aq.o3Conc <= 0.090}">
 										        		'<th class="w-25 fw-normal text-success">보통</th>' +
 										        	</c:when>
-										        	<c:when test="${0.090 < aq.o3_Conc && aq.o3_Conc <= 0.150}">
+										        	<c:when test="${0.090 < aq.o3Conc && aq.o3Conc <= 0.150}">
 										        		'<th class="w-25 fw-normal text-warning">나쁨</th>' +
 										        	</c:when>
-										        	<c:when test="${aq.o3_Conc > 0.150}">
+										        	<c:when test="${aq.o3Conc > 0.150}">
 										        		'<th class="w-25 fw-normal text-danger">매우나쁨</th>' +
 										        	</c:when>
 										        	<c:otherwise>
@@ -956,8 +956,8 @@
 										        	</c:otherwise>
 									        	</c:choose>
 										        	<c:choose>
-										        	<c:when test="${aq.o3_Conc != -1}">
-										        		'<th class="w-25 fw-normal">${aq.o3_Conc}㎍/m³</th>' +
+										        	<c:when test="${aq.o3Conc != -1}">
+										        		'<th class="w-25 fw-normal">${aq.o3Conc}㎍/m³</th>' +
 										        	</c:when>
 										        	<c:otherwise>
 										        		'<th class="w-25 fw-normal">점검중</th>' +
@@ -971,8 +971,8 @@
 		            '        </div>' + 
 		            '    </div>' +    
 		            '</div>',				
-		            lat: ${aq.ms_Lat},
-		            lon: ${aq.ms_Lon}
+		            lat: ${aq.msLat},
+		            lon: ${aq.msLon}
 			        
 			    }<c:if test="${!status.last}">,</c:if>
 				</c:forEach>

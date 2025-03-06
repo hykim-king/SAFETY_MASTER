@@ -4,42 +4,42 @@ import java.util.Objects;
 
 public class Weather_CurrentVO {
 
-	private long weather_Id;
-	private String gu_Cd;
+	private long weatherId;
+	private String guCd;
 	private double temp;
-	private double min_Temp;
-	private double max_Temp;
-	private double feels_Like_Temp;
-	private String weather_Desc;
-	private String weather_Icon_Id;
+	private double minTemp;
+	private double maxTemp;
+	private double feelsLikeTemp;
+	private String weatherDesc;
+	private String weatherIconId;
 	private int humidity;
-	private double wind_Speed;
-	private String ms_Dt;
-	private int crt_By;
-	private String crt_Dt;
-	private int mod_By;
-	private String mod_Dt;
-	private String gu_Nm;
+	private double windSpeed;
+	private String msDt;
+	private int crtBy;
+	private String crtDt;
+	private int modBy;
+	private String modDt;
+	private String guNm;
 
 	public Weather_CurrentVO() {
 		super();
 
 	}
 
-	public long getWeather_Id() {
-		return weather_Id;
+	public long getWeatherId() {
+		return weatherId;
 	}
 
-	public void setWeather_Id(long weather_Id) {
-		this.weather_Id = weather_Id;
+	public void setWeatherId(long weatherId) {
+		this.weatherId = weatherId;
 	}
 
-	public String getGu_Cd() {
-		return gu_Cd;
+	public String getGuCd() {
+		return guCd;
 	}
 
-	public void setGu_Cd(String gu_Cd) {
-		this.gu_Cd = gu_Cd;
+	public void setGuCd(String guCd) {
+		this.guCd = guCd;
 	}
 
 	public double getTemp() {
@@ -50,44 +50,44 @@ public class Weather_CurrentVO {
 		this.temp = temp;
 	}
 
-	public double getMin_Temp() {
-		return min_Temp;
+	public double getMinTemp() {
+		return minTemp;
 	}
 
-	public void setMin_Temp(double min_Temp) {
-		this.min_Temp = min_Temp;
+	public void setMinTemp(double minTemp) {
+		this.minTemp = minTemp;
 	}
 
-	public double getMax_Temp() {
-		return max_Temp;
+	public double getMaxTemp() {
+		return maxTemp;
 	}
 
-	public void setMax_Temp(double max_Temp) {
-		this.max_Temp = max_Temp;
+	public void setMaxTemp(double maxTemp) {
+		this.maxTemp = maxTemp;
 	}
 
-	public double getFeels_Like_Temp() {
-		return feels_Like_Temp;
+	public double getFeelsLikeTemp() {
+		return feelsLikeTemp;
 	}
 
-	public void setFeels_Like_Temp(double feels_Like_Temp) {
-		this.feels_Like_Temp = feels_Like_Temp;
+	public void setFeelsLikeTemp(double feelsLikeTemp) {
+		this.feelsLikeTemp = feelsLikeTemp;
 	}
 
-	public String getWeather_Desc() {
-		return weather_Desc;
+	public String getWeatherDesc() {
+		return weatherDesc;
 	}
 
-	public void setWeather_Desc(String weather_Desc) {
-		this.weather_Desc = weather_Desc;
+	public void setWeatherDesc(String weatherDesc) {
+		this.weatherDesc = weatherDesc;
 	}
 
-	public String getWeather_Icon_Id() {
-		return weather_Icon_Id;
+	public String getWeatherIconId() {
+		return weatherIconId;
 	}
 
-	public void setWeather_Icon_Id(String weather_Icon_Id) {
-		this.weather_Icon_Id = weather_Icon_Id;
+	public void setWeatherIconId(String weatherIconId) {
+		this.weatherIconId = weatherIconId;
 	}
 
 	public int getHumidity() {
@@ -98,66 +98,65 @@ public class Weather_CurrentVO {
 		this.humidity = humidity;
 	}
 
-	public double getWind_Speed() {
-		return wind_Speed;
+	public double getWindSpeed() {
+		return windSpeed;
 	}
 
-	public void setWind_Speed(double wind_Speed) {
-		this.wind_Speed = wind_Speed;
+	public void setWindSpeed(double windSpeed) {
+		this.windSpeed = windSpeed;
 	}
 
-	public String getMs_Dt() {
-		return ms_Dt;
+	public String getMsDt() {
+		return msDt;
 	}
 
-	public void setMs_Dt(String ms_Dt) {
-		this.ms_Dt = ms_Dt;
+	public void setMsDt(String msDt) {
+		this.msDt = msDt;
 	}
 
-	public int getCrt_By() {
-		return crt_By;
+	public int getCrtBy() {
+		return crtBy;
 	}
 
-	public void setCrt_By(int crt_By) {
-		this.crt_By = crt_By;
+	public void setCrtBy(int crtBy) {
+		this.crtBy = crtBy;
 	}
 
-	public String getCrt_Dt() {
-		return crt_Dt;
+	public String getCrtDt() {
+		return crtDt;
 	}
 
-	public void setCrt_Dt(String crt_Dt) {
-		this.crt_Dt = crt_Dt;
+	public void setCrtDt(String crtDt) {
+		this.crtDt = crtDt;
 	}
 
-	public int getMod_By() {
-		return mod_By;
+	public int getModBy() {
+		return modBy;
 	}
 
-	public void setMod_By(int mod_By) {
-		this.mod_By = mod_By;
+	public void setModBy(int modBy) {
+		this.modBy = modBy;
 	}
 
-	public String getMod_Dt() {
-		return mod_Dt;
+	public String getModDt() {
+		return modDt;
 	}
 
-	public void setMod_Dt(String mod_Dt) {
-		this.mod_Dt = mod_Dt;
-	}
-	
-
-	public String getGu_Nm() {
-		return gu_Nm;
+	public void setModDt(String modDt) {
+		this.modDt = modDt;
 	}
 
-	public void setGu_Nm(String gu_Nm) {
-		this.gu_Nm = gu_Nm;
+	public String getGuNm() {
+		return guNm;
+	}
+
+	public void setGuNm(String guNm) {
+		this.guNm = guNm;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(weather_Id);
+		return Objects.hash(weatherId);
 	}
 
 	@Override
@@ -169,18 +168,19 @@ public class Weather_CurrentVO {
 		if (getClass() != obj.getClass())
 			return false;
 		Weather_CurrentVO other = (Weather_CurrentVO) obj;
-		return weather_Id == other.weather_Id;
+		return weatherId == other.weatherId;
 	}
 
 	@Override
 	public String toString() {
-		return "Weather_CurrentVO [weather_Id=" + weather_Id + ", gu_Cd=" + gu_Cd + ", temp=" + temp + ", min_Temp="
-				+ min_Temp + ", max_Temp=" + max_Temp + ", feels_Like_Temp=" + feels_Like_Temp + ", weather_Desc="
-				+ weather_Desc + ", weather_Icon_Id=" + weather_Icon_Id + ", humidity=" + humidity + ", wind_Speed="
-				+ wind_Speed + ", ms_Dt=" + ms_Dt + ", crt_By=" + crt_By + ", crt_Dt=" + crt_Dt + ", mod_By=" + mod_By
-				+ ", mod_Dt=" + mod_Dt + ", gu_Nm=" + gu_Nm + "]";
+		return "Weather_CurrentVO [weatherId=" + weatherId + ", guCd=" + guCd + ", temp=" + temp + ", minTemp="
+				+ minTemp + ", maxTemp=" + maxTemp + ", feelsLikeTemp=" + feelsLikeTemp + ", weatherDesc=" + weatherDesc
+				+ ", weatherIconId=" + weatherIconId + ", humidity=" + humidity + ", windSpeed=" + windSpeed + ", msDt="
+				+ msDt + ", crtBy=" + crtBy + ", crtDt=" + crtDt + ", modBy=" + modBy + ", modDt=" + modDt + ", guNm="
+				+ guNm + "]";
 	}
-
-
-
+	
+	
+	
+	
 }

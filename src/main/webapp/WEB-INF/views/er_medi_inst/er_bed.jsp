@@ -93,7 +93,7 @@
 		<div style="margin-left: 250px;" class="container ps-0 pt-0 pb-1">
 			<p style="font-size: 14px;"
 				class="pt-2 mb-0 text-start text-dark">최근 업데이트
-				시간&nbsp:&nbsp${er_Bed_List[0].hvi_Dt}</p>
+				시간&nbsp:&nbsp${er_Bed_List[0].hviDt}</p>
 		</div>
 		<c:forEach var="er_bed" items="${er_Bed_List}">
 			<div class="container-fluid d-flex justify-content-center">
@@ -126,8 +126,8 @@
 						<tr>
 							<th style="cursor: pointer;"
 								onclick="window.location.href='${CP}/er_medi_inst/detail/${er_bed.hpid}'"
-								class="table-success text-decoration-underline" scope="row">${er_bed.duty_Nm}</th>
-							<td>${er_bed.er_Tel}</td>
+								class="table-success text-decoration-underline" scope="row">${er_bed.dutyNm}</th>
+							<td>${er_bed.erTel}</td>
 							<td>${er_bed.hvec}</td>
 							<td>${er_bed.hvoc}</td>
 							<td>${er_bed.hvcc}</td>
@@ -142,8 +142,8 @@
 							<td>${er_bed.hv6}</td>
 							<td>${er_bed.hv7}</td>
 							<td>${er_bed.hv11}</td>
-							<td>${er_bed.hvct_Yn }</td>
-							<td>${er_bed.hvmri_Yn}</td>
+							<td>${er_bed.hvctYn }</td>
+							<td>${er_bed.hvmriYn}</td>
 						</tr>
 					</tbody>
 				</table>

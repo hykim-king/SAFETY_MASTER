@@ -4,86 +4,86 @@ import java.util.Objects;
 
 public class Pm_WarningVO {
 
-	private String warn_Id;
-	private String dist_Nm;
-	private String move_Nm;
-	private String issue_Item;
-	private String issue_Gbn;
-	private int issue_Conc;
-	private String issue_Dt;
-	private String clear_Dt;
+	private String warnId;
+	private String distNm;
+	private String moveNm;
+	private String issueItem;
+	private String issueGbn;
+	private int issueConc;
+	private String issueDt;
+	private String clearDt;
 	private int sn;
-	private int crt_By;
-	private String crt_Dt;
-	private int mod_By;
-	private String mod_Dt;
+	private int crtBy;
+	private String crtDt;
+	private int modBy;
+	private String modDt;
 
 	public Pm_WarningVO() {
 		super();
 	}
 
-	public String getWarn_Id() {
-		return warn_Id;
+	public String getWarnId() {
+		return warnId;
 	}
 
-	public void setWarn_Id(String warn_Id) {
-		this.warn_Id = warn_Id;
+	public void setWarnId(String warnId) {
+		this.warnId = warnId;
 	}
 
-	public String getDist_Nm() {
-		return dist_Nm;
+	public String getDistNm() {
+		return distNm;
 	}
 
-	public void setDist_Nm(String dist_Nm) {
-		this.dist_Nm = dist_Nm;
+	public void setDistNm(String distNm) {
+		this.distNm = distNm;
 	}
 
-	public String getMove_Nm() {
-		return move_Nm;
+	public String getMoveNm() {
+		return moveNm;
 	}
 
-	public void setMove_Nm(String move_Nm) {
-		this.move_Nm = move_Nm;
+	public void setMoveNm(String moveNm) {
+		this.moveNm = moveNm;
 	}
 
-	public String getIssue_Item() {
-		return issue_Item;
+	public String getIssueItem() {
+		return issueItem;
 	}
 
-	public void setIssue_Item(String issue_Item) {
-		this.issue_Item = issue_Item;
+	public void setIssueItem(String issueItem) {
+		this.issueItem = issueItem;
 	}
 
-	public String getIssue_Gbn() {
-		return issue_Gbn;
+	public String getIssueGbn() {
+		return issueGbn;
 	}
 
-	public void setIssue_Gbn(String issue_Gbn) {
-		this.issue_Gbn = issue_Gbn;
+	public void setIssueGbn(String issueGbn) {
+		this.issueGbn = issueGbn;
 	}
 
-	public int getIssue_Conc() {
-		return issue_Conc;
+	public int getIssueConc() {
+		return issueConc;
 	}
 
-	public void setIssue_Conc(int issue_Conc) {
-		this.issue_Conc = issue_Conc;
+	public void setIssueConc(int issueConc) {
+		this.issueConc = issueConc;
 	}
 
-	public String getIssue_Dt() {
-		return issue_Dt;
+	public String getIssueDt() {
+		return issueDt;
 	}
 
-	public void setIssue_Dt(String issue_Dt) {
-		this.issue_Dt = issue_Dt;
+	public void setIssueDt(String issueDt) {
+		this.issueDt = issueDt;
 	}
 
-	public String getClear_Dt() {
-		return clear_Dt;
+	public String getClearDt() {
+		return clearDt;
 	}
 
-	public void setClear_Dt(String clear_Dt) {
-		this.clear_Dt = clear_Dt;
+	public void setClearDt(String clearDt) {
+		this.clearDt = clearDt;
 	}
 
 	public int getSn() {
@@ -94,41 +94,41 @@ public class Pm_WarningVO {
 		this.sn = sn;
 	}
 
-	public int getCrt_By() {
-		return crt_By;
+	public int getCrtBy() {
+		return crtBy;
 	}
 
-	public void setCrt_By(int crt_By) {
-		this.crt_By = crt_By;
+	public void setCrtBy(int crtBy) {
+		this.crtBy = crtBy;
 	}
 
-	public String getCrt_Dt() {
-		return crt_Dt;
+	public String getCrtDt() {
+		return crtDt;
 	}
 
-	public void setCrt_Dt(String crt_Dt) {
-		this.crt_Dt = crt_Dt;
+	public void setCrtDt(String crtDt) {
+		this.crtDt = crtDt;
 	}
 
-	public int getMod_By() {
-		return mod_By;
+	public int getModBy() {
+		return modBy;
 	}
 
-	public void setMod_By(int mod_By) {
-		this.mod_By = mod_By;
+	public void setModBy(int modBy) {
+		this.modBy = modBy;
 	}
 
-	public String getMod_Dt() {
-		return mod_Dt;
+	public String getModDt() {
+		return modDt;
 	}
 
-	public void setMod_Dt(String mod_Dt) {
-		this.mod_Dt = mod_Dt;
+	public void setModDt(String modDt) {
+		this.modDt = modDt;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(warn_Id);
+		return Objects.hash(warnId);
 	}
 
 	@Override
@@ -140,15 +140,19 @@ public class Pm_WarningVO {
 		if (getClass() != obj.getClass())
 			return false;
 		Pm_WarningVO other = (Pm_WarningVO) obj;
-		return Objects.equals(warn_Id, other.warn_Id);
+		return Objects.equals(warnId, other.warnId);
 	}
 
 	@Override
 	public String toString() {
-		return "Pm_WarningVO [warn_Id=" + warn_Id + ", dist_Nm=" + dist_Nm + ", move_Nm=" + move_Nm + ", issue_Item="
-				+ issue_Item + ", issue_Gbn=" + issue_Gbn + ", issue_Conc=" + issue_Conc + ", issue_Dt=" + issue_Dt
-				+ ", clear_Dt=" + clear_Dt + ", sn=" + sn + ", crt_By=" + crt_By + ", crt_Dt=" + crt_Dt + ", mod_By="
-				+ mod_By + ", mod_Dt=" + mod_Dt + "]";
+		return "Pm_WarningVO [warnId=" + warnId + ", distNm=" + distNm + ", moveNm=" + moveNm + ", issueItem="
+				+ issueItem + ", issueGbn=" + issueGbn + ", issueConc=" + issueConc + ", issueDt=" + issueDt
+				+ ", clearDt=" + clearDt + ", sn=" + sn + ", crtBy=" + crtBy + ", crtDt=" + crtDt + ", modBy=" + modBy
+				+ ", modDt=" + modDt + "]";
 	}
+
+	
+	
+	
 
 }

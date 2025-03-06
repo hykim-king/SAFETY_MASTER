@@ -62,9 +62,9 @@ public class MainController {
 
 		for (Weather_ForecastVO wf : wf_List) {
 
-			wf.setWeek(DateCmn.str_To_Week(wf.getFcst_Dt()));
+			wf.setWeek(DateCmn.str_To_Week(wf.getFcstDt()));
 
-			wf.setFcst_Dt(wf.getFcst_Dt().substring(5, 10).replace("-", "/"));
+			wf.setFcstDt(wf.getFcstDt().substring(5, 10).replace("-", "/"));
 
 			log.info(count + ":" + wf.toString());
 
@@ -74,8 +74,8 @@ public class MainController {
 		model.addAttribute("aqc", air_QualityVO);
 		model.addAttribute("wf_List", wf_List);
 
-		model.addAttribute("wc_Dt", weather_CurrentVO.getMs_Dt().split(" ")[1]);
-		model.addAttribute("aqc_Dt", air_QualityVO.getMs_Dt().split(" ")[1]);
+		model.addAttribute("wc_Dt", weather_CurrentVO.getMsDt().split(" ")[1]);
+		model.addAttribute("aqc_Dt", air_QualityVO.getMsDt().split(" ")[1]);
 
 		return "index";
 	}

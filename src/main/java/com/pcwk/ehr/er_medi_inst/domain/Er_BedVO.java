@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class Er_BedVO {
 
-	private String ebi_Id;
+	private String ebiId;
 	private String hpid;
-	private String gu_Cd;
-	private String duty_Nm;
-	private String er_Tel;
-	private String hvi_Dt;
+	private String guCd;
+	private String dutyNm;
+	private String erTel;
+	private String hviDt;
 	private String hvec;
 	private String hvoc;
 	private String hvcc;
@@ -27,254 +27,190 @@ public class Er_BedVO {
 	private String hv9;
 	private String hv10;
 	private String hv11;
-	private String hvct_Yn;
-	private String hvmri_Yn;
-	private int crt_By;
-	private String crt_Dt;
-	private int mod_By;
-	private String mod_Dt;
-
-	public Er_BedVO() {
-		super();
+	private String hvctYn;
+	private String hvmriYn;
+	private int crtBy;
+	private String crtDt;
+	private int modBy;
+	private String modDt;
+	public String getEbiId() {
+		return ebiId;
 	}
-
-	public String getEbi_Id() {
-		return ebi_Id;
+	public void setEbiId(String ebiId) {
+		this.ebiId = ebiId;
 	}
-
-	public void setEbi_Id(String ebi_Id) {
-		this.ebi_Id = ebi_Id;
-	}
-
 	public String getHpid() {
 		return hpid;
 	}
-
 	public void setHpid(String hpid) {
 		this.hpid = hpid;
 	}
-
-	public String getGu_Cd() {
-		return gu_Cd;
+	public String getGuCd() {
+		return guCd;
 	}
-
-	public void setGu_Cd(String gu_Cd) {
-		this.gu_Cd = gu_Cd;
+	public void setGuCd(String guCd) {
+		this.guCd = guCd;
 	}
-
-	public String getDuty_Nm() {
-		return duty_Nm;
+	public String getDutyNm() {
+		return dutyNm;
 	}
-
-	public void setDuty_Nm(String duty_Nm) {
-		this.duty_Nm = duty_Nm;
+	public void setDutyNm(String dutyNm) {
+		this.dutyNm = dutyNm;
 	}
-
-	public String getEr_Tel() {
-		return er_Tel;
+	public String getErTel() {
+		return erTel;
 	}
-
-	public void setEr_Tel(String er_Tel) {
-		this.er_Tel = er_Tel;
+	public void setErTel(String erTel) {
+		this.erTel = erTel;
 	}
-
-	public String getHvi_Dt() {
-		return hvi_Dt;
+	public String getHviDt() {
+		return hviDt;
 	}
-
-	public void setHvi_Dt(String hvi_Dt) {
-		this.hvi_Dt = hvi_Dt;
+	public void setHviDt(String hviDt) {
+		this.hviDt = hviDt;
 	}
-
 	public String getHvec() {
 		return hvec;
 	}
-
 	public void setHvec(String hvec) {
 		this.hvec = hvec;
 	}
-
 	public String getHvoc() {
 		return hvoc;
 	}
-
 	public void setHvoc(String hvoc) {
 		this.hvoc = hvoc;
 	}
-
 	public String getHvcc() {
 		return hvcc;
 	}
-
 	public void setHvcc(String hvcc) {
 		this.hvcc = hvcc;
 	}
-
 	public String getHvncc() {
 		return hvncc;
 	}
-
 	public void setHvncc(String hvncc) {
 		this.hvncc = hvncc;
 	}
-
 	public String getHvccc() {
 		return hvccc;
 	}
-
 	public void setHvccc(String hvccc) {
 		this.hvccc = hvccc;
 	}
-
 	public String getHvicc() {
 		return hvicc;
 	}
-
 	public void setHvicc(String hvicc) {
 		this.hvicc = hvicc;
 	}
-
 	public String getHvgc() {
 		return hvgc;
 	}
-
 	public void setHvgc(String hvgc) {
 		this.hvgc = hvgc;
 	}
-
 	public String getHv2() {
 		return hv2;
 	}
-
 	public void setHv2(String hv2) {
 		this.hv2 = hv2;
 	}
-
 	public String getHv3() {
 		return hv3;
 	}
-
 	public void setHv3(String hv3) {
 		this.hv3 = hv3;
 	}
-
 	public String getHv4() {
 		return hv4;
 	}
-
 	public void setHv4(String hv4) {
 		this.hv4 = hv4;
 	}
-
 	public String getHv5() {
 		return hv5;
 	}
-
 	public void setHv5(String hv5) {
 		this.hv5 = hv5;
 	}
-
 	public String getHv6() {
 		return hv6;
 	}
-
 	public void setHv6(String hv6) {
 		this.hv6 = hv6;
 	}
-
 	public String getHv7() {
 		return hv7;
 	}
-
 	public void setHv7(String hv7) {
 		this.hv7 = hv7;
 	}
-
 	public String getHv8() {
 		return hv8;
 	}
-
 	public void setHv8(String hv8) {
 		this.hv8 = hv8;
 	}
-
 	public String getHv9() {
 		return hv9;
 	}
-
 	public void setHv9(String hv9) {
 		this.hv9 = hv9;
 	}
-
 	public String getHv10() {
 		return hv10;
 	}
-
 	public void setHv10(String hv10) {
 		this.hv10 = hv10;
 	}
-
 	public String getHv11() {
 		return hv11;
 	}
-
 	public void setHv11(String hv11) {
 		this.hv11 = hv11;
 	}
-
-	public String getHvct_Yn() {
-		return hvct_Yn;
+	public String getHvctYn() {
+		return hvctYn;
 	}
-
-	public void setHvct_Yn(String hvct_Yn) {
-		this.hvct_Yn = hvct_Yn;
+	public void setHvctYn(String hvctYn) {
+		this.hvctYn = hvctYn;
 	}
-
-	public String getHvmri_Yn() {
-		return hvmri_Yn;
+	public String getHvmriYn() {
+		return hvmriYn;
 	}
-
-	public void setHvmri_Yn(String hvmri_Yn) {
-		this.hvmri_Yn = hvmri_Yn;
+	public void setHvmriYn(String hvmriYn) {
+		this.hvmriYn = hvmriYn;
 	}
-
-	public int getCrt_By() {
-		return crt_By;
+	public int getCrtBy() {
+		return crtBy;
 	}
-
-	public void setCrt_By(int crt_By) {
-		this.crt_By = crt_By;
+	public void setCrtBy(int crtBy) {
+		this.crtBy = crtBy;
 	}
-
-	public String getCrt_Dt() {
-		return crt_Dt;
+	public String getCrtDt() {
+		return crtDt;
 	}
-
-	public void setCrt_Dt(String crt_Dt) {
-		this.crt_Dt = crt_Dt;
+	public void setCrtDt(String crtDt) {
+		this.crtDt = crtDt;
 	}
-
-	public int getMod_By() {
-		return mod_By;
+	public int getModBy() {
+		return modBy;
 	}
-
-	public void setMod_By(int mod_By) {
-		this.mod_By = mod_By;
+	public void setModBy(int modBy) {
+		this.modBy = modBy;
 	}
-
-	public String getMod_Dt() {
-		return mod_Dt;
+	public String getModDt() {
+		return modDt;
 	}
-
-	public void setMod_Dt(String mod_Dt) {
-		this.mod_Dt = mod_Dt;
+	public void setModDt(String modDt) {
+		this.modDt = modDt;
 	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(ebi_Id);
+		return Objects.hash(ebiId);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -284,18 +220,18 @@ public class Er_BedVO {
 		if (getClass() != obj.getClass())
 			return false;
 		Er_BedVO other = (Er_BedVO) obj;
-		return Objects.equals(ebi_Id, other.ebi_Id);
+		return Objects.equals(ebiId, other.ebiId);
 	}
-
 	@Override
 	public String toString() {
-		return "Er_BedVO [ebi_Id=" + ebi_Id + ", hpid=" + hpid + ", gu_Cd=" + gu_Cd + ", duty_Nm=" + duty_Nm
-				+ ", er_Tel=" + er_Tel + ", hvi_Dt=" + hvi_Dt + ", hvec=" + hvec + ", hvoc=" + hvoc + ", hvcc=" + hvcc
-				+ ", hvncc=" + hvncc + ", hvccc=" + hvccc + ", hvicc=" + hvicc + ", hvgc=" + hvgc + ", hv2=" + hv2
-				+ ", hv3=" + hv3 + ", hv4=" + hv4 + ", hv5=" + hv5 + ", hv6=" + hv6 + ", hv7=" + hv7 + ", hv8=" + hv8
-				+ ", hv9=" + hv9 + ", hv10=" + hv10 + ", hv11=" + hv11 + ", hvct_Yn=" + hvct_Yn + ", hvmri_Yn="
-				+ hvmri_Yn + ", crt_By=" + crt_By + ", crt_Dt=" + crt_Dt + ", mod_By=" + mod_By + ", mod_Dt=" + mod_Dt
-				+ "]";
+		return "Er_BedVO [ebiId=" + ebiId + ", hpid=" + hpid + ", guCd=" + guCd + ", dutyNm=" + dutyNm + ", erTel="
+				+ erTel + ", hviDt=" + hviDt + ", hvec=" + hvec + ", hvoc=" + hvoc + ", hvcc=" + hvcc + ", hvncc="
+				+ hvncc + ", hvccc=" + hvccc + ", hvicc=" + hvicc + ", hvgc=" + hvgc + ", hv2=" + hv2 + ", hv3=" + hv3
+				+ ", hv4=" + hv4 + ", hv5=" + hv5 + ", hv6=" + hv6 + ", hv7=" + hv7 + ", hv8=" + hv8 + ", hv9=" + hv9
+				+ ", hv10=" + hv10 + ", hv11=" + hv11 + ", hvctYn=" + hvctYn + ", hvmriYn=" + hvmriYn + ", crtBy="
+				+ crtBy + ", crtDt=" + crtDt + ", modBy=" + modBy + ", modDt=" + modDt + "]";
 	}
+
+	
 
 }

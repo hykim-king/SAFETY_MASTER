@@ -3,18 +3,18 @@ package com.pcwk.ehr.er_medi_inst.domain;
 import java.util.Objects;
 
 public class Er_Medi_InstVO {
-	
+
 	private String hpid;
-	private String gu_Cd;
-	private String duty_Nm;
-	private String duty_Addr;
-	private String duty_Tel;
-	private String er_Tel;
-	private int crt_By;
-	private String crt_Dt;
-	private int mod_By;
-	private String mod_Dt;
-	
+	private String guCd;
+	private String dutyNm;
+	private String dutyAddr;
+	private String dutyTel;
+	private String erTel;
+	private int crtBy;
+	private String crtDt;
+	private int modBy;
+	private String modDt;
+
 	public Er_Medi_InstVO() {
 		super();
 	}
@@ -27,76 +27,76 @@ public class Er_Medi_InstVO {
 		this.hpid = hpid;
 	}
 
-	public String getGu_Cd() {
-		return gu_Cd;
+	public String getGuCd() {
+		return guCd;
 	}
 
-	public void setGu_Cd(String gu_Cd) {
-		this.gu_Cd = gu_Cd;
+	public void setGuCd(String guCd) {
+		this.guCd = guCd;
 	}
 
-	public String getDuty_Nm() {
-		return duty_Nm;
+	public String getDutyNm() {
+		return dutyNm;
 	}
 
-	public void setDuty_Nm(String duty_Nm) {
-		this.duty_Nm = duty_Nm;
+	public void setDutyNm(String dutyNm) {
+		this.dutyNm = dutyNm;
 	}
 
-	public String getDuty_Addr() {
-		return duty_Addr;
+	public String getDutyAddr() {
+		return dutyAddr;
 	}
 
-	public void setDuty_Addr(String duty_Addr) {
-		this.duty_Addr = duty_Addr;
+	public void setDutyAddr(String dutyAddr) {
+		this.dutyAddr = dutyAddr;
 	}
 
-	public String getDuty_Tel() {
-		return duty_Tel;
+	public String getDutyTel() {
+		return dutyTel;
 	}
 
-	public void setDuty_Tel(String duty_Tel) {
-		this.duty_Tel = duty_Tel;
+	public void setDutyTel(String dutyTel) {
+		this.dutyTel = dutyTel;
 	}
 
-	public String getEr_Tel() {
-		return er_Tel;
+	public String getErTel() {
+		return erTel;
 	}
 
-	public void setEr_Tel(String er_Tel) {
-		this.er_Tel = er_Tel;
+	public void setErTel(String erTel) {
+		this.erTel = erTel;
 	}
 
-	public int getCrt_By() {
-		return crt_By;
+	public int getCrtBy() {
+		return crtBy;
 	}
 
-	public void setCrt_By(int crt_By) {
-		this.crt_By = crt_By;
+	public void setCrtBy(int crtBy) {
+		this.crtBy = crtBy;
 	}
 
-	public String getCrt_Dt() {
-		return crt_Dt;
+	public String getCrtDt() {
+		return crtDt;
 	}
 
-	public void setCrt_Dt(String crt_Dt) {
-		this.crt_Dt = crt_Dt;
+	public void setCrtDt(String crtDt) {
+		this.crtDt = crtDt;
 	}
 
-	public int getMod_By() {
-		return mod_By;
+	public int getModBy() {
+		return modBy;
 	}
 
-	public void setMod_By(int mod_By) {
-		this.mod_By = mod_By;
+	public void setModBy(int modBy) {
+		this.modBy = modBy;
 	}
 
-	public String getMod_Dt() {
-		return mod_Dt;
+	public String getModDt() {
+		return modDt;
 	}
 
-	public void setMod_Dt(String mod_Dt) {
-		this.mod_Dt = mod_Dt;
+	public void setModDt(String modDt) {
+		this.modDt = modDt;
 	}
 
 	@Override
@@ -118,11 +118,9 @@ public class Er_Medi_InstVO {
 
 	@Override
 	public String toString() {
-		return "Er_Medi_InstVO [hpid=" + hpid + ", gu_Cd=" + gu_Cd + ", duty_Nm=" + duty_Nm + ", duty_Addr=" + duty_Addr
-				+ ", duty_Tel=" + duty_Tel + ", er_Tel=" + er_Tel + ", crt_By=" + crt_By + ", crt_Dt=" + crt_Dt
-				+ ", mod_By=" + mod_By + ", mod_Dt=" + mod_Dt + "]";
+		return "Er_Medi_InstVO [hpid=" + hpid + ", guCd=" + guCd + ", dutyNm=" + dutyNm + ", dutyAddr=" + dutyAddr
+				+ ", dutyTel=" + dutyTel + ", erTel=" + erTel + ", crtBy=" + crtBy + ", crtDt=" + crtDt + ", modBy="
+				+ modBy + ", modDt=" + modDt + "]";
 	}
-	
-	
 
 }

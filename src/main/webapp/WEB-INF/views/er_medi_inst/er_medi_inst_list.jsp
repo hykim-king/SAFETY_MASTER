@@ -96,16 +96,16 @@
 						onclick="window.location.href='${CP}/er_medi_inst/detail/${emi.hpid}'">
 						<div class="card border-secondary h-100">
 							<img src="/assets/images/er_medi_inst/${emi.hpid}.jpg"
-								class="card-img-top" alt="${emi.duty_Nm} 이미지" height="309.4px">
+								class="card-img-top" alt="${emi.dutyNm} 이미지" height="309.4px">
 							<div class="card-body">
-								<h5 style="font-size: 19px;" class="card-title fw-bolder">${emi.duty_Nm}</h5>
+								<h5 style="font-size: 19px;" class="card-title fw-bolder">${emi.dutyNm}</h5>
 
 								<p style="font-size: 14px; color: #616161;"
-									class="card-text mb-1">${emi.duty_Addr}</p>
+									class="card-text mb-1">${emi.dutyAddr}</p>
 								<p style="font-size: 14px; color: #616161;"
-									class="card-text pt-1 mb-0">대표전화 : ${emi.duty_Tel}</p>
+									class="card-text pt-1 mb-0">대표전화 : ${emi.dutyTel}</p>
 								<p style="font-size: 14px; color: #616161;"
-									class="card-text mb-0">응급실전화 : ${emi.er_Tel}</p>
+									class="card-text mb-0">응급실전화 : ${emi.erTel}</p>
 							</div>
 						</div>
 					</div>
