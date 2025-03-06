@@ -3,14 +3,14 @@ import json
 
 # 모든 대피소 데이터를 저장할 리스트 초기화
 url = "https://www.safetydata.go.kr"
-dataName = "/V2/api/DSSP-IF-00195" # 민방위 대피소 데이터 url 입력
+dataName = "/V2/api/DSSP-IF-10943" # 민방위 대피소 데이터 url 입력
 shelters = []
 pageNo = 1
 numOfRows = 1000  # 한 페이지당 최대 행 수
 while True:
     # API 요청에 필요한 파라미터 설정
     payloads = {
-        "serviceKey": "EW729M3N50O3W79U",
+        "serviceKey": "7TML53MMO8B79RL6",
         "returnType": "json",
         "pageNo": pageNo,
         "numOfRows": numOfRows,
@@ -28,6 +28,11 @@ while True:
         if not page_shelters:
             # 더 이상 가져올 데이터가 없으면 루프 종료
             break
+
+            # '서울특별시' 대피소 필터링
+            filtered_shelters = [s for s in page_shelters if "서울특별시" in (s.get("EQK_ACMDFCLTY_ADRES") or "")]
+
+
         shelters.extend(page_shelters)
         pageNo += 1  # 다음 페이지로 이동
     else:

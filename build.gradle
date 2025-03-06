@@ -58,7 +58,9 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	
 	runtimeOnly 'com.h2database:h2'
-	
+
+	implementation 'com.google.guava:guava:31.1-jre'  
+
 	//---------------------------------------------------------------------
 	
 	
@@ -82,5 +84,4 @@ sourceSets {
 	}
 	
 }
-
 

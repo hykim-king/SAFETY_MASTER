@@ -14,7 +14,9 @@ API_URL = "https://www.safetydata.go.kr/V2/api/DSSP-IF-00195"
 API_KEY = "EW729M3N50O3W79U"  # 서비스 키
 
 def connect_oracle():
-
+    """
+    Oracle DB 연결
+    """
     dsn = f"{DB_HOST}:{DB_PORT}/{DB_SID}"
     try:
         conn = oracledb.connect(user=DB_USER, password=DB_PASSWORD, dsn=dsn)
@@ -25,15 +27,13 @@ def connect_oracle():
         print("DB 연결 실패:", e)
         exit()
 
-
-#API에서 대피소 데이터 가져오기 및 필터링
 def fetch_shelters():
-    # 리스트 ..
+    """
+    API에서 대피소 데이터 가져오기 및 필터링
+    """
     shelters = []
-    #API에서 데이터를 효율적으로 가져오기 위한 페이지네이션
     pageNo = 1
-    # 페이지당 최대 개수
-    numOfRows = 1000
+    numOfRows = 1000  # 페이지당 최대 개수
 
     while True:
         payloads = {
@@ -46,14 +46,14 @@ def fetch_shelters():
 
         if response.status_code == 200:
             data = response.json()
-            page_shelters = data
+            page_shelters = data.get("body", [])
 
             # 데이터가 없으면 종료
             if not page_shelters:
                 break
 
             # '서울특별시' 대피소 필터링
-            filtered_shelters = [s for s in page_shelters if "서울특별시" in (s.get("FCLT_ADDR_RONA") or "")]
+            filtered_shelters = [s for s in page_shelters if "서울특별시" in (s.get("MNG_INST_NM") or "")]
 
             shelters.extend(filtered_shelters)
             pageNo += 1
@@ -65,7 +65,9 @@ def fetch_shelters():
     return shelters
 
 def insert_faclt_data(conn, cursor, shelters):
-
+    """
+    FAClT 테이블에 데이터 삽입 (MERGE INTO 사용)
+    """
     sql = """
     MERGE INTO FAClT F
     USING (SELECT :FCLT_CD AS FCLT_CD FROM DUAL) NEW_DATA

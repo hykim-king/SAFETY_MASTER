@@ -1,0 +1,8 @@
+{
+    "header": {
+        "resultMsg": "LIMITED NUMBER OF SERVICE REQUESTS EXCEEDS ERROR",
+        "resultCode": "22",
+        "errorMsg": "서비스 요청제한횟수 초과"
+    },
+    "body": null
+}
