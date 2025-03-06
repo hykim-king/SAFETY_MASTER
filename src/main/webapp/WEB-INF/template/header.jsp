@@ -23,6 +23,8 @@
                             <li><a class="dropdown-item" href="/typ/view">태풍</a></li>
                             <li><a class="dropdown-item" href="/disastermessage/view">재난문자</a></li>
                             <li><a class="dropdown-item" href="#">재난안전통계</a></li>
+                            <li><a class="dropdown-item" href="/disastermessage/safety_Index">재난안전지수</a></li>
+
                         </ul></li>
 
                     <!-- 날씨 메뉴 드롭다운  -->

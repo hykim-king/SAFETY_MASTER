@@ -86,4 +86,33 @@
         WHERE DIS_MES_NUM = #{disMesNum}
     </select>
 
+    <select id="safetyIndex">
+        SELECT COUNT(*)*1000 AS totalCnt
+        FROM DISASTER_MESSAGE
+        WHERE DIS_MES_AREA LIKE '%' || #{searchWord} || '%'
+          AND TO_TIMESTAMP(DIS_MES_DT, 'YYYY/MM/DD HH24:MI:SS.FF') >= SYSTIMESTAMP - INTERVAL '99' DAY - INTERVAL '99' DAY - INTERVAL '99' DAY - INTERVAL '68' DAY
+    </select>
+
+    <select id="safetyIndex_EWSF">
+        SELECT PUMP_TON_
+        FROM EWSF
+        WHERE SGG LIKE '%' || #{searchWord} || '%'
+    </select>
+    
+    <select id="item_count">
+        SELECT
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '먼지' || '%' THEN 1 END) AS dust_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '폭염' || '%' THEN 1 END) AS heat_wave_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '호우' || '%' THEN 1 END) AS heavy_rain_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '한파' || '%' THEN 1 END) AS cold_wave_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '대설' || '%' THEN 1 END) AS heavy_snow_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '산불' || '%' THEN 1 END) AS wildfire_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '풍랑' || '%' THEN 1 END) AS storm_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '전염병' || '%' THEN 1 END) AS epidemic_count,
+            COUNT(CASE WHEN DIS_MES_TYPE LIKE '%' || '산사태' || '%' THEN 1 END) AS landslide_count
+        FROM DISASTER_MESSAGE
+        WHERE DIS_MES_AREA LIKE '%' || #{searchWord} || '%'
+          AND TO_TIMESTAMP(DIS_MES_DT, 'YYYY/MM/DD HH24:MI:SS.FF') >= SYSTIMESTAMP - INTERVAL '99' DAY - INTERVAL '99' DAY - INTERVAL '99' DAY - INTERVAL '68' DAY
+    </select>
 </mapper>
+

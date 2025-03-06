@@ -1,6 +1,7 @@
 package com.pcwk.ehr.disastermessage.mapper;
 
 import com.pcwk.ehr.cmn.SearchVO;
+import com.pcwk.ehr.disastermessage.domain.DisasterCountVO;
 import com.pcwk.ehr.disastermessage.domain.DisasterMessageVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -17,4 +18,13 @@ public interface DisasterMessageMapper {
 
     //재난문자의 지역,종류,내용을 단건 검색하는 쿼리문
     DisasterMessageVO getDisMesDetail(Long id);
+
+    //searchWord에 재난빈도수 데이터를 불러옴
+    int safetyIndex (SearchVO searchVO);
+
+    //searchWord에 따라 양수량 데이터를 불러옴
+    int safetyIndex_EWSF (SearchVO searchVO);
+
+    //searchWord에 따라 재난유형별 빈도수 데이터를 불러옴
+    List<DisasterCountVO> item_count (SearchVO searchVO);
 }

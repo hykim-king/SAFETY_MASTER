@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+/* 전체 컨테이너 */
+.container1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 30px; /* 안전지수와 차트 사이의 간격 */
+    margin-top: 0!important;
+}
+
+/* 안전지수 표시 */
+.safety-index {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* 안전지수 수치 강조 */
+.safety-index strong {
+    color: #007bff;
+}
+
+/* 차트 영역 */
+.chart-container {
+    width: 60%; /* 차트의 너비를 적당히 조정 */
+    max-width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* 차트 중앙 정렬 */
+}
+
+/* 안전지수 텍스트와 차트가 나란히 오게 하기 위한 스타일 */
+.safety-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* 지역 선택 버튼 */
+.region-select-btn {
+    padding: 12px 120px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.region-select-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* 모달 및 기타 스타일은 기존과 동일하게 유지 */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* 모달 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 420px;
+    width: 60%;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+/* 지역 리스트 */
+.region-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.region-box button {
+    padding: 12px 18px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.region-box button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* 버튼 스타일 */
+.region-box button.selected {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #0056b3;
+}
+
+/* 차트 및 안전지수가 나란히 배치된 푸터 */
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* 완료 버튼 */
+.complete-btn {
+    padding: 12px 18px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.complete-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    padding: 12px 18px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}

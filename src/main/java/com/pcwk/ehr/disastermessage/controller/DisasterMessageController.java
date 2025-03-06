@@ -2,6 +2,7 @@ package com.pcwk.ehr.disastermessage.controller;
 
 import com.pcwk.ehr.cmn.SearchVO;
 import com.pcwk.ehr.cmn.StringUtil;
+import com.pcwk.ehr.disastermessage.domain.DisasterCountVO;
 import com.pcwk.ehr.disastermessage.domain.DisasterMessageVO;
 import com.pcwk.ehr.disastermessage.service.DisasterMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +86,35 @@ public class DisasterMessageController {
 
         return viewName;
     }
+
+    @GetMapping("/safety_Index")
+    public String SafetyIndex(Model model,
+                              //searchWord를 강남 으로 설정하여 초기값을 강남으로 설정
+                              @RequestParam(value = "searchWord", defaultValue = "강남") String searchWord)throws Exception  {
+        String viewName = "disastermessage/disastermessage_index";
+
+        SearchVO search = new SearchVO();
+        search.setSearchWord(searchWord);
+
+        try {
+            //searchWord에 재난빈도수 데이터를 불러옴
+            int safetyIndex = disasterMessageService.safetyIndex(search);
+            //searchWord에 따라 양수량 데이터를 불러옴
+            int safetyIndex_EWSF = disasterMessageService.safetyIndex_EWSF(search);
+            //searchWord에 따라 재난유형별 빈도수 데이터를 불러옴
+            List <DisasterCountVO> itemCount = disasterMessageService.item_count(search);
+
+            // 모델에 데이터 추가
+            model.addAttribute("safetyIndex", safetyIndex);
+            model.addAttribute("safetyIndex_EWSF", safetyIndex_EWSF);
+            model.addAttribute("searchWord", searchWord);
+            model.addAttribute("item_count", itemCount);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return viewName;
+    }
+
 
 }
