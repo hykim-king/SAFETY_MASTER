@@ -7,4 +7,4 @@
 		<p>&copy;2025 서울 365 안전포털 웹 페이지 All rights reserved.</p>
 	</div>
 </footer>
-<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
