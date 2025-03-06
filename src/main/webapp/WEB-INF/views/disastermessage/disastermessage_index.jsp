@@ -25,15 +25,15 @@
     <!-- 안전지수 및 관련 정보 -->
     <div class="safety-info-container">
         <div class="safety-index">
-            재난 빈도수: <strong><c:out value="${safetyIndex}" default="-" /></strong>
+            재난 빈도수 * 가중치 : <strong><c:out value="${safetyIndex}" default="-" /></strong>
         </div>
 
         <div class="safety-index">
-            양수량: <strong><c:out value="${safetyIndex_EWSF}" default="-" /></strong>
+            양수량 : <strong><c:out value="${safetyIndex_EWSF}" default="-" /> ton</strong>
         </div>
 
         <div class="safety-index">
-            안전지수: <strong id="safetyIndexValue">${safetyIndex_EWSF - safetyIndex}</strong>
+            안전지수 : <strong id="safetyIndexValue">${safetyIndex_EWSF - safetyIndex}</strong>
         </div>
 
         <div id="safetyImageContainer" data-image-url="${imageUrl}">
