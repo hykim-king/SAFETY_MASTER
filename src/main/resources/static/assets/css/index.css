@@ -1,0 +1,68 @@
+/* 전체 컨테이너 스타일 */
+#container {
+	width: 1200px;
+	margin: auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.dashboard-box {
+	width: 100%;
+	padding: 20px; /* 원하는 패딩을 추가 */
+	box-sizing: border-box;
+	background-color: #f8f9fa; /* 배경색을 설정 */
+	border: 1px solid #ddd; /* 외부 테두리 추가 */
+	border-radius: 8px; /* 테두리 둥글게 */
+}
+
+.weather-dashboard {
+	/* background-color: #95caff; */
+	background-color: #fffaf7; /* 배경색을 설정 */
+	padding: 30px
+}
+
+/* 헤더 스타일 */
+.header {
+	padding-bottom: 20px;
+	border-bottom: 2px solid #ddd;
+}
+
+#dropdownMenuButton1 {
+	background-color: #fffaf7;
+}
+
+/* 현재 날씨 스타일 */
+.card {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.display-4 {
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.text-danger {
+	color: red;
+}
+
+/* 대기질 정보 스타일 */
+.badge {
+	font-size: 1rem;
+	padding: 5px 10px;
+}
+
+/* 10일 예보 스타일 */
+.forecast-title {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.forecast-card {
+	width: 180px;
+}
+
+.forecast-card .card {
+	background: rgb(255, 252, 240);
+	border-radius: 10px;
+}
