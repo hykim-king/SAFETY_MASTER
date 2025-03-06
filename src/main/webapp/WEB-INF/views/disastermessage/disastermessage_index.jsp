@@ -313,10 +313,10 @@
         imageUrl = "/assets/images/매우좋음.png";
     } else if (safetyIndexValue > 10000) {
         imageUrl = '/assets/images/좋음.png';
-    } else if (safetyIndexValue < -10000) {
-        imageUrl = '/assets/images/나쁨.png';
     } else if (safetyIndexValue < -50000) {
         imageUrl = '/assets/images/매우나쁨.png';
+    } else if (safetyIndexValue < 10000) {
+        imageUrl = '/assets/images/나쁨.png';
     }
 
     // 이미지 삽입
