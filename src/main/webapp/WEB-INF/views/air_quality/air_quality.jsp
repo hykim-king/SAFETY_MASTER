@@ -487,7 +487,7 @@
 		</div>
 		
 		<div class="container-fluid mt-5 px-0">
-		<img alt="" src="/assets/images/pm_prepare.png" width="100%" height="453px" class="">
+		<img alt="" src="/assets/images/young_min/pm_prepare.png" width="100%" height="453px" class="">
 		</div>
 
 
@@ -627,7 +627,7 @@
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
-				    		"/assets/images/ico_air_level0.png"
+				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
 			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),
@@ -724,7 +724,7 @@
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
-				    		"/assets/images/ico_air_level0.png"
+				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
 			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),
@@ -821,7 +821,7 @@
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
-				    		"/assets/images/ico_air_level0.png"
+				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
 			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),
@@ -918,7 +918,7 @@
 				    		"https://d.kbs.co.kr/static/images/now/ico_air_level4.png"
 				    	</c:when>
 				    	<c:otherwise>
-				    		"/assets/images/ico_air_level0.png"
+				    		"/assets/images/young_min/ico_air_level0.png"
 				    	</c:otherwise>
 			    	</c:choose>, 
 			        latlng: new kakao.maps.LatLng(${aq.ms_Lat}, ${aq.ms_Lon}),

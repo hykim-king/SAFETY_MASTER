@@ -348,7 +348,7 @@
 								map.setCenter(coords);
 								
 
-								var imageSrc = '/assets/images/hospital_marker.png', // 마커이미지의 주소입니다    
+								var imageSrc = '/assets/images/young_min/hospital_marker.png', // 마커이미지의 주소입니다    
 								imageSize = new kakao.maps.Size(34, 36) // 마커이미지의 크기입니다
 
 								// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
