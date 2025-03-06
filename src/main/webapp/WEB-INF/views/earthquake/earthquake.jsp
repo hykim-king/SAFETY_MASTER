@@ -70,7 +70,7 @@
                         map.panTo(moveLatLon);
                     }
                         //마커 이미지를 불러옴
-                    var imageSrc = '/assets/images/dropBlueBold.png',
+                    var imageSrc = '/assets/images/yeong-chang/dropBlueBold.png',
                         imageSize = new kakao.maps.Size(24, 29), // 마커이미지의 크기 지정
                         imageOption = {offset: new kakao.maps.Point(17, 29)}; // 마커이미지의 옵션 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정
 
@@ -187,13 +187,13 @@
                         var eqkMtValue = eqkMt;
                             console.log(eqkMtValue);
                         if (eqkMtValue >= '5.0~') {
-                            return "/assets/images/red.png"; // 5.0 이상 마커 (빨간색)
+                            return "/assets/images/yeong-chang/red.png"; // 5.0 이상 마커 (빨간색)
                         } else if (eqkMtValue >= '4.0 - 4.9') {
-                            return "/assets/images/orange.png"; // 4.0 ~ 4.9 마커 (주황색)
+                            return "/assets/images/yeong-chang/orange.png"; // 4.0 ~ 4.9 마커 (주황색)
                         } else if (eqkMtValue >= '3.0 - 3.9') {
-                            return "/assets/images/blue.png"; // 3.0 ~ 3.9 마커 (파란색)
+                            return "/assets/images/yeong-chang/blue.png"; // 3.0 ~ 3.9 마커 (파란색)
                         } else {
-                            return "/assets/images/green.png"; // 2.9 이하 마커 (초록색)
+                            return "/assets/images/yeong-chang/green.png"; // 2.9 이하 마커 (초록색)
                         }
                     }
 
@@ -242,10 +242,10 @@
                         <thead>
                         <tr>
                             <th>규모</th>
-                            <th><img src="/assets/images/green.png" style="width: 20px"></th>
-                            <th><img src="/assets/images/blue.png" style="width: 20px"></th>
-                            <th><img src="/assets/images/orange.png" style="width: 20px"></th>
-                            <th><img src="/assets/images/red.png" style="width: 20px"></th>
+                            <th><img src="/assets/images/yeong-chang/green.png" style="width: 20px"></th>
+                            <th><img src="/assets/images/yeong-chang/blue.png" style="width: 20px"></th>
+                            <th><img src="/assets/images/yeong-chang/orange.png" style="width: 20px"></th>
+                            <th><img src="/assets/images/yeong-chang/red.png" style="width: 20px"></th>
                         </tr>
                         </thead>
                         <tbody>
