@@ -10,7 +10,7 @@ public class AcmdfcltyVO extends DTO {
     private String hdongCd;        
     private String acmdBuldMngNo;  
     private String dtlAdres;       
-    private String vtAcmdPsbilNmpr; // ✅ 수정: "vtAcmdPsblNmpr" → "vtAcmdPsbilNmpr"
+    private String vtAcmdPsbilNmpr; 
     private String fcltyAr;        
     private String bdongCd;        
     private String rnDtlAdres;     
@@ -65,10 +65,10 @@ public class AcmdfcltyVO extends DTO {
     public void setDtlAdres(String dtlAdres) {
         this.dtlAdres = dtlAdres;
     }
-    public String getVtAcmdPsbilNmpr() { // ✅ getter 수정
+    public String getVtAcmdPsbilNmpr() { 
         return vtAcmdPsbilNmpr;
     }
-    public void setVtAcmdPsbilNmpr(String vtAcmdPsbilNmpr) { // ✅ setter 수정
+    public void setVtAcmdPsbilNmpr(String vtAcmdPsbilNmpr) {
         this.vtAcmdPsbilNmpr = vtAcmdPsbilNmpr;
     }
     public String getFcltyAr() {
