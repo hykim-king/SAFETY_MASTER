@@ -40,10 +40,10 @@
                     AND SGG LIKE '%' || #{searchWord} || '%'
                 </when>
                 <when test="searchDiv == '20'">
-                    AND FCLT_NM LIKE '%' || #{searchWord} || '%'
+                    AND SGG LIKE '%' || #{searchWord} || '%'
                 </when>
                 <when test="searchDiv == '30'">
-                    AND ADDRESS LIKE '%' || #{searchWord} || '%'
+                    AND FCLT_NM LIKE '%' || #{searchWord} || '%'
                 </when>
             </choose>
         </if>
@@ -65,7 +65,7 @@
             FROM HANPA_EMERGENCY
             WHERE 1 = 1
             <include refid="doRetrieveWhere" />
-            ORDER BY SEQ_NO DESC
+            ORDER BY SEQ_NO ASC
             OFFSET (#{pageNo} - 1) * #{pageSize} ROWS FETCH NEXT #{pageSize} ROWS ONLY
         ) A
         CROSS JOIN (

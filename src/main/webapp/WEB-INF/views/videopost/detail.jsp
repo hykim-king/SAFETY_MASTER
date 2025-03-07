@@ -6,8 +6,17 @@
 <html>
 <head>
     <title>${video.videoTitle}</title>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" >
+<link href="/assets/css/header.css" rel="stylesheet" >
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="/assets/js/jquery_3_7_1.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/videodetail.css">
 </head>
+		<!-- header-->
+        <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
 <body>
 
 <div class="video-detail-container">
@@ -41,6 +50,8 @@
         <a href="<c:url value='/videopost/list' />">목록으로 돌아가기</a>
     </div>
 </div>
-
+		<!-- footer-->
+        <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
 </body>
 </html>

@@ -46,23 +46,25 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
             <div class="stateWrap">
                 <strong>대피소목록</strong>
                 <ul>
-                    <a><strong>한파 대피소</strong></a>
+                <li><a><strong> 한파 대피소</strong></a></li>
                 </ul>
             </div>
         </div>
 
         <div class="intro-section">
-            <p>시군구로 대피시설 정보를 조회하실 수 있습니다.</p>
+            <p>시군구, 시설명으로 대피시설 정보를 조회하실 수 있습니다.</p>
             <p>민방위사태 발생 시 주민의 생명과 재산을 보호하기 위하여 정부 지원으로 설치 또는 공공용으로 지정된 대피시설입니다.</p>
         </div>
 
-        <div class="listWrap">
+    </div>
+            <div class="listWrap">
             <form action="#" class="search-form" name="userForm" id="userForm" method="get">
                 <input type="hidden" name="pageNo" id="pageNo">
                 <div class="search-group">
                     <select name="searchDiv" id="searchDiv">
                         <option value="10" <c:if test="${10 == search.searchDiv}">selected</c:if>>검색 항목을 선택하세요</option>
                         <option value="20" <c:if test="${20 == search.searchDiv}">selected</c:if>>시군구 검색</option>
+                        <option value="30" <c:if test="${30 == search.searchDiv}">selected</c:if>>시설명 검색</option>
                     </select>
                     <input type="search" name="searchWord" id="searchWord" value="${search.searchWord}" placeholder="검색어를 입력하세요">
                     <select name="pageSize" id="pageSize">
@@ -116,7 +118,6 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
         <%
         out.print(pageHtml);
         %>
-    </div>
     <!-- footer-->
     <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
     <!--// footer-------------------------------------------------->

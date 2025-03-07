@@ -1,4 +1,3 @@
-
 /* 기본 스타일 */
 body {
     font-family: 'Noto Sans KR', sans-serif;
@@ -7,6 +6,16 @@ body {
     background-color: #f8f9fb; /* 연한 회색빛 배경 적용 */
     color: #333;
 }
+
+/* 소개 문구 - 왼쪽 정렬 적용 */
+.intro-section {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #444;
+    padding-left: 20px;
+}
+
 
 /* 컨테이너 */
 #container {
@@ -17,15 +26,6 @@ body {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* 소개 문구 - 왼쪽 정렬 적용 */
-.intro-section {
-    text-align: left;
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #444;
-    padding-left: 20px;
 }
 
 /* 제목 영역 */
