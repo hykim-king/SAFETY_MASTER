@@ -72,8 +72,6 @@
 							<li><a class="dropdown-item" href="#">Feature 2</a></li>
 							<li><a class="dropdown-item" href="#">Feature 3</a></li>
 						</ul></li>
-
-
 					<!-- 응급의료기관 -->
 					<li class="nav-item dropdown"><a
 						class="nav-link text-dark fw-bolder" href="#"
@@ -109,7 +107,6 @@
 
 			/* 마우스 오버시 이벤트 */
 			dropdown.addEventListener("mouseover", function() {
-
 				let menu = this.querySelector(".dropdown-menu");
 
 				menu.classList.add("show");
