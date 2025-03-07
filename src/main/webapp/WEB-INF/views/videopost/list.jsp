@@ -13,9 +13,11 @@
 <script src="/assets/js/jquery_3_7_1.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/videolist.css">
 </head>
-		<!-- header-->
-        <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-		<!--// header-------------------------------------------------->
+<!-- header-->
+<div class="container">
+	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+	<!--// header-------------------------------------------------->
+</div>
 <body>
 
 <div class="search-bar">
@@ -68,9 +70,10 @@
         <a href="<c:url value='/videopost/list?page=${page + 1}&searchType=${searchType}&searchKeyword=${searchKeyword}' />">다음 &raquo;</a>
     </c:if>
 </div>
-		<!-- footer-->
-        <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-		<!--// footer-------------------------------------------------->
+	<div class="container">
+	<!-- footer-->
+	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+	<!--// footer-------------------------------------------------->
 <script src="/assets/js/bootstrap.min.js"></script>
 </body>
 </html>

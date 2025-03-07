@@ -49,8 +49,10 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 </head>
 
 <!-- header-->
-<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-<!--// header-------------------------------------------------->
+<div class="container">
+	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+	<!--// header-------------------------------------------------->
+</div>
 
 <body>
 	<div id="container" class="message">
@@ -129,9 +131,11 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 	<br>
 	</div>
 
+	<div class="container">
 	<!-- footer-->
 	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 	<!--// footer-------------------------------------------------->
+	
 	<script src="/assets/js/acmdfclty/acmdfclty_page.js"></script>
 </body>
 </html>

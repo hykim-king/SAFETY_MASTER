@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html lang="ko">
-<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +59,11 @@
         }
     </script>
 </head>
-
+<!-- header-->
+<div class="container">
+	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+	<!--// header-------------------------------------------------->
+	
 <body class="checklist-body">
     <div class="checklist-container mt-5 p-4 border rounded">
         <h1 class="checklist-title">재난 대피 물품 안내</h1>
@@ -169,5 +173,8 @@
         </div>
     </div>
 </body>
-<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+	<div class="container">
+	<!-- footer-->
+	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+	<!--// footer-------------------------------------------------->
 </html>

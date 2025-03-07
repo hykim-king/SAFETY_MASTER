@@ -14,9 +14,11 @@
 <script src="/assets/js/jquery_3_7_1.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/videodetail.css">
 </head>
-		<!-- header-->
-        <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-		<!--// header-------------------------------------------------->
+<!-- header-->
+<div class="container">
+	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+	<!--// header-------------------------------------------------->
+</div>
 <body>
 
 <div class="video-detail-container">
@@ -50,8 +52,9 @@
         <a href="<c:url value='/videopost/list' />">목록으로 돌아가기</a>
     </div>
 </div>
-		<!-- footer-->
-        <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-		<!--// footer-------------------------------------------------->
+	<div class="container">
+	<!-- footer-->
+	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+	<!--// footer-------------------------------------------------->
 </body>
 </html>

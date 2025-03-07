@@ -37,8 +37,10 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 </head>
 
 <!-- header-->
-<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-<!--// header-------------------------------------------------->
+<div class="container">
+	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+	<!--// header-------------------------------------------------->
+</div>
 
 <body>
     <div id="container" class="message">
@@ -118,9 +120,11 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
         <%
         out.print(pageHtml);
         %>
-    <!-- footer-->
-    <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-    <!--// footer-------------------------------------------------->
+	<div class="container">
+	<!-- footer-->
+	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+	<!--// footer-------------------------------------------------->
+	</div>
     
     <script src="/assets/js/hanpa/hanpa.js"></script>
 </body>
