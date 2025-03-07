@@ -21,6 +21,5 @@
 			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_InstVO" />
 		<typeAlias alias="Er_Medi_Inst_Er_BedVO"
 			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_Inst_Er_BedVO" />
-
 	</typeAliases>
 </configuration>
