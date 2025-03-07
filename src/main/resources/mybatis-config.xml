@@ -3,7 +3,23 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <settings>
-        <setting name="mapUnderscoreToCamelCase" value="true"/>
-    </settings>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	<typeAliases>
+		<typeAlias alias="Weather_CurrentVO"
+			type="com.pcwk.ehr.weather_current.domain.Weather_CurrentVO" />
+		<typeAlias alias="Air_QualityVO"
+			type="com.pcwk.ehr.air_quality.domain.Air_QualityVO" />
+		<typeAlias alias="Pm_WarningVO"
+			type="com.pcwk.ehr.air_quality.domain.Pm_WarningVO" />
+		<typeAlias alias="Weather_ForecastVO"
+			type="com.pcwk.ehr.weather_forecast.domain.Weather_ForecastVO" />
+		<typeAlias alias="Er_BedVO"
+			type="com.pcwk.ehr.er_medi_inst.domain.Er_BedVO" />
+		<typeAlias alias="Er_Medi_InstVO"
+			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_InstVO" />
+		<typeAlias alias="Er_Medi_Inst_Er_BedVO"
+			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_Inst_Er_BedVO" />
+	</typeAliases>
 </configuration>
