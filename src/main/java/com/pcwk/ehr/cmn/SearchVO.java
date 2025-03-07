@@ -39,6 +39,4 @@ public class SearchVO extends DTO {
                 + ", getPageNo()=" + getPageNo() + "]";
     }
 
-
-
 }
