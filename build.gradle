@@ -50,7 +50,7 @@ dependencies {
 	providedRuntime 'javax.servlet:javax.servlet-api:4.0.1'
 	providedCompile 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
 
-	
+
 	// 내장 Tomcat
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	
@@ -61,7 +61,7 @@ dependencies {
 	
 	runtimeOnly 'com.h2database:h2'
 
-	implementation 'com.google.guava:guava:31.1-jre'  
+	implementation 'com.google.guava:guava:31.1-jre'  // 최신 버전으로 변경 가능
 
 	//---------------------------------------------------------------------
 	
