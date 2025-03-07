@@ -80,9 +80,10 @@
         <div class="tab-content mt-3" id="myTabContent">
 <!-- 손에 들고 가야할 것 -->
 <div class="tab-pane fade show active" id="carry" role="tabpanel">
+<br>
     <h4>손에 들고 가야할 것</h4>
     <p>모든 가족 구성원들은 반드시 비상용 백(Go Bag)을 준비해 두어야 합니다. 비상용 백에는 대피시에 필요한 물품들을 넣어두십시오.<br> 각 가족 구성원의 비상용 백을 배낭이나 바퀴달린 여행용 가방처럼 튼튼하고 휴대가 편리한 가방에 넣어두십시오. <br>비상용 백은 집에서 나갈 때 쉽게 가져갈 수 있어야 합니다. 연중 언제나 반드시 준비해 두십시오.</p>
-
+<br>
     <!-- 조건 선택 버튼 -->
     <div class="mb-3">
         <button class="btn checklist-btn-outline-primary me-2" onclick="toggleExtraItems('pet', 'carry', this)">반려동물</button>
@@ -125,6 +126,7 @@
 
 <!-- 집에 비치할 것 -->
 <div class="tab-pane fade" id="store" role="tabpanel">
+<br>
     <h4>집에 비치할 것</h4>
     <a>최소 3일동안 자립적으로 생존하기에 충분한 생필품을 가정해 비치해 두십시오. <br>가급적 이 품목들을 찾기 쉬운 별도의 용기나 특별한 찬장에 보관하십시오.<br></a>
      <a><b>이 생필품은 비상용이라는 점을 가족들에게 알려주어야 합니다.</b></a><br><br>
@@ -132,8 +134,8 @@
         <li>비상 식량 및 물</li>
         <a>· 식량은 가구별로 15일 ~ 30일 분 정도를 준비해야한다.<br>
 · 가공식품.<br>
-- 라면, 통조림 등 적정 소요량.<br>
-- 정부는 양곡을 충분히 비축하고 있으며, 필요시에는 식량 배급제를 실시하므로 지나친 사재기를 하지 맙시다.<br><br></a>
+· 라면, 통조림 등 적정 소요량.<br>
+· 정부는 양곡을 충분히 비축하고 있으며, 필요시에는 식량 배급제를 실시하므로 지나친 사재기를 하지 맙시다.<br><br></a>
         <li>의약품</li>
         <li>라디오 및 비상 배터리</li>
         <li>비상용 랜턴</li>
@@ -148,6 +150,7 @@
 
             <!-- 체크리스트 -->
             <div class="tab-pane fade" id="checklist" role="tabpanel">
+            <br>
                 <h4>체크리스트</h4>
                 <div id="checklist-content" class="p-3 border rounded">
                     <ul class="checklist-list">
