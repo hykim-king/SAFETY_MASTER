@@ -9,12 +9,12 @@ import com.pcwk.ehr.mapper.TimeMapper;
 
 @Service
 public class TimeServiceImpl implements TimeService {
-	
+
 	final Logger log = LoggerFactory.getLogger(getClass());
 
 	@Autowired
 	TimeMapper timeMapper;
-	
+
 	public TimeServiceImpl() {
 		super();
 		log.info("┌─────────────────────┐");

@@ -33,7 +33,7 @@ class TimeMapperJUnit {
 		log.info("│   tearDown()   │");
 		log.info("└────────────────┘");
 	}
-	
+
 	@Test
 	void getDateTime() {
 		log.info("┌───────────────────┐");
