@@ -1,0 +1,10 @@
+.nav-link {
+    position: relative;
+    padding-bottom: 5px; /* 글자와 밑줄 간격 */
+    border-bottom: 4px solid transparent; /* 기본적으로 투명 */
+    transition: border-bottom 0.1s ease-in-out;
+}
+
+.nav-item.dropdown:hover .nav-link {
+    border-bottom: 2px solid #000000; /* 마우스 오버 시 파란색 밑줄 */
+}
