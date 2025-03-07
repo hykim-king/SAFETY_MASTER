@@ -54,8 +54,8 @@ public class TimeController {
 		log.info("└────────────────────┘");
 		
 		
-		return "template/main";
-		
+		return "index";
+
 		
 	}
 	
