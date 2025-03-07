@@ -44,14 +44,23 @@
 
 %>
 
-<%@ include file="../../template/header.jsp" %>
+
 <html>
 <head>
     <title>재난문자</title>
+  <link href="/assets/css/header.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/css/dismes.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
+
+	<div class="container">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
+
 <div id="container" class="message">
 
   <div>
@@ -126,7 +135,15 @@
     <% out.print(pageHtml); %>
 
   </div>
+
+
+    <div class="container">
+      <!-- footer-->
+      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+      <!--// footer-------------------------------------------------->
+    </div>
+
+
   <script src="/assets/js/dismes/dismes_page.js"></script> <!-- 여기에 스크립트 파일 경로 -->
 </body>
-<%@ include file="../../template/footer.jsp" %>
 </html>

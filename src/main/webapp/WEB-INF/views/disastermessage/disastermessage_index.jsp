@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="../../template/header.jsp" %>
+
 <html>
 
 <head>
@@ -16,7 +16,11 @@
 </head>
 
 <body>
-
+<div class="container">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
 <!-- "지역 선택" 버튼 -->
 <button id="regionSelectBtn" class="region-select-btn">
     <c:out value="${searchWord}" default="지역 선택" />
@@ -333,6 +337,12 @@
 
 </script>
 
+<div class="container">
+    <!-- footer-->
+    <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+    <!--// footer-------------------------------------------------->
+</div>
+
 </body>
-<%@ include file="../../template/footer.jsp" %>
+
 </html>

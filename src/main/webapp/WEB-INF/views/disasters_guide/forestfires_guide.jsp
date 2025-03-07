@@ -5,7 +5,6 @@
   Time: PM 4:52
   To change this template use File | Settings | File Templates.
 --%>
-<%@ include file="../../template/header.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,6 +13,11 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container">
+    <!-- header-->
+    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+    <!--// header-------------------------------------------------->
+</div>
 <div id="container" class="message">
     <div id="state_sub">
         <div id="sidebar">
@@ -61,6 +65,11 @@
         </div>
     </div>
 </div>
+
+ <div class="container">
+      <!-- footer-->
+      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+      <!--// footer-------------------------------------------------->
+    </div>
 </body>
 </html>
-<%@ include file="../../template/footer.jsp" %>

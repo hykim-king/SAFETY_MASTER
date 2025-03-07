@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@ include file="../../template/header.jsp" %>
 
 <html>
 <head>
@@ -22,6 +21,11 @@
     </style>
 </head>
 <body>
+<div class="container">
+    <!-- header-->
+    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+    <!--// header-------------------------------------------------->
+</div>
 <div id="container" class="message">
     <div id="state_sub">
         <div id="sidebar">
@@ -106,6 +110,10 @@
         </div>
     </div>
 </div>
+ <div class="container">
+      <!-- footer-->
+      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+      <!--// footer-------------------------------------------------->
+    </div>
 </body>
-<%@ include file="../../template/footer.jsp" %>
 </html>

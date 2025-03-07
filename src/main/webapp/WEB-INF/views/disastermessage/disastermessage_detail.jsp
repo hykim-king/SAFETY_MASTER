@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../template/header.jsp" %>
+
 <html>
 <head>
     <title>재난문자 상세</title>
@@ -8,6 +8,11 @@
 </head>
 
 <body>
+<div class="container">
+    <!-- header-->
+    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+    <!--// header-------------------------------------------------->
+</div>
 <h2>재난문자 상세</h2>
 
 <div class="container">
@@ -28,6 +33,10 @@
 
 </div>
 
+  <div class="container">
+      <!-- footer-->
+      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+      <!--// footer-------------------------------------------------->
+    </div>
 </body>
 </html>
-<%@ include file="../../template/footer.jsp" %>

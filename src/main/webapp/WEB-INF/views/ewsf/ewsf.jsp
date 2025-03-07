@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="../../template/header.jsp" %>
 <html>
 <head>
     <title>급수시설</title>
@@ -12,7 +11,11 @@
     </style>
 </head>
 <body>
-
+<div class="container">
+    <!-- header-->
+    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+    <!--// header-------------------------------------------------->
+</div>
 <h3>자치구별 양수량</h3>
 <div class="topArea">
     <ul>
@@ -141,6 +144,10 @@
 </script>
 
 
+ <div class="container">
+      <!-- footer-->
+      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+      <!--// footer-------------------------------------------------->
+    </div>
 </body>
 </html>
-<%@ include file="../../template/footer.jsp" %>

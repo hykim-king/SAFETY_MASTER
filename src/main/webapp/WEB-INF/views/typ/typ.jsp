@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ include file="../../template/header.jsp" %>
 <html>
 <head>
   <title>태풍</title>
@@ -9,7 +8,11 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 <body>
-
+<div class="container">
+  <!-- header-->
+  <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+  <!--// header-------------------------------------------------->
+</div>
 <div class="earthquakeList">
   <div class="leftArea" style="margin-top: 45px">
     <div class="selectArea">
@@ -224,7 +227,10 @@
 
 
 
-
+ <div class="container">
+      <!-- footer-->
+      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+      <!--// footer-------------------------------------------------->
+    </div>
 </body>
 </html>
-<%@ include file="../../template/footer.jsp" %>
