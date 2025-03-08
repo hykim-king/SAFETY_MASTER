@@ -6,13 +6,14 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.pcwk.ehr.board.domain.BoardVO;
+import com.pcwk.ehr.cmn.BoardDTO;
 import com.pcwk.ehr.cmn.DTO;
 import com.pcwk.ehr.reply.domain.ReplyVO;
 
 @Mapper
 public interface BoardMapper {
 	
-	List<BoardVO> doRetrieve(DTO dto);
+	List<BoardVO> doRetrieve(BoardDTO dto);
 	
 	int doSave(BoardVO boardVO) throws SQLException;
 	

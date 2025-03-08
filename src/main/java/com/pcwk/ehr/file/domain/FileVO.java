@@ -1,8 +1,8 @@
 package com.pcwk.ehr.file.domain;
 
-import com.pcwk.ehr.cmn.DTO;
+import com.pcwk.ehr.cmn.BoardDTO;
 
-public class FileVO extends DTO {
+public class FileVO extends BoardDTO {
 	
 	private String orgFileName; //원본 파일명
 	private String saveFileName;//저장 파일명(동적으로 생성)

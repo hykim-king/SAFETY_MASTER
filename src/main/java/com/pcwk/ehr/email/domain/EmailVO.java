@@ -1,14 +1,14 @@
 package com.pcwk.ehr.email.domain;
 
-import com.pcwk.ehr.cmn.DTO;
+import com.pcwk.ehr.cmn.BoardDTO;
 
-public class EmailVO extends DTO {
+public class EmailVO extends BoardDTO {
 
-    private String email; // 이메일
-    private String auth_code; // 인증번호
-    private int reg_stat; // 회원가입여부
-	
-    public EmailVO() {
+	private String email; // 이메일
+	private String auth_code; // 인증번호
+	private int reg_stat; // 회원가입여부
+
+	public EmailVO() {
 		super();
 	}
 
@@ -49,6 +49,5 @@ public class EmailVO extends DTO {
 				+ getEmail() + ", getAuth_code()=" + getAuth_code() + ", getReg_stat()=" + getReg_stat()
 				+ ", toString()=" + super.toString() + "]";
 	}
-    
-    
+
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.pcwk.ehr.cmn.DataNotFoundException;
 import com.pcwk.ehr.cmn.MessageVO;
+import com.pcwk.ehr.cmn.SearchBoardVO;
 import com.pcwk.ehr.cmn.SearchVO;
 import com.pcwk.ehr.user.domain.UserVO;
 import com.pcwk.ehr.user.service.UserService;
@@ -67,7 +68,7 @@ public class UserController {
 	@GetMapping("/doRetrieve.do")
 	public String doRetrieve(HttpServletRequest req, Model model) throws Exception {
 	    String viewName = "user/user_list";
-	    SearchVO search = new SearchVO();
+	    SearchBoardVO search = new SearchBoardVO();
 	    log.debug("┌───────────────────────────────────────┐");
 	    log.debug("│ **doRetrieve()**                      │");
 	    log.debug("└───────────────────────────────────────┘");

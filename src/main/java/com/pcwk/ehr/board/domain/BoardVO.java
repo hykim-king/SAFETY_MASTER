@@ -1,8 +1,8 @@
 package com.pcwk.ehr.board.domain;
 
-import com.pcwk.ehr.cmn.DTO;
+import com.pcwk.ehr.cmn.BoardDTO;
 
-public class BoardVO extends DTO {
+public class BoardVO extends BoardDTO {
 	private int boardId;
 	private String title;
 	private String content;

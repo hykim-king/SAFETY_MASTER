@@ -1,15 +1,11 @@
 package com.pcwk.ehr.reply.controller;
 
 import java.sql.SQLException;
-import java.util.List;
-
-
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,16 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
-import com.pcwk.ehr.board.domain.BoardVO;
 import com.pcwk.ehr.board.service.BoardService;
 import com.pcwk.ehr.cmn.MessageVO;
-import com.pcwk.ehr.cmn.SearchVO;
-import com.pcwk.ehr.cmn.StringUtil;
 import com.pcwk.ehr.reply.domain.ReplyVO;
 import com.pcwk.ehr.reply.service.ReplyService;
 import com.pcwk.ehr.user.domain.UserVO;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @RequestMapping("reply")

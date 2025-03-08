@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pcwk.ehr.cmn.BoardDTO;
 import com.pcwk.ehr.cmn.DTO;
 import com.pcwk.ehr.user.domain.UserVO;
 import com.pcwk.ehr.user.mapper.UserMapper;
@@ -14,11 +15,9 @@ import com.pcwk.ehr.user.mapper.UserMapper;
 @Service
 public class UserServiceImple implements UserService {
 	final Logger log = LoggerFactory.getLogger(getClass());
-	
+
 	@Autowired
 	UserMapper mapper;
-	
-	
 
 	public UserServiceImple() {
 		super();
@@ -44,7 +43,7 @@ public class UserServiceImple implements UserService {
 	}
 
 	@Override
-	public List<UserVO> doRetrieve(DTO dto) {
+	public List<UserVO> doRetrieve(BoardDTO dto) {
 		log.info("┌───────────────────────────────────────┐");
 		log.info("│ **doRetrieve()**                      │");
 		log.info("└───────────────────────────────────────┘");
@@ -84,41 +83,47 @@ public class UserServiceImple implements UserService {
 	}
 
 	@Override
-    public int checkUserId(String userId) {
+	public int checkUserId(String userId) {
 		log.info("┌───────────────────────────────────────┐");
 		log.info("│ **checkUserId()**                     │");
 		log.info("└───────────────────────────────────────┘");
-        return mapper.checkUserId(userId);
-    }
-	
+		return mapper.checkUserId(userId);
+	}
+
 	@Override
-    public UserVO findUserByEmail(String email) throws Exception {
+	public UserVO findUserByEmail(String email) throws Exception {
 		log.info("┌───────────────────────────────────────┐");
 		log.info("│ **findUserByEmail()**                     │");
 		log.info("└───────────────────────────────────────┘");
-        return mapper.doSelectOneByEmail(email);
-    }
-	
+		return mapper.doSelectOneByEmail(email);
+	}
+
 	@Override
-    public int setAdmin(String userId) throws Exception {
-        log.info("┌───────────────────────────────────────┐");
-        log.info("│ **setAdmin()**                        │");
-        log.info("└───────────────────────────────────────┘");
-        // 기존 관리자를 해제
-        int removeCount = mapper.removeCurrentAdmin();
-        log.info("removeCount: {}", removeCount);
-        // 새 관리자 지정
-        int setCount = mapper.setAdmin(userId);
-        log.info("setCount: {}", setCount);
-        return setCount;
-    }
+	public int setAdmin(String userId) throws Exception {
+		log.info("┌───────────────────────────────────────┐");
+		log.info("│ **setAdmin()**                        │");
+		log.info("└───────────────────────────────────────┘");
+		// 기존 관리자를 해제
+		int removeCount = mapper.removeCurrentAdmin();
+		log.info("removeCount: {}", removeCount);
+		// 새 관리자 지정
+		int setCount = mapper.setAdmin(userId);
+		log.info("setCount: {}", setCount);
+		return setCount;
+	}
 
 	@Override
 	public int checkNickname(String nickname) {
 		log.info("┌───────────────────────────────────────┐");
 		log.info("│ **checkNickname()**                     │");
 		log.info("└───────────────────────────────────────┘");
-        return mapper.checkNickname(nickname);
+		return mapper.checkNickname(nickname);
+	}
+
+	@Override
+	public List<UserVO> doRetrieve(DTO dto) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

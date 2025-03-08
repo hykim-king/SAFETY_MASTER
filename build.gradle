@@ -78,7 +78,6 @@ tasks.named('test') {
 }
 
 tasks.withType(JavaCompile) {
-<<<<<<< HEAD
 	options.encoding = 'UTF-8'
 }
 
@@ -93,18 +92,3 @@ sourceSets {
 	
 }
 
-=======
-    options.encoding = 'UTF-8'
-}
-
-//Compile: srcDirs 디렉토리 포함
-sourceSets {
-    main {
-        resources {
-            srcDirs = ['src/main/resources', 'src/main/webapp']
-        }
-    }
-}
-
-
->>>>>>> d467ff4 (initial commit)

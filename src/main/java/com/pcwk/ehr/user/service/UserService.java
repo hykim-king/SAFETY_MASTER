@@ -1,7 +1,5 @@
 package com.pcwk.ehr.user.service;
 
-import java.util.List;
-
 import com.pcwk.ehr.cmn.WorkDiv;
 import com.pcwk.ehr.user.domain.UserVO;
 

@@ -26,6 +26,14 @@ public interface WorkDiv<T> {
 	 * @return List<BoardVO>
 	 */
 	List<T> doRetrieve(DTO dto);
+	
+	/**
+	 * 목록조회
+	 * 
+	 * @param dto
+	 * @return List<BoardVO>
+	 */
+	List<T> doRetrieve(BoardDTO dto);
 
 	/**
 	 * 단건 저장
