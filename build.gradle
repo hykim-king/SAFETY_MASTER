@@ -63,6 +63,11 @@ dependencies {
 
 	implementation 'com.google.guava:guava:31.1-jre'  // 최신 버전으로 변경 가능
 
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	//Gson
+  implementation group: 'com.google.code.gson', name: 'gson', version: '2.12.1'
+
 	//---------------------------------------------------------------------
 	
 	
@@ -73,6 +78,7 @@ tasks.named('test') {
 }
 
 tasks.withType(JavaCompile) {
+<<<<<<< HEAD
 	options.encoding = 'UTF-8'
 }
 
@@ -87,3 +93,18 @@ sourceSets {
 	
 }
 
+=======
+    options.encoding = 'UTF-8'
+}
+
+//Compile: srcDirs 디렉토리 포함
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources', 'src/main/webapp']
+        }
+    }
+}
+
+
+>>>>>>> d467ff4 (initial commit)
