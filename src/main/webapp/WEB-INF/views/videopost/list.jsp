@@ -13,13 +13,17 @@
 <script src="/assets/js/jquery_3_7_1.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/videolist.css">
 </head>
-<!-- header-->
-<div class="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-	<!--// header-------------------------------------------------->
-</div>
+
+
+
 <body>
 
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+	
 <div class="search-bar">
     <form action="<c:url value='/videopost/list' />" method="get">
         <select name="searchType">

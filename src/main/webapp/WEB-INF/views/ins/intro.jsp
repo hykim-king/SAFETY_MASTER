@@ -18,10 +18,14 @@
 
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
-        <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-		<!--// header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
+	<div id="container" class="container">
+
 
 		<!-- main-->
 		<main class="container my-4 mx-1">

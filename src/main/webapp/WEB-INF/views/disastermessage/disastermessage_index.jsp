@@ -16,11 +16,13 @@
 </head>
 
 <body>
-<div class="container">
+
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->
 	</div>
+
 <!-- "지역 선택" 버튼 -->
 <button id="regionSelectBtn" class="region-select-btn">
     <c:out value="${searchWord}" default="지역 선택" />

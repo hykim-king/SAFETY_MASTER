@@ -6,16 +6,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/ewsf.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link href="/assets/css/header.css" rel="stylesheet">
     <style>
 
     </style>
 </head>
+
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 <h3>자치구별 양수량</h3>
 <div class="topArea">
     <ul>

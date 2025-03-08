@@ -62,9 +62,18 @@
         margin: 0 15px; 
     }
 </style>
+
+
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 	<div id="container" class="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+	
 		<div>
 			<h1 class="title">주요 재난 통계</h1>
 		</div>

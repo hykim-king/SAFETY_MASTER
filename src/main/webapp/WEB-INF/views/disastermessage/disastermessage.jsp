@@ -52,9 +52,11 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/dismes.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
+
+
 <body>
 
-	<div class="container">
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->

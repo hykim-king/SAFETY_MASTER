@@ -114,9 +114,10 @@
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
+		
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->

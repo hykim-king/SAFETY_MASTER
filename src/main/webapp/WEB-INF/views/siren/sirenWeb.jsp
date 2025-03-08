@@ -72,9 +72,15 @@
             
     </style>
 </head>
+
 <body>
-<div id="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 	<div id=siren-container>
     <h1>신호방법</h1>
 

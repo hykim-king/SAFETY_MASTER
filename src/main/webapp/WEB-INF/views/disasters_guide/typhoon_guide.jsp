@@ -4,18 +4,25 @@
     <title>자연재난 행동요령</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/disasters_guide.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
+    
     <style>
         #sidebar{
             height: 468.3%!important;
         }
     </style>
 </head>
+
+
+
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 <div >
     <!-- 여기에 본문 내용이 들어갑니다 -->
         <div id="sidebar">

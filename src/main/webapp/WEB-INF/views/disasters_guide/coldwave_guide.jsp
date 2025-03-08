@@ -11,12 +11,15 @@
         height: 374.6%;!important;
     }
 </style>
+	
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 <div >
     <!-- 여기에 본문 내용이 들어갑니다 -->
         <div id="sidebar">

@@ -12,12 +12,15 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/disasters_guide.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
+
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+	
 <div id="container" class="message">
     <div id="state_sub">
         <div id="sidebar">

@@ -48,13 +48,15 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 </script>
 </head>
 
-<!-- header-->
-<div class="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-	<!--// header-------------------------------------------------->
-</div>
 
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 	<div id="container" class="message">
 		<div id="state_sub">
 			<div class="stateWrap">

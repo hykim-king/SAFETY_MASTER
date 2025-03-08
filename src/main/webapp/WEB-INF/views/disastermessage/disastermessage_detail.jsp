@@ -7,12 +7,16 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 </head>
 
+	
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
+
 <h2>재난문자 상세</h2>
 
 <div class="container">

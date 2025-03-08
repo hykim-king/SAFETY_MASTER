@@ -155,10 +155,17 @@
     }
   </style>
 </head>
+
+
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
   <div id="container" class="container">
-    <!-- header (변경 없음) -->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
     <!-- 메인 영역 -->
     <main class="container my-4">

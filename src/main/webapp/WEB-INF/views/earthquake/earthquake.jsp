@@ -5,6 +5,7 @@
     <title>과거지진</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/eqk.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link href="/assets/css/header.css" rel="stylesheet">
     <style>
         #earthquakeChart {
             width: 100%;
@@ -16,12 +17,17 @@
 
 
 </head>
+
+
+
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 <div class="earthquakeList">
     <div class="leftArea">
         <div class="titArea">

@@ -41,15 +41,13 @@
                                 <li class="custom-nav-item custom-dropdown">
                                     <a class="custom-nav-link custom-dropdown-toggle">재난현황</a>
                                     <ul class="custom-dropdown-menu">
-                                        <li><a class="custom-dropdown-item" href="${CP}/rainfall/view">홍수</a></li>
+                                        <li><a class="custom-dropdown-item" href="${CP}/rainfall/view">호우</a></li>
                                         <li><a class="custom-dropdown-item" href="${CP}/waterlevel/view">홍수</a></li>
                                         <li><a class="custom-dropdown-item" href="${CP}/earthquake/view">지진</a></li>
                                         <li><a class="custom-dropdown-item" href="${CP}/typ/view">태풍</a></li>
-                                        <li><a class="custom-dropdown-item" href="${CP}/disastermessage/view">재난문자</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="${CP}/accident-stats">주요재난통계</a></li>
-                                        <li><a class="custom-dropdown-item"
-                                                href="${CP}/disastermessage/safety_Index">재난안전지수</a></li>
+                                        <li><a class="custom-dropdown-item" href="${CP}/disastermessage/view">재난문자</a></li>
+                                        <li><a class="custom-dropdown-item" href="${CP}/accident-stats">주요재난통계</a></li>
+                                        <li><a class="custom-dropdown-item" href="${CP}/disastermessage/safety_Index">재난안전지수</a></li>
                                     </ul>
                                 </li>
 

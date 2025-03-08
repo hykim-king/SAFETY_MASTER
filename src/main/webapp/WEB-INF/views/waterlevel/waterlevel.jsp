@@ -234,8 +234,13 @@
 </head>
 
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
 <div id="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 	<div id="wl-container">
 		<div id="map">
 			<div id="legend">
