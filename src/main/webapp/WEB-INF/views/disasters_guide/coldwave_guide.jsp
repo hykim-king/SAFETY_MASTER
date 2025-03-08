@@ -5,7 +5,6 @@
     <title>자연재난 행동요령</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/disasters_guide.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-    <link href="/assets/css/header.css" rel="stylesheet" >
 </head>
 <style>
     #sidebar{
@@ -16,7 +15,6 @@
 <div class="container">
     <!-- header-->
     <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    
     <!--// header-------------------------------------------------->
 </div>
 <div >

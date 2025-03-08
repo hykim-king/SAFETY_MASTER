@@ -5,7 +5,6 @@
     <title>재난문자 상세</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/dismes_detail.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-    <link href="/assets/css/header.css" rel="stylesheet">
 </head>
 
 <body>

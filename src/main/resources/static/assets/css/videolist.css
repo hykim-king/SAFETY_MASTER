@@ -12,7 +12,6 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 20px;
-    margin-top: 50px;
 }
 
 .search-bar form {
@@ -69,7 +68,6 @@ hr {
     width: 100%;  /* 부모 grid의 크기를 맞춤 */
     text-align: center;
     transition: transform 0.2s ease-in-out;
-     margin-top: 20px;
 }
 .video-item:hover {
     transform: scale(1.05);
@@ -113,7 +111,6 @@ hr {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-     margin-bottom: 30px;
 }
 
 .pagination a {
