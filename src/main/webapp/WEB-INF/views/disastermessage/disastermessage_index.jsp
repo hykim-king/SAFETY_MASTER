@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/disastermessage_index.css">
+    <link href="/assets/css/header.css" rel="stylesheet" >
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

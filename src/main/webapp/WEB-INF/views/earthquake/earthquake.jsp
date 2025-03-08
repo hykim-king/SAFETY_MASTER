@@ -5,6 +5,7 @@
     <title>과거지진</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/eqk.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link href="/assets/css/header.css" rel="stylesheet" >
     <style>
         #earthquakeChart {
             width: 100%;
@@ -379,7 +380,7 @@
     });
 
 </script>
- <div class="container">
+ <div class="container-fluid px-0">
       <!-- footer-->
       <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
       <!--// footer-------------------------------------------------->
