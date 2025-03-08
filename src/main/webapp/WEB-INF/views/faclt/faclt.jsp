@@ -142,7 +142,7 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 	%>
 
 
-	<div class="container-fluid">
+	<div class="container">
 	<!-- footer-->
 	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 	<!--// footer-------------------------------------------------->
