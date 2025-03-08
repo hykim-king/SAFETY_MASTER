@@ -29,7 +29,7 @@
 		) WF2
 		WHERE WF2.FCST_DT > TO_DATE(#{now}, 'YYYY/MM/DD HH24:MI')
 		AND
-		WF2.FCST_ID LIKE '%1200'
+		WF2.FCST_ID LIKE '%0900'
 		AND GU_CD = #{gu_Code}
 		ORDER BY WF2.FCST_DT ASC
 	</select>

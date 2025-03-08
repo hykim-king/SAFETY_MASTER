@@ -22,12 +22,13 @@
 
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->
+	</div>
 
-
+	<div id="container" class="container">
 		<!-- main-->
 		<main>
 			<main>
@@ -262,8 +263,8 @@
 									<p class="mb-0">${wf.week}</p>
 									<p class="mt-1 mb-1">${wf.fcstDt}</p>
 									<img class="rounded mx-auto d-block"
-										src="https://openweathermap.org/img/wn/${wf.weatherIconId}@2x.png" height="70"
-										width="70">
+										src="https://openweathermap.org/img/wn/${wf.weatherIconId}@2x.png"
+										height="70" width="70">
 									<div class="d-flex justify-content-center mt-0 mb-0 gap-1">
 										<p class="fs-5 text-danger">${wf.maxTemp}°</p>
 										<p class="fs-5">/</p>
@@ -279,7 +280,9 @@
 		</main>
 		<!--// main---------------------------------------------------->
 
+	</div>
 
+	<div class="container-fluid px-0">
 		<!-- footer-->
 		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 		<!--// footer-------------------------------------------------->
