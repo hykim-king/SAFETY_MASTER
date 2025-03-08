@@ -4359,3 +4359,8 @@ Caused by: oracle.net.ns.NetException: ORA-12541: 데이터베이스에 접속�
 2025-03-08 16:05:02.131  INFO 18056 --- [safety_master] [http-nio-8080-exec-9] c.p.e.board.controller.BoardController   : vo:BoardVO [boardId=153, title=ㅓㅏㅓ, content=null, readCnt=3, regId=ㅓㅏㅏㅓㅏ, regDt=2025-03-06, modDt=null, div=30]
 2025-03-08 16:05:02.131  INFO 18056 --- [safety_master] [http-nio-8080-exec-9] c.p.e.board.controller.BoardController   : vo:BoardVO [boardId=152, title=ㄴㅇㄹ, content=null, readCnt=6, regId=ㅈㄷㄱ, regDt=2025-03-06, modDt=null, div=30]
 2025-03-08 16:05:02.131  INFO 18056 --- [safety_master] [http-nio-8080-exec-9] c.p.e.board.controller.BoardController   : vo:BoardVO [boardId=151, title=000000, content=null, readCnt=22, regId=0000000, regDt=2025-03-06, modDt=null, div=30]
+2025-03-08 16:12:05.409  INFO 18056 --- [safety_master] [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-08 16:12:05.412  INFO 18056 --- [safety_master] [RMI TCP Connection(18)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-08 16:12:05.425  INFO 18056 --- [safety_master] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-08 16:12:05.440  INFO 18056 --- [safety_master] [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-08 16:12:05.473  INFO 18056 --- [safety_master] [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
