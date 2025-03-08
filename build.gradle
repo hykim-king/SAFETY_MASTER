@@ -63,6 +63,11 @@ dependencies {
 
 	implementation 'com.google.guava:guava:31.1-jre'  // 최신 버전으로 변경 가능
 
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	//Gson
+  implementation group: 'com.google.code.gson', name: 'gson', version: '2.12.1'
+
 	//---------------------------------------------------------------------
 	
 	

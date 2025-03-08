@@ -21,5 +21,19 @@
 			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_InstVO" />
 		<typeAlias alias="Er_Medi_Inst_Er_BedVO"
 			type="com.pcwk.ehr.er_medi_inst.domain.Er_Medi_Inst_Er_BedVO" />
+		<typeAlias alias="SearchVO"
+			type="com.pcwk.ehr.cmn.SearchBoardVO" />
+		<typeAlias alias="UserVO"
+			type="com.pcwk.ehr.user.domain.UserVO" />
+		<typeAlias alias="EmailVO"
+			type="com.pcwk.ehr.email.domain.EmailVO" />
+		<typeAlias alias="BoardVO"
+			type="com.pcwk.ehr.board.domain.BoardVO" />
+		<typeAlias alias="ReplyVO"
+			type="com.pcwk.ehr.reply.domain.ReplyVO" />
+		<typeAlias alias="FileVO"
+			type="com.pcwk.ehr.file.domain.FileVO" />
+		<typeAlias alias="InsVO"
+			type="com.pcwk.ehr.insurance.domain.InsVO" />
 	</typeAliases>
 </configuration>

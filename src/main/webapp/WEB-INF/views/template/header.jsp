@@ -5,6 +5,26 @@
 <c:set var="CP" value="${pageContext.request.contextPath}" />
 
 <header id="header" class="mx-1 mt-4">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link"
+						href="${pageContext.request.contextPath}/mypage">마이페이지</a></li>
+					<li class="nav-item"><c:choose>
+							<c:when test="${empty sessionScope.user.name }">
+								<li class="nav-item"><a class="nav-link"
+									href="${pageContext.request.contextPath}/login/login.do">로그인</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="nav-item"><a class="nav-link"
+									href="${pageContext.request.contextPath}/logout">로그아웃</a></li>
+							</c:otherwise>
+						</c:choose></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="container-fluid">
 			<a class="navbar-brand text-dark fs-2" href="${CP}/index">서울365
@@ -28,6 +48,8 @@
 							<li><a class="dropdown-item" href="${CP}/typ/view">태풍</a></li>
 							<li><a class="dropdown-item"
 								href="${CP}/disastermessage/view">재난문자</a></li>
+							<li><a class="dropdown-item"
+								href="${CP}/accident-stats">주요재난통계</a></li>
 							<li><a class="dropdown-item"
 								href="${CP}/disastermessage/safety_Index">재난안전통계</a></li>
 						</ul></li>
@@ -62,8 +84,9 @@
 						class="nav-link text-dark fw-bolder" id="preparationDropdown"
 						role="button"> 재난대비 </a>
 						<ul class="dropdown-menu" aria-labelledby="preparationDropdown">
-							<li><a class="dropdown-item" href="${CP}/siren">재난 경보 소리 테스트</a></li>
-							<li><a class="dropdown-item" href="#">안전점검 퀴즈</a></li>
+							<li><a class="dropdown-item" href="${CP}/siren">재난 경보 소리
+									테스트</a></li>
+								<li><a class="dropdown-item" href="${CP}/quiz/quiz">재난상황대처로 알아보는 MBTI</a></li>
 							<li><a class="dropdown-item" href="${CP}/checklist">생존
 									필수품 추천 및 체크리스트</a></li>
 							<li><a class="dropdown-item" href="${CP}/videopost/list">재난
@@ -77,9 +100,10 @@
 						class="nav-link text-dark fw-bolder" id="insuranceDropdown"
 						role="button"> 시민안전보험 </a>
 						<ul class="dropdown-menu" aria-labelledby="insuranceDropdown">
-							<li><a class="dropdown-item" href="#">Feature 1</a></li>
-							<li><a class="dropdown-item" href="#">Feature 2</a></li>
-							<li><a class="dropdown-item" href="#">Feature 3</a></li>
+							<li><a class="dropdown-item" href="${CP}/ins/intro.do">시민안전보험
+									소개</a></li>
+							<li><a class="dropdown-item" href="${CP}/ins/getIns.do">시민안전보험
+									조회</a></li>
 						</ul></li>
 					<!-- 응급의료기관 -->
 					<li class="nav-item dropdown"><a
@@ -97,9 +121,12 @@
 						class="nav-link text-dark fw-bolder" id="boardDropdown"
 						role="button"> 재난안전게시판 </a>
 						<ul class="dropdown-menu" aria-labelledby="boardDropdown">
-							<li><a class="dropdown-item" href="#">Feature 1</a></li>
-							<li><a class="dropdown-item" href="#">Feature 2</a></li>
-							<li><a class="dropdown-item" href="#">Feature 3</a></li>
+							<li><a class="dropdown-item"
+								href="${CP}/board/doRetrieve.do?div=10">공지사항</a></li>
+							<li><a class="dropdown-item"
+								href="${CP}/board/doRetrieve.do?div=20">자유게시판</a></li>
+							<li><a class="dropdown-item"
+								href="${CP}/board/doRetrieve.do?div=30">통계자료실</a></li>
 						</ul></li>
 				</ul>
 			</div>
