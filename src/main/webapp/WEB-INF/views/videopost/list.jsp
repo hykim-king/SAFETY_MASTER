@@ -20,7 +20,7 @@
 </div>
 <body>
 
-<div class="search-bar">
+<div class="search-bar container">
     <form action="<c:url value='/videopost/list' />" method="get">
         <select name="searchType">
             <option value="title">제목</option>

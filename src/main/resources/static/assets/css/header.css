@@ -1,10 +1,152 @@
-.nav-link {
-    position: relative;
-    padding-bottom: 5px; /* 글자와 밑줄 간격 */
-    border-bottom: 4px solid transparent; /* 기본적으로 투명 */
-    transition: border-bottom 0.1s ease-in-out;
+/* 전체 헤더 박스 스타일 (카드 형태) */
+.custom-header-box {
+    background-color: #fff;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; 
+    position: relative; /
+     overflow: visible !important; 
 }
 
-.nav-item.dropdown:hover .nav-link {
-    border-bottom: 2px solid #000000; /* 마우스 오버 시 파란색 밑줄 */
+/* 로고 컨테이너 */
+.custom-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+/* 로고 크기 조정 */
+.custom-logo-img {
+    height: 60px; 
+    width: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 마우스 오버 시 로고 확대 효과 */
+.custom-logo-img:hover {
+    transform: scale(1.1);
+}
+
+/* 네비게이션 스타일 */
+.custom-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* 메뉴 리스트 중앙 정렬 */
+.custom-nav-pills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+}
+
+/* ✅ 네모 상자 제거 및 줄바꿈 방지 */
+.custom-nav-item {
+    list-style-type: none;
+    position: relative;
+    white-space: nowrap; /* ✅ 글씨 줄바꿈 방지 */
+}
+
+/* 메뉴 항목 스타일 */
+.custom-nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+/* 마우스 오버 효과 */
+.custom-nav-link:hover {
+    color: #0056b3;
+}
+
+
+/* 드롭다운 메뉴 스타일 */
+.custom-dropdown-menu {
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    white-space: nowrap; 
+}
+
+
+
+.custom-nav-item.custom-dropdown {
+    position: relative;
+}
+
+/* 드롭다운 메뉴 애니메이션 */
+.custom-nav-item.custom-dropdown:hover .custom-dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.custom-header-box {
+    position: relative;
+    height: auto; 
+}
+
+/* 드롭다운 메뉴 항목 스타일 */
+.custom-dropdown-menu .custom-dropdown-item {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: black;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: block;
+    text-decoration: none;
+}
+
+/* 드롭다운 메뉴 항목 마우스 오버 효과 */
+.custom-dropdown-menu .custom-dropdown-item:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .custom-header-box {
+        width: 95%;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .custom-nav-pills {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .custom-nav-item {
+        display: block;
+        padding: 8px 0;
+    }
 }

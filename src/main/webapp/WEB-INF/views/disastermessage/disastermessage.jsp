@@ -51,6 +51,7 @@
   <link href="/assets/css/header.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/css/dismes.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link href="/assets/css/header.css" rel="stylesheet" >
 </head>
 <body>
 
