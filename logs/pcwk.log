@@ -1552,3 +1552,117 @@
 2025-03-11 14:29:55.165  INFO 1348 --- [safety_master] [http-nio-0.0.0.0-8080-exec-2] c.p.ehr.main.controller.MainController   : BoardVO [boardId=258, title=2025년 1월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2025-01-09, modDt=null, div=30]
 2025-03-11 14:29:55.165  INFO 1348 --- [safety_master] [http-nio-0.0.0.0-8080-exec-2] c.p.ehr.main.controller.MainController   : BoardVO [boardId=257, title=2024년 12월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2024-12-09, modDt=null, div=30]
 2025-03-11 14:29:55.165  INFO 1348 --- [safety_master] [http-nio-0.0.0.0-8080-exec-2] c.p.ehr.main.controller.MainController   : BoardVO [boardId=256, title=2024년 11월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2024-11-09, modDt=null, div=30]
+2025-03-11 14:39:54.862  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.SafetyMasterApplication     : Starting SafetyMasterApplication using Java 21.0.5 with PID 4712 (D:\safety_master\bin\main started by kitc1 in D:\safety_master)
+2025-03-11 14:39:54.863  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.SafetyMasterApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-03-11 14:39:54.889  INFO 4712 --- [safety_master] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\kitc1\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\23.2.0.0\49acfb33ee776e43d2085e2fcc838778202a9128\ojdbc8-23.2.0.0.jar referenced one or more files that do not exist: file:/C:/Users/kitc1/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/23.2.0.0/49acfb33ee776e43d2085e2fcc838778202a9128/oraclepki.jar
+2025-03-11 14:39:54.890  INFO 4712 --- [safety_master] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-11 14:39:54.890  INFO 4712 --- [safety_master] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-11 14:39:55.637  INFO 4712 --- [safety_master] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-03-11 14:39:55.655  INFO 4712 --- [safety_master] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2025-03-11 14:39:55.987  INFO 4712 --- [safety_master] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-11 14:39:55.996  INFO 4712 --- [safety_master] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-11 14:39:55.997  INFO 4712 --- [safety_master] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-03-11 14:39:56.116  INFO 4712 --- [safety_master] [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-03-11 14:39:56.120  INFO 4712 --- [safety_master] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-11 14:39:56.120  INFO 4712 --- [safety_master] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1230 ms
+2025-03-11 14:39:56.464  INFO 4712 --- [safety_master] [restartedMain] c.p.e.a.c.Air_quality_Controller         : ┌────────────────────────────┐
+2025-03-11 14:39:56.464  INFO 4712 --- [safety_master] [restartedMain] c.p.e.a.c.Air_quality_Controller         : │  Air_quality_Controller()  │
+2025-03-11 14:39:56.464  INFO 4712 --- [safety_master] [restartedMain] c.p.e.a.c.Air_quality_Controller         : └────────────────────────────┘
+2025-03-11 14:39:56.467  INFO 4712 --- [safety_master] [restartedMain] c.p.e.board.controller.BoardController   : ┌──────────────────────────┐
+2025-03-11 14:39:56.467  INFO 4712 --- [safety_master] [restartedMain] c.p.e.board.controller.BoardController   : │ BoardController()        │
+2025-03-11 14:39:56.467  INFO 4712 --- [safety_master] [restartedMain] c.p.e.board.controller.BoardController   : └──────────────────────────┘
+2025-03-11 14:39:56.467  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.board.service.BoardServiceImpl   : ┌──────────────────────────┐
+2025-03-11 14:39:56.468  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.board.service.BoardServiceImpl   : │ BoardServiceImpl()       │
+2025-03-11 14:39:56.468  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.board.service.BoardServiceImpl   : └──────────────────────────┘
+2025-03-11 14:39:56.469  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.reply.service.ReplyServiceImpl   : ┌──────────────────────────┐
+2025-03-11 14:39:56.469  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.reply.service.ReplyServiceImpl   : │ BoardServiceImpl()       │
+2025-03-11 14:39:56.469  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.reply.service.ReplyServiceImpl   : └──────────────────────────┘
+2025-03-11 14:39:56.470  INFO 4712 --- [safety_master] [restartedMain] c.pcwk.ehr.file.service.FileServiceImpl  : ┌──────────────────────────┐
+2025-03-11 14:39:56.471  INFO 4712 --- [safety_master] [restartedMain] c.pcwk.ehr.file.service.FileServiceImpl  : │ FileServiceImpl()        │
+2025-03-11 14:39:56.471  INFO 4712 --- [safety_master] [restartedMain] c.pcwk.ehr.file.service.FileServiceImpl  : └──────────────────────────┘
+2025-03-11 14:39:56.472  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.controller.TimeController   : ┌─────────────────────┐
+2025-03-11 14:39:56.473  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.controller.TimeController   : │  TimeServiceImpl()  │
+2025-03-11 14:39:56.473  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.controller.TimeController   : └─────────────────────┘
+2025-03-11 14:39:56.474  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.service.TimeServiceImpl     : ┌─────────────────────┐
+2025-03-11 14:39:56.474  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.service.TimeServiceImpl     : │  TimeServiceImpl()  │
+2025-03-11 14:39:56.474  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.service.TimeServiceImpl     : └─────────────────────┘
+2025-03-11 14:39:56.479  INFO 4712 --- [safety_master] [restartedMain] c.p.e.email.controller.EmailController   : ┌───────────────────────────────────────┐
+2025-03-11 14:39:56.479  INFO 4712 --- [safety_master] [restartedMain] c.p.e.email.controller.EmailController   : │ **EmailController()**                  │
+2025-03-11 14:39:56.479  INFO 4712 --- [safety_master] [restartedMain] c.p.e.email.controller.EmailController   : └───────────────────────────────────────┘
+2025-03-11 14:39:56.506  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.user.service.UserServiceImple    : ┌───────────────────────────────────────┐
+2025-03-11 14:39:56.506  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.user.service.UserServiceImple    : │ **UserServiceImple()**                │
+2025-03-11 14:39:56.506  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.user.service.UserServiceImple    : └───────────────────────────────────────┘
+2025-03-11 14:39:56.508  INFO 4712 --- [safety_master] [restartedMain] c.p.e.e.c.Er_Medi_InstController         : ┌────────────────────────────┐
+2025-03-11 14:39:56.508  INFO 4712 --- [safety_master] [restartedMain] c.p.e.e.c.Er_Medi_InstController         : │  Er_Medi_InstController()  │
+2025-03-11 14:39:56.508  INFO 4712 --- [safety_master] [restartedMain] c.p.e.e.c.Er_Medi_InstController         : └────────────────────────────┘
+2025-03-11 14:39:56.539  INFO 4712 --- [safety_master] [restartedMain] c.p.e.i.controller.InsController         : ┌──────────────────────────┐
+2025-03-11 14:39:56.539  INFO 4712 --- [safety_master] [restartedMain] c.p.e.i.controller.InsController         : │ InsController()          │
+2025-03-11 14:39:56.540  INFO 4712 --- [safety_master] [restartedMain] c.p.e.i.controller.InsController         : └──────────────────────────┘
+2025-03-11 14:39:56.540  INFO 4712 --- [safety_master] [restartedMain] c.p.e.insurance.service.InsServiceImpl   : ┌──────────────────────────┐
+2025-03-11 14:39:56.540  INFO 4712 --- [safety_master] [restartedMain] c.p.e.insurance.service.InsServiceImpl   : │ InsServiceImpl()         │
+2025-03-11 14:39:56.540  INFO 4712 --- [safety_master] [restartedMain] c.p.e.insurance.service.InsServiceImpl   : └──────────────────────────┘
+2025-03-11 14:39:56.542  INFO 4712 --- [safety_master] [restartedMain] c.p.e.login.controller.LoginController   : ┌───────────────────────────────────────┐
+2025-03-11 14:39:56.542  INFO 4712 --- [safety_master] [restartedMain] c.p.e.login.controller.LoginController   : │ *LoginController()*                   │
+2025-03-11 14:39:56.542  INFO 4712 --- [safety_master] [restartedMain] c.p.e.login.controller.LoginController   : └───────────────────────────────────────┘
+2025-03-11 14:39:56.544  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.main.controller.MainController   : ┌────────────────────┐
+2025-03-11 14:39:56.544  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.main.controller.MainController   : │  MainController()  │
+2025-03-11 14:39:56.544  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.main.controller.MainController   : └────────────────────┘
+2025-03-11 14:39:56.551  INFO 4712 --- [safety_master] [restartedMain] c.p.e.reply.controller.ReplyController   : ┌──────────────────────────┐
+2025-03-11 14:39:56.551  INFO 4712 --- [safety_master] [restartedMain] c.p.e.reply.controller.ReplyController   : │ ReplyController()        │
+2025-03-11 14:39:56.551  INFO 4712 --- [safety_master] [restartedMain] c.p.e.reply.controller.ReplyController   : └──────────────────────────┘
+2025-03-11 14:39:56.554  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.user.controller.UserController   : ┌───────────────────────────────────────┐
+2025-03-11 14:39:56.554  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.user.controller.UserController   : │ **UserController()**                  │
+2025-03-11 14:39:56.554  INFO 4712 --- [safety_master] [restartedMain] c.p.ehr.user.controller.UserController   : └───────────────────────────────────────┘
+2025-03-11 14:39:56.557  INFO 4712 --- [safety_master] [restartedMain] c.p.e.w.controller.WeatherController     : ┌──────────────────────┐
+2025-03-11 14:39:56.557  INFO 4712 --- [safety_master] [restartedMain] c.p.e.w.controller.WeatherController     : │  WeatherController() │
+2025-03-11 14:39:56.558  INFO 4712 --- [safety_master] [restartedMain] c.p.e.w.controller.WeatherController     : └──────────────────────┘
+2025-03-11 14:39:56.596  INFO 4712 --- [safety_master] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-03-11 14:39:56.762  INFO 4712 --- [safety_master] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-11 14:39:56.980  INFO 4712 --- [safety_master] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@509c0e1b
+2025-03-11 14:39:56.981  INFO 4712 --- [safety_master] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-11 14:39:57.044  INFO 4712 --- [safety_master] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:oracle:thin:@192.168.100.30:1522:XE'
+2025-03-11 14:39:57.075  INFO 4712 --- [safety_master] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-11 14:39:57.092  INFO 4712 --- [safety_master] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-11 14:39:57.092  INFO 4712 --- [safety_master] [restartedMain] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-11 14:39:57.093  INFO 4712 --- [safety_master] [restartedMain] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-11 14:39:57.096  INFO 4712 --- [safety_master] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-11 14:39:57.102  INFO 4712 --- [safety_master] [restartedMain] com.pcwk.ehr.SafetyMasterApplication     : Started SafetyMasterApplication in 2.473 seconds (process running for 2.891)
+2025-03-11 14:40:02.841  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.e.c.Er_Medi_InstController         : ┌────────────────────────────┐
+2025-03-11 14:40:02.841  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.e.c.Er_Medi_InstController         : │  Er_Medi_InstController()  │
+2025-03-11 14:40:02.841  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.e.c.Er_Medi_InstController         : │        er_BedView()        │
+2025-03-11 14:40:02.841  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.e.c.Er_Medi_InstController         : └────────────────────────────┘
+2025-03-11 14:40:02.841  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.e.c.Er_Medi_InstController         : 기관명 : 가톨릭
+2025-03-11 14:40:02.841  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.e.c.Er_Medi_InstController         : 구코드 : 
+2025-03-11 14:40:02.869 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.m.E.get_Current_Er_Bed             : ==>  Preparing: SELECT ERB.* FROM (SELECT EBI3.*, EMI.DUTY_NM, EMI.ER_TEL, EMI.GU_CD FROM (SELECT EBI2.* FROM (SELECT EBI1.* , ROW_NUMBER() OVER (PARTITION BY EBI1.HPID ORDER BY EBI1.HVI_DT DESC) AS RNUM FROM ER_BED_INFO EBI1) EBI2 WHERE EBI2.RNUM = 1) EBI3 INNER JOIN EMERGENCY_MEDICAL_INST_INFO EMI ON EBI3.HPID = EMI.HPID) ERB WHERE 1=1 AND ERB.DUTY_NM LIKE ?
+2025-03-11 14:40:02.917 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.m.E.get_Current_Er_Bed             : ==> Parameters: %가톨릭%(String)
+2025-03-11 14:40:03.022 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-1] c.p.e.m.E.get_Current_Er_Bed             : <==      Total: 3
+2025-03-11 14:40:04.836  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : ┌────────────────────┐
+2025-03-11 14:40:04.837  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : │  MainController()  │
+2025-03-11 14:40:04.837  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : │    indexView()     │
+2025-03-11 14:40:04.837  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : └────────────────────┘
+2025-03-11 14:40:04.841 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.e.m.W.get_Current_WeatherBy_Gu_Cd    : ==>  Preparing: SELECT WC2.*, GI.GU_NM FROM ( SELECT WEATHER_ID , GU_CD , TEMP , MIN_TEMP , MAX_TEMP , FEELS_LIKE_TEMP , WEATHER_DESC , WEATHER_ICON_ID , HUMIDITY , WIND_SPEED , MS_DT , CRT_BY , CRT_DT , MOD_BY , MOD_DT FROM (SELECT WC1.* , ROW_NUMBER() OVER (PARTITION BY WC1.GU_CD ORDER BY WC1.MS_DT DESC) AS RNUM FROM WEATHER_CURRENT WC1) WHERE GU_CD = ? AND RNUM = 1) WC2 INNER JOIN GU_INFO GI ON WC2.GU_CD = GI.GU_CD
+2025-03-11 14:40:04.841 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.e.m.W.get_Current_WeatherBy_Gu_Cd    : ==> Parameters: 111261(String)
+2025-03-11 14:40:04.850 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.e.m.W.get_Current_WeatherBy_Gu_Cd    : <==      Total: 1
+2025-03-11 14:40:04.850 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] .p.e.m.A.get_Current_Air_QualityBy_Gu_Cd : ==>  Preparing: SELECT AQC2.*, GI.GU_NM FROM ( SELECT AQ_ID , GU_CD , CAI_GRADE , CAI , PM25_CONC , PM10_CONC , O3_CONC , MS_DT , CRT_BY , CRT_DT , MOD_BY , MOD_DT FROM (SELECT AQC1.* , ROW_NUMBER() OVER (PARTITION BY AQC1.GU_CD ORDER BY AQC1.MS_DT DESC) AS RNUM FROM AIR_QUALITY_CURRENT AQC1) WHERE GU_CD = ? AND RNUM = 1) AQC2 INNER JOIN GU_INFO GI ON AQC2.GU_CD = GI.GU_CD
+2025-03-11 14:40:04.850 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] .p.e.m.A.get_Current_Air_QualityBy_Gu_Cd : ==> Parameters: 111261(String)
+2025-03-11 14:40:04.855 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] .p.e.m.A.get_Current_Air_QualityBy_Gu_Cd : <==      Total: 1
+2025-03-11 14:40:04.856 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.e.m.W.get_Weather_ForecastBy_Gu_Cd   : ==>  Preparing: SELECT WF2.* FROM( SELECT FCST_ID , GU_CD , TO_DATE(FCST_DT, 'YYYY/MM/DD HH24:MI') AS FCST_DT , TEMP , MIN_TEMP , MAX_TEMP , FEELS_LIKE_TEMP , WEATHER_DESC , WEATHER_ICON_ID , HUMIDITY , WIND_SPEED , POP , CRT_BY , CRT_DT , MOD_BY , MOD_DT FROM WEATHER_FORECAST WF1 ) WF2 WHERE WF2.FCST_DT > TO_DATE(?, 'YYYY/MM/DD HH24:MI') AND WF2.FCST_ID LIKE '%0900' AND GU_CD = ? ORDER BY WF2.FCST_DT ASC
+2025-03-11 14:40:04.856 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.e.m.W.get_Weather_ForecastBy_Gu_Cd   : ==> Parameters: 2025/03/11 23:59(String), 111261(String)
+2025-03-11 14:40:04.862 DEBUG 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.e.m.W.get_Weather_ForecastBy_Gu_Cd   : <==      Total: 5
+2025-03-11 14:40:04.927  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : 현재 날씨 : Weather_CurrentVO [weatherId=111261202503111146, guCd=111261, temp=10.82, minTemp=10.71, maxTemp=11.81, feelsLikeTemp=9.08, weatherDesc=연무, weatherIconId=50d, humidity=43, windSpeed=1.03, msDt=2025.03.11 11:46, crtBy=0, crtDt=2025.03.11 11:46, modBy=0, modDt=null, guNm=강남구]
+2025-03-11 14:40:04.930  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : 현재 대기질 : Air_QualityVO [aqId=111261202503111100, guCd=111261, guNm=강남구, msAddr=null, msLat=0.0, msLon=0.0, sortOrd=0, caiGrade=나쁨, cai=177, pm25Conc=71, pm10Conc=94, o3Conc=0.031, msDt=2025.03.11 11:00, crtBy=0, crtDt=2025.03.11 11:47, modBy=0, modDt=null]
+2025-03-11 14:40:04.933  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : 1:Weather_ForecastVO [fcstId=111261202503120900, guCd=111261, fcstDt=03/12, temp=9.08, minTemp=9.08, maxTemp=9.08, feelsLikeTemp=7.83, weatherDesc=온흐림, weatherIconId=04d, humidity=45, windSpeed=2.36, pop=0.0, crtBy=0, crtDt=2025.03.07 10:00, modBy=0, modDt=2025.03.11 10:00, week=수]
+2025-03-11 14:40:04.933  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : 1:Weather_ForecastVO [fcstId=111261202503130900, guCd=111261, fcstDt=03/13, temp=7.22, minTemp=7.22, maxTemp=7.22, feelsLikeTemp=5.9, weatherDesc=온흐림, weatherIconId=04d, humidity=22, windSpeed=2.06, pop=0.0, crtBy=0, crtDt=2025.03.08 10:00, modBy=0, modDt=2025.03.11 10:00, week=목]
+2025-03-11 14:40:04.933  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : 1:Weather_ForecastVO [fcstId=111261202503140900, guCd=111261, fcstDt=03/14, temp=8.71, minTemp=8.71, maxTemp=8.71, feelsLikeTemp=8.22, weatherDesc=온흐림, weatherIconId=04d, humidity=27, windSpeed=1.46, pop=0.0, crtBy=0, crtDt=2025.03.09 14:46, modBy=0, modDt=2025.03.11 10:00, week=금]
+2025-03-11 14:40:04.933  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : 1:Weather_ForecastVO [fcstId=111261202503150900, guCd=111261, fcstDt=03/15, temp=9.16, minTemp=9.16, maxTemp=9.16, feelsLikeTemp=7.44, weatherDesc=온흐림, weatherIconId=04d, humidity=58, windSpeed=3.11, pop=0.0, crtBy=0, crtDt=2025.03.10 09:13, modBy=0, modDt=2025.03.11 10:00, week=토]
+2025-03-11 14:40:04.933  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : 1:Weather_ForecastVO [fcstId=111261202503160900, guCd=111261, fcstDt=03/16, temp=5.54, minTemp=5.54, maxTemp=5.54, feelsLikeTemp=5.54, weatherDesc=실 비, weatherIconId=10d, humidity=81, windSpeed=0.83, pop=0.2, crtBy=0, crtDt=2025.03.11 10:00, modBy=0, modDt=null, week=일]
+2025-03-11 14:40:04.934  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : BoardVO [boardId=260, title=2025년 3월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2025-03-09, modDt=null, div=30]
+2025-03-11 14:40:04.934  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : BoardVO [boardId=259, title=2025년 2월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2025-02-09, modDt=null, div=30]
+2025-03-11 14:40:04.934  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : BoardVO [boardId=258, title=2025년 1월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2025-01-09, modDt=null, div=30]
+2025-03-11 14:40:04.934  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : BoardVO [boardId=257, title=2024년 12월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2024-12-09, modDt=null, div=30]
+2025-03-11 14:40:04.934  INFO 4712 --- [safety_master] [http-nio-0.0.0.0-8080-exec-10] c.p.ehr.main.controller.MainController   : BoardVO [boardId=256, title=2024년 11월 재난안전분석 결과 및 중점관리대상 재난안전사고, content=null, readCnt=0, regId=null, regDt=2024-11-09, modDt=null, div=30]
+2025-03-11 14:40:13.129  INFO 4712 --- [safety_master] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-03-11 14:40:13.131  INFO 4712 --- [safety_master] [RMI TCP Connection(2)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-11 14:40:13.139  INFO 4712 --- [safety_master] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-11 14:40:13.143  INFO 4712 --- [safety_master] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-11 14:40:13.169  INFO 4712 --- [safety_master] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
