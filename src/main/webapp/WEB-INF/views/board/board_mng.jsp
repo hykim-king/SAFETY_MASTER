@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +10,11 @@
   <!-- Bootstrap 및 헤더 CSS -->
   <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="/assets/css/header.css" rel="stylesheet">
+  <link href="/assets/css/footer.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>${vo.title}</title>
   <script src="/assets/js/jquery_3_7_1.js"></script>
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
   <!-- 커스텀 CSS -->
   <style>
     /* 전체 컨테이너 */
@@ -156,10 +155,12 @@
   </style>
 </head>
 <body>
+    <div class="">
+        <!-- header-->
+        <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+        <!--// header-------------------------------------------------->
+    </div>
   <div id="container" class="container">
-    <!-- header (변경 없음) -->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-
     <!-- 메인 영역 -->
     <main class="container my-4">
       <article class="col-md-12">
@@ -174,12 +175,10 @@
           </c:if>
         </div>
         <hr>
-
         <!-- 게시글 상세 내용 폼 -->
         <form action="#" method="post">
           <input type="hidden" name="boardId" id="boardId" value="${vo.boardId}">
           <input type="hidden" name="div" id="div" value="${vo.getDiv()}">
-
           <!-- 제목 -->
           <div class="row mb-3">
             <label for="title" class="col-sm-2 col-form-label form-label">제목</label>
@@ -187,7 +186,6 @@
               <input disabled class="form-control" value="${vo.title}" type="text" maxlength="50" name="title" id="title">
             </div>
           </div>
-
           <!-- 작성자 -->
           <div class="row mb-3">
             <label for="regId" class="col-sm-2 col-form-label form-label">작성자</label>
@@ -195,7 +193,6 @@
               <input disabled class="form-control" value="${vo.regId}" type="text" maxlength="20" name="regId" id="regId">
             </div>
           </div>
-
           <!-- 작성일 -->
           <div class="row mb-3">
             <label for="regDt" class="col-sm-2 col-form-label form-label">작성일</label>
@@ -203,7 +200,6 @@
               <input disabled class="form-control" value="${vo.regDt}" type="text" maxlength="13" name="regDt" id="regDt">
             </div>
           </div>
-
           <!-- 내용 -->
           <div class="row mb-3">
             <label for="contentsTextArea" class="col-sm-2 col-form-label form-label">내용</label>
@@ -212,7 +208,6 @@
             </div>
           </div>
         </form>
-
         <!-- 첨부파일 영역 -->
         <div class="attachment-section">
           <h6>첨부파일</h6>
@@ -224,23 +219,22 @@
                 </a>
                 <input disabled hidden="enabled" type="file" name="file" id="file" class="form-control">
                 <c:if test="${not empty sessionScope.user and (sessionScope.user.isAdmin eq 'Y' or sessionScope.user.nickname eq vo.regId)}">
-                	<button type="button" id="fileDeleteBtn" class="btn btn-danger btn-sm" style="display: none;">삭제</button>
+                    <button type="button" id="fileDeleteBtn" class="btn btn-danger btn-sm" style="display: none;">삭제</button>
                 </c:if>
               </div>
             </c:when>
             <c:otherwise>
               <p>첨부파일이 없습니다.</p>
               <c:if test="${not empty sessionScope.user and (sessionScope.user.isAdmin eq 'Y' or sessionScope.user.nickname eq vo.regId)}">
-              	<div class="col-12">
-                	<label for="file">파일 업로드</label>
-                	<input disabled type="file" name="file" id="file" class="form-control">
-                	<button hidden="enabled" type="button" id="fileDeleteBtn" class="btn btn-danger btn-sm" style="display: none;">삭제</button>                                                               
-              	</div>
+                <div class="col-12">
+                    <label for="file">파일 업로드</label>
+                    <input disabled type="file" name="file" id="file" class="form-control">
+                    <button hidden="enabled" type="button" id="fileDeleteBtn" class="btn btn-danger btn-sm" style="display: none;">삭제</button>                                                               
+                </div>
               </c:if>
             </c:otherwise>
           </c:choose>
         </div>
-
         <!-- 댓글 영역 (vo.getDiv() == 20일 때만 노출) -->
         <c:choose>
           <c:when test="${20 == vo.getDiv()}">
@@ -267,7 +261,6 @@
             <c:if test="${empty sessionScope.user}">
               <p>댓글 등록은 로그인 후 이용 가능합니다.</p>
             </c:if>
-
             <!-- 댓글 목록 -->
             <div class="row mb-2">
               <c:choose>
@@ -304,11 +297,12 @@
         </c:choose>
       </article>
     </main>
-
-    <!-- footer (변경 없음) -->
-    <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
   </div>
-
+    <div class="container-fluid px-0">
+        <!-- footer-->
+        <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+        <!--// footer-------------------------------------------------->
+    </div>
   <!-- 기능 스크립트 (변경 없음) -->
   <script src="/assets/js/board_mng.js"></script>
   <script src="/assets/js/reply.js"></script>

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.pcwk.ehr.board.domain.BoardVO;
 import com.pcwk.ehr.cmn.BoardDTO;
@@ -26,4 +27,6 @@ public interface BoardMapper {
 	int doUpdate(BoardVO boardVO) throws SQLException;
 	
 	int getBoardSequence();
+	
+	List<BoardVO> getLatestFiveBoard(@Param(value = "div") String div);
 }

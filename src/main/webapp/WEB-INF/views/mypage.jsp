@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/mypage.css" rel="stylesheet">
+	<link href="/assets/css/header.css" rel="stylesheet">
     
 	
 	<script>
@@ -34,6 +35,11 @@
 
 </head>
 <body>
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
     
     <!-- 정보 수정 카드 -->
     <div class="container mt-5">
@@ -103,6 +109,12 @@
             </div>
         </div>
     </div>
+	
+	<div class="container-fluid px-0">
+		<!-- footer-->
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
+	</div>
     
     <!-- 성공 메시지가 있는 경우 알럿 및 리다이렉트 -->
     <c:if test="${not empty successMessage}">

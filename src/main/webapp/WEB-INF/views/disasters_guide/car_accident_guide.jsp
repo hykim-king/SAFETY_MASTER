@@ -13,22 +13,63 @@
     <title>사회재난 행동요령</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/disasters_guide.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-
+    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
     <style>
-        #sidebar{
-            height: 172.2% !important;
+        .container-fluid {
+            flex: 0 !important;
+        }
+            #sidebar99 {
+            position: fixed; /* 화면에 고정 */
+            top: 0; /* 화면의 상단에 고정 */
+            left: 0; /* 화면의 왼쪽에 고정 */
+            width: 200px; /* 사이드바의 너비 */
+            margin-top: 7%;
+            height: 58vh;
+            background-color: #f4f4f4; /* 배경색 */
+            padding-top: 20px; /* 상단 여백 */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 사이드바에 그림자 효과 */
+            z-index: 999; /* 다른 요소보다 위에 표시 */
+        }
+
+        #sidebar99 ul {
+            list-style-type: none; /* 기본 불릿 제거 */
+            padding-left: 0; /* 기본 패딩 제거 */
+        }
+
+        #sidebar99 li {
+            margin: 10px 0; /* 각 항목 간의 간격 */
+        }
+
+        #sidebar99 a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        #sidebar99 a:hover {
+            background-color: #007bff; /* 마우스 오버 시 배경색 변경 */
+            color: white; /* 마우스 오버 시 글자 색 변경 */
+        }
+        .div23{
+            position : relative;
+            transform : translateY(1571px);
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
+
 <div id="container" class="message">
     <div id="state_sub">
-        <div id="sidebar">
+        <div id="sidebar99">
             <ul>
                 <li><a href="/disasterguide/fire">화재</a></li>
                 <li><a href="/disasterguide/forestfires">산불</a></li>
@@ -110,7 +151,7 @@
         </div>
     </div>
 </div>
- <div class="container">
+ <div class="container-fluid px-0 div23">
       <!-- footer-->
       <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
       <!--// footer-------------------------------------------------->

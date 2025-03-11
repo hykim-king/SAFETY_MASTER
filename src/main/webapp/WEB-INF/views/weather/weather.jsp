@@ -21,27 +21,29 @@
 
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->
+	</div>
+
+	<div id="container" class="container">
+
 
 
 		<!-- main-->
-		<main>
-
-			<div class="mt-5 weather-dashboard">
-				<!-- 상단 헤더 -->
+		<!-- 날씨 대시보드 -->
+		<div id="container" class="container">
+			<div class="weather-dashboard">
 				<div
 					class="header d-flex justify-content-between align-items-center">
 					<h2>
 						오늘 날씨 <span id="date"></span>
 					</h2>
-					<div
-						class="d-flex justify-content-end align-items-center gap-3 me-5">
+					<div class="d-flex justify-content-end align-items-center gap-3">
 						<h3>서울특별시</h3>
 						<div class="dropdown mb-1">
-							<button class="btn btn-dark dropdown-toggle text-dark"
+							<button class="btn btn-outline-primary dropdown-toggle"
 								type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
 								aria-expanded="false">${wc.guNm}</button>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -75,9 +77,9 @@
 					</div>
 				</div>
 
-				<!-- 현재 날씨 & 대기질 -->
+				<!-- 날씨 및 대기지수 카드들 -->
 				<div class="row mt-3 justify-content-center">
-					<!-- 현재 날씨 -->
+					<!-- 날씨 정보 -->
 					<div class="col-md-5">
 						<div class="card p-4 text-end">
 							<p class="text-start">발표일 : ${wc_Dt}</p>
@@ -95,11 +97,12 @@
 							<div
 								class="d-flex justify-content-center align-items-center gap-2 mt-2">
 								<small>체감 <span class="fw-bolder">${wc.feelsLikeTemp}°</span></small>
-								<small>습도 <span class="fw-bolder">${wc.humidity}%</span>
-								</small> <small>풍속 <span class="fw-bolder">${wc.windSpeed}m/s</span></small>
+								<small>습도 <span class="fw-bolder">${wc.humidity}%</span></small>
+								<small>풍속 <span class="fw-bolder">${wc.windSpeed}m/s</span></small>
 							</div>
 						</div>
 					</div>
+
 					<!-- 대기질 정보 -->
 					<div class="col-md-6">
 						<div class="card p-4">
@@ -139,8 +142,6 @@
 											</div>
 										</c:otherwise>
 									</c:choose>
-
-
 								</div>
 								<div class="col-6 mt-4">
 									<p class="fw-lighter">미세먼지</p>
@@ -251,45 +252,51 @@
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- 5일간의 날씨 예보 -->
-				<h3 class="text-start forecast-title mt-4 ms-1">5일 예보</h3>
-				<div class="row justify-content-center gap-4">
-					<c:forEach var="wf" items="${wf_List}">
-						<div class="col-md-2 forecast-card">
-							<div class="card text-center p-3">
-								<p class="mb-0">${wf.week}</p>
-								<p class="mt-1 mb-1">${wf.fcstDt}</p>
-								<img class="rounded mx-auto d-block"
-									src="https://openweathermap.org/img/wn/${wf.weatherIconId}@2x.png"
-									height="70" width="70">
-								<div class="d-flex justify-content-center mt-0 mb-0 gap-1">
-									<p class="fs-5 text-danger">${wf.maxTemp}°</p>
-									<p class="fs-5">/</p>
-									<p class="fs-5 text-primary">${wf.minTemp}°</p>
+			<!-- 5일간의 날씨 예보 -->
+			<div class="card mt-4 p-5 pt-0">
+				<div class="row mt-3 justify-content-center">
+					<h3 class="text-start forecast-title mt-4 ms-3">5일 예보</h3>
+					<div class="row justify-content-center gap-4">
+						<c:forEach var="wf" items="${wf_List}">
+							<div class="col-md-2 forecast-card">
+								<div class="card text-center p-3">
+									<p class="mb-0">${wf.week}</p>
+									<p class="mt-1 mb-1">${wf.fcstDt}</p>
+									<img class="rounded mx-auto d-block"
+										src="https://openweathermap.org/img/wn/${wf.weatherIconId}@2x.png"
+										height="70" width="70">
+									<div class="d-flex justify-content-center mt-0 mb-0 gap-1">
+										<p class="fs-5 text-danger">${wf.maxTemp}°</p>
+										<p class="fs-5">/</p>
+										<p class="fs-5 text-primary">${wf.minTemp}°</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</c:forEach>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
-
-			<div class="d-flex justify-content-center mt-5">
-				<h1>서울특별시 ${wc.guNm} 3일 단기예보</h1>
-			</div>
-
-
+		</div>
 		</main>
 
-
+		</main>
 		<!--// main---------------------------------------------------->
+
+
+		<div class="d-flex justify-content-center mt-5">
+			<h1 class="fs-2">서울특별시 ${wc.guNm} 3일 단기예보</h1>
+		</div>
+
 	</div>
 
 
-	<div class="container-fluid mt-4 position-relative"
-		style="left: 250px;">
+	<div
+		class="container-fluid mt-4 position-relative d-flex justify-content-center"
+		style="">
 		<div>
-			<table class="table table-bordered border-dark text-center w-75">
+			<table class="table table-bordered border-dark text-center w-100">
 				<thead>
 					<tr class="text-center table-success">
 						<th scope="col">날짜</th>
@@ -388,12 +395,12 @@
 	</div>
 
 
-	<div class="container">
+
+	<div class="container-fluid px-0">
 		<!-- footer-->
 		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 		<!--// footer-------------------------------------------------->
 	</div>
-
 
 	<script>
 		// 오늘 날짜 자동 업데이트

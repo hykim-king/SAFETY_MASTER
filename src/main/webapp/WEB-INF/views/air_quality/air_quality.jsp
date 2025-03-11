@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1200">
+<meta name="viewport" content="1200">
 <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="/assets/css/header.css" rel="stylesheet">
 <link href="/assets/css/air_quality.css" rel="stylesheet">
@@ -108,15 +108,57 @@
 .pm_w {
 	width: 1150px;
 }
+
+#pm_prepare {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#pm_prepare::before, 
+#pm_prepare::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+}
+
+#pm_prepare::before {
+    left: 0;
+    background-color: #F1F1F1; /* 왼쪽 배경색 (네이비톤) */
+}
+
+#pm_prepare::after {
+    right: 0;
+    background-color: #E3E1DE; /* 오른쪽 배경색 (밝은 네이비톤 또는 원하는 컬러) */
+}
+
+#pm_prepare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#pm_prepare img {
+    max-width: 1320px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
 </style>
 
 <script src="/assets/js/jquery_3_7_1.js"></script>
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
+		
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->
@@ -127,7 +169,7 @@
 	<!-- main-->
 	<main>
 		<div class="container">
-			<div class="row">
+			<div class="row pt-5">
 				<div class="col-6">
 					<h1 class="fs-4 mb-4 fw-bolder">서울특별시 실시간 대기환경 지도</h1>
 					<div class="nav-tab">
@@ -144,7 +186,7 @@
 						</ul>
 					</div>
 					<div id="map" class="border-end border-start"
-						style="width: 568px; height: 600px;"></div>
+						style="width: 636px; height: 600px;"></div>
 					<div
 						class="border-end border-start border-bottom ps-3 bg-light text-start">
 						<p class="map-b pt-2 mb-1">&#128309;좋음 &#128994;보통 &#128992;나쁨
@@ -486,7 +528,7 @@
 			</table>
 		</div>
 		
-		<div class="container-fluid mt-5 px-0">
+		<div id="pm_prepare" class="container-fluid mt-5 px-0">
 		<img alt="" src="/assets/images/young_min/pm_prepare.png" width="100%" height="453px" class="">
 		</div>
 
@@ -496,7 +538,7 @@
 
 	<!--// main---------------------------------------------------->
 
-	<div class="container">
+	<div class="container-fluid px-0">
 		<!-- footer-->
 		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 		<!--// footer-------------------------------------------------->

@@ -13,13 +13,20 @@
 <script src="/assets/js/jquery_3_7_1.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/css/videolist.css">
 </head>
-<!-- header-->
-<div class="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-	<!--// header-------------------------------------------------->
-</div>
+
+
+
 <body>
 
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+	
+<div class="container">
+<p class="heading-title">재난 훈련 영상</p>
+<hr>
 <div class="search-bar">
     <form action="<c:url value='/videopost/list' />" method="get">
         <select name="searchType">
@@ -30,10 +37,8 @@
         <button type="submit">검색</button>
     </form>
 </div>
-
-<hr>
-
 <div class="video-container">
+
     <c:forEach var="video" items="${videoList}">
         <div class="video-item">
             <a href="<c:url value='/videopost/detail/${video.videoUuid}' />">
@@ -70,10 +75,13 @@
         <a href="<c:url value='/videopost/list?page=${page + 1}&searchType=${searchType}&searchKeyword=${searchKeyword}' />">다음 &raquo;</a>
     </c:if>
 </div>
-	<div class="container">
+</div>
+
+	<div class="container-fluid px-0">
 	<!-- footer-->
 	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 	<!--// footer-------------------------------------------------->
+	</div>
 <script src="/assets/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -27,4 +27,7 @@ public interface DisasterMessageMapper {
 
     //searchWord에 따라 재난유형별 빈도수 데이터를 불러옴
     List<DisasterCountVO> item_count (SearchVO searchVO);
+    
+    // 서울 긴급재난문자 최신 5건 가져오기
+    List<DisasterMessageVO> getLatestFiveDisasterMessageForSeoul();
 }

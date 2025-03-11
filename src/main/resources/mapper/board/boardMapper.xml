@@ -2,21 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pcwk.ehr.board.mapper.BoardMapper">
 
-	<sql id="doRetrieveWhere">
-		<if test="'' != searchDiv">
-			<choose>
-				<when test="'10' == searchDiv">
-					AND board_title LIKE #{searchWord} ||'%'
-				</when>
-				<when test="'20' == searchDiv">
-					AND board_contents LIKE #{searchWord} ||'%'
-				</when>
-				<when test="'30' == searchDiv">
-					AND reg_id LIKE #{searchWord} ||'%'
-				</when>
-			</choose>
-		</if>
-	</sql>
+<sql id="doRetrieveWhere">
+        <if test="'' != searchDiv">
+            <choose>  
+                <when test="'10' == searchDiv">
+                    AND board_title    LIKE '%'|| #{searchWord} ||'%'
+                </when>
+                <when test="'20' == searchDiv">
+                    AND board_contents LIKE '%'|| #{searchWord} ||'%'
+                </when>        
+                <when test="'30' == searchDiv">
+                    AND reg_id         LIKE '%'|| #{searchWord} ||'%'               
+                </when>   
+            </choose>
+        </if>
+    </sql>
 
 	<select id="doRetrieve" parameterType="SearchVO"
 		resultType="BoardVO">
@@ -31,7 +31,8 @@
 		TO_CHAR(tt1.reg_dt, 'YYYY-MM-DD') as regDt,
 		tt1.div
 		FROM (
-		SELECT ROWNUM rnum, t1.*
+		SELECT ROWNUM
+		rnum, t1.*
 		FROM (
 		SELECT *
 		FROM board
@@ -53,7 +54,8 @@
 	</select>
 
 	<select id="getBoardSequence" resultType="java.lang.Integer">
-		SELECT BOARD_SEQ.CURRVAL FROM dual
+		SELECT
+		BOARD_SEQ.CURRVAL FROM dual
 	</select>
 
 
@@ -94,7 +96,8 @@
 		board_contents as content,
 		read_cnt as readCnt,
 		reg_id as regId,
-		reg_dt as regDt,
+		reg_dt
+		as regDt,
 		mod_dt,
 		div
 		FROM
@@ -120,11 +123,49 @@
 	<update id="doUpdate" parameterType="BoardVO">
 		UPDATE board
 		SET
-		board_title = #{title},
+		board_title =
+		#{title},
 		board_contents = #{content},
 		mod_dt = SYSDATE
 		WHERE
-		board_id = #{boardId}
+		board_id =
+		#{boardId}
 	</update>
+
+	<select id="getLatestFiveBoard" parameterType="String"
+		resultType="BoardVO">
+		SELECT b1.board_id as boardId,
+		b1.board_title as title,
+		b1.reg_dt,
+		b1.div
+		FROM (
+		SELECT
+		board_id,
+		board_title,
+		board_contents,
+		read_cnt,
+		reg_id,
+		reg_dt,
+		mod_dt,
+		div
+		FROM
+		board
+		WHERE 1 = 1
+		<choose>
+			<when test="'10' == div">
+				AND div = #{div}
+			</when>
+			<when test="'20' == div">
+				AND div = #{div}
+			</when>
+			<when test="'30' == div">
+				AND div = #{div}
+			</when>
+		</choose>
+		ORDER BY reg_dt DESC
+		) b1
+		WHERE ROWNUM <![CDATA[<]]>
+		6
+	</select>
 
 </mapper>

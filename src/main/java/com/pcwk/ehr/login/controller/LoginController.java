@@ -66,7 +66,7 @@ public class LoginController {
             UserVO outVO = loginService.doSelectOne(user);
             session.setAttribute("user", outVO);
             log.info("userId:{}", userId);
-            return "redirect:/main";  // 일반 로그인 성공 시 홈 페이지로 이동
+            return "redirect:/index";  // 일반 로그인 성공 시 홈 페이지로 이동
         } else {
             model.addAttribute("errorMessage", "오류가 발생했습니다.");
             return "login";

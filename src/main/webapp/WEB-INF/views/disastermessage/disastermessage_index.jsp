@@ -8,96 +8,111 @@
 
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/disastermessage_index.css">
-
+<link href="/assets/css/header.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
     </style>
 </head>
-
+    <div class="">
+        <!-- header-->
+        <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+        <!--// header-------------------------------------------------->
+    </div>
+    
+    
 <body>
-<div class="container">
-		<!-- header-->
-		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-		<!--// header-------------------------------------------------->
-	</div>
-<!-- "지역 선택" 버튼 -->
-<button id="regionSelectBtn" class="region-select-btn">
-    <c:out value="${searchWord}" default="지역 선택" />
-</button>
-<div class="container1">
-    <!-- 안전지수 및 관련 정보 -->
+    
+    <br>
+    
+    <div class="container">
+
+
+<!-- 안전지수 정보 및 지역 선택을 가로로 배치 -->
+<div class="safety-wrapper">
+    <!-- 안전지수 정보 -->
     <div class="safety-info-container">
         <div class="safety-index">
             재난 빈도수 * 가중치 : <strong><c:out value="${safetyIndex}" default="-" /></strong>
         </div>
-
         <div class="safety-index">
             양수량 : <strong><c:out value="${safetyIndex_EWSF}" default="-" /> ton</strong>
         </div>
-
         <div class="safety-index">
             안전지수 : <strong id="safetyIndexValue">${safetyIndex_EWSF - safetyIndex}</strong>
         </div>
+        <div id="safetyImageContainer" class="safety-image"></div>
+    </div>
 
-        <div id="safetyImageContainer" data-image-url="${imageUrl}">
-            <!-- 이미지 -->
+    <!-- 지역 선택 버튼 -->
+    <div class="region-select-wrapper">
+        <button id="regionSelectBtn" class="region-select-btn">
+            <c:out value="${searchWord}" default="지역 선택" />
+        </button>
+    </div>
+</div>
+
+
+
+        <!-- 차트를 가로 정렬 -->
+        <div class="charts-wrapper">
+            <div class="chart-container">
+                <canvas id="disasterFrequency"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="safetyChart"></canvas>
+            </div>
         </div>
     </div>
 
+    <!-- 지역 선택 모달 -->
+    <div id="overlay" class="overlay"></div>
 
-    <div class="chart-container" style="width: 800px; margin: auto; padding-top: 20px; height: 500px">
-        <canvas id="disasterFrequency"></canvas>
+    <div id="regionModal" class="modal">
+        <h3>지역 선택</h3>
+        <div class="region-box">
+            <button data-value="강남">강남</button>
+            <button data-value="강동">강동</button>
+            <button data-value="강서">강서</button>
+            <button data-value="강북">강북</button>
+            <button data-value="관악">관악</button>
+            <button data-value="광진">광진</button>
+            <button data-value="구로">구로</button>
+            <button data-value="금천">금천</button>
+            <button data-value="노원">노원</button>
+            <button data-value="도봉">도봉</button>
+            <button data-value="동대문">동대문</button>
+            <button data-value="동작">동작</button>
+            <button data-value="마포">마포</button>
+            <button data-value="서대문">서대문</button>
+            <button data-value="서초">서초</button>
+            <button data-value="성동">성동</button>
+            <button data-value="성북">성북</button>
+            <button data-value="송파">송파</button>
+            <button data-value="양천">양천</button>
+            <button data-value="영등포">영등포</button>
+            <button data-value="용산">용산</button>
+            <button data-value="은평">은평</button>
+            <button data-value="종로">종로</button>
+            <button data-value="중구">중구</button>
+            <button data-value="중랑">중랑</button>
+        </div>
+        <div class="modal-footer">
+            <button class="close-btn" id="closeModal">닫기</button>
+            <button class="complete-btn" id="completeSelection">완료</button>
+        </div>
     </div>
 
-    <!-- 차트 -->
-    <div class="chart-container" style="width: 800px; margin: auto; padding-top: 20px; height: 500px">
-        <canvas id="safetyChart"></canvas>
-    </div>
+    <form id="regionForm" method="GET" action="/disastermessage/safety_Index">
+        <input type="hidden" id="selectedRegion" name="searchWord" value="${searchWord}">
+    </form>
+</body>
+
+<div class="container-fluid px-0">
+    <!-- footer-->
+    <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+    <!--// footer-------------------------------------------------->
 </div>
-
-<div id="overlay" class="overlay"></div>
-
-<div id="regionModal" class="modal">
-    <h3>지역 선택</h3>
-    <div class="region-box">
-        <button data-value="강남">강남</button>
-        <button data-value="강동">강동</button>
-        <button data-value="강서">강서</button>
-        <button data-value="강북">강북</button>
-        <button data-value="관악">관악</button>
-        <button data-value="광진">광진</button>
-        <button data-value="구로">구로</button>
-        <button data-value="금천">금천</button>
-        <button data-value="노원">노원</button>
-        <button data-value="도봉">도봉</button>
-        <button data-value="동대문">동대문</button>
-        <button data-value="동작">동작</button>
-        <button data-value="마포">마포</button>
-        <button data-value="서대문">서대문</button>
-        <button data-value="서초">서초</button>
-        <button data-value="성동">성동</button>
-        <button data-value="성북">성북</button>
-        <button data-value="송파">송파</button>
-        <button data-value="양천">양천</button>
-        <button data-value="영등포">영등포</button>
-        <button data-value="용산">용산</button>
-        <button data-value="은평">은평</button>
-        <button data-value="종로">종로</button>
-        <button data-value="중구">중구</button>
-        <button data-value="중랑">중랑</button>
-    </div>
-    <div class="modal-footer">
-        <button class="close-btn" id="closeModal">닫기</button>
-        <button class="complete-btn" id="completeSelection">완료</button>
-    </div>
-</div>
-
-<form id="regionForm" method="GET" action="/disastermessage/safety_Index">
-    <input type="hidden" id="selectedRegion" name="searchWord" value="${searchWord}">
-</form>
-
-
 <!-- JavaScript -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -316,7 +331,7 @@
     if (safetyIndexValue > 50000) {
         imageUrl = "/assets/images/yeong-chang/매우좋음.png";
     } else if (safetyIndexValue > 10000) {
-        imageUrl = '/assets/images/yeong-chang/좋음.png';
+        imageUrl = '/assets/images/yeong-chang/좋음.png';		
     } else if (safetyIndexValue < -50000) {
         imageUrl = '/assets/images/yeong-chang/매우나쁨.png';
     } else if (safetyIndexValue < 10000) {
@@ -336,13 +351,4 @@
     }
 
 </script>
-
-<div class="container">
-    <!-- footer-->
-    <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-    <!--// footer-------------------------------------------------->
-</div>
-
-</body>
-
 </html>

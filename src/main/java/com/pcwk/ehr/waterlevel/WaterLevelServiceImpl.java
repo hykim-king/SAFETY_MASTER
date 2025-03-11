@@ -2,6 +2,8 @@ package com.pcwk.ehr.waterlevel;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -10,6 +12,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class WaterLevelServiceImpl implements WaterLevelService {
+	
+	
+	final Logger log = LoggerFactory.getLogger(getClass());
+	
 	private final WaterLevelMapper waterLevelMapper;
 	   
     @Autowired
@@ -30,7 +36,17 @@ public class WaterLevelServiceImpl implements WaterLevelService {
     }
     @Override
     public List<WaterLevel> getPagedWaterLevels(int offset, int limit) {
-        return waterLevelMapper.getPagedWaterLevels(offset, limit);
+    	
+    	List<WaterLevel> list =  waterLevelMapper.getPagedWaterLevels(offset, limit);
+    	
+    	for(WaterLevel wl: list) {
+    		
+    		log.info("홍수 ID : " + wl.getMeaDt());
+    		
+    	}
+    	
+    	
+        return list;
     }
     @Override
     public int getTotalRecords() {

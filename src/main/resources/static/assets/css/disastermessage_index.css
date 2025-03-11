@@ -6,64 +6,70 @@ body {
     color: #333;
 }
 
-/* 전체 컨테이너 */
-.container1 {
+/* 안전지수 정보와 지역 선택을 가로로 정렬 */
+.safety-wrapper {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 30px; /* 안전지수와 차트 사이의 간격 */
-    margin-top: 0!important;
+    justify-content: space-between; /* 좌우 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%;
+    padding: 15px 20px;
 }
 
-/* 안전지수 표시 */
+/* 안전지수 정보 영역 */
+.safety-info-container {
+	margin-right:10px;
+    display: flex;
+    flex-wrap: nowrap; /* 줄 바꿈 방지 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 안전지수 개별 요소 */
 .safety-index {
-    font-size: 18px;
-    color: #333;
+    font-size: 20px;
     font-weight: bold;
-    margin: 0;
+    color: #333;
+    background: white;
+    padding: 20px 30px; /* 내부 패딩 확장 */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 320px; /* 기존 260px에서 확장 */
+    min-width: 320px;
+    height: 100px; /* 일정한 높이 유지 */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
+    justify-content: center; /* 내부 내용 중앙 정렬 */
+    align-items: center; /* 내부 내용 중앙 정렬 */
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
 }
 
-/* 안전지수 수치 강조 */
+/* 강조된 텍스트 */
 .safety-index strong {
     color: #007bff;
 }
 
-/* 차트 영역 */
-.chart-container {
-    width: 60%; /* 차트의 너비를 적당히 조정 */
-    max-width: 600px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+/* 지역 선택 버튼을 오른쪽 정렬 */
+.region-select-wrapper {
     display: flex;
-    justify-content: center; /* 차트 중앙 정렬 */
-}
-
-/* 안전지수 텍스트와 차트가 나란히 오게 하기 위한 스타일 */
-.safety-info-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* 지역 선택 버튼 */
 .region-select-btn {
-    padding: 12px 120px;
+    padding: 12px 40px; /* 기존보다 가로 패딩 증가 */
+    font-size: 16px; /* 글자 크기 증가 */
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px; /* 둥근 모서리 유지 */
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    font-size: 16px;
+    min-width: 150px; /* 최소 너비 추가 */
+    text-align: center; /* 텍스트 중앙 정렬 */
 }
 
 .region-select-btn:hover {
@@ -71,7 +77,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* 모달 및 기타 스타일은 기존과 동일하게 유지 */
+/* 모달 */
 .overlay {
     display: none;
     position: fixed;
@@ -84,7 +90,6 @@ body {
     z-index: 1000;
 }
 
-/* 모달 */
 .modal {
     display: none;
     position: fixed;
@@ -99,6 +104,7 @@ body {
     border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     z-index: 1001;
+    text-align: center; /* 모달 내부 텍스트 중앙 정렬 */
 }
 
 /* 지역 리스트 */
@@ -106,7 +112,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
+    justify-content: center; /* 버튼 중앙 정렬 */
     margin-bottom: 20px;
 }
 
@@ -133,23 +139,19 @@ body {
     border: 2px solid #0056b3;
 }
 
-/* 차트 및 안전지수가 나란히 배치된 푸터 */
-.modal-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-/* 완료 버튼 */
-.complete-btn {
+/* 완료 및 닫기 버튼 */
+.complete-btn, .close-btn {
     padding: 12px 18px;
-    background: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease-in-out;
+}
+
+.complete-btn {
+    background: #28a745;
 }
 
 .complete-btn:hover {
@@ -157,19 +159,51 @@ body {
     transform: scale(1.05);
 }
 
-/* 닫기 버튼 */
 .close-btn {
-    padding: 12px 18px;
     background: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
 }
 
 .close-btn:hover {
     background-color: #c82333;
     transform: scale(1.05);
+}
+
+/* 차트 두 개를 가로 중앙 정렬 */
+.charts-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 20px auto;
+}
+
+/* 개별 차트 컨테이너 */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 500px;
+}
+
+/* 안전지수 이미지 중앙 정렬 */
+.safety-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* 안전지수 이미지 크기 조정 */
+.safety-image img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }

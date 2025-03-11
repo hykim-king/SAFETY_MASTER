@@ -46,4 +46,9 @@ public class DisasterMessageServiceImpl implements DisasterMessageService {
     public List<DisasterCountVO> item_count(SearchVO searchVO) throws Exception {
         return disasterMessageMapper.item_count(searchVO);
     }
+
+	@Override
+	public List<DisasterMessageVO> getLatestFiveDisasterMessageForSeoul() {
+		return disasterMessageMapper.getLatestFiveDisasterMessageForSeoul();
+	}
 }

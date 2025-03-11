@@ -5,7 +5,14 @@
     <title>과거지진</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/eqk.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link href="/assets/css/header.css" rel="stylesheet">
     <style>
+		#container {
+			max-width: 1320px;
+		    margin: 0 auto;
+		    padding: 0 15px;
+		    margin-top: 36px;
+		}
         #earthquakeChart {
             width: 100%;
             height: 700px !important;
@@ -16,13 +23,18 @@
 
 
 </head>
+
+
+
 <body>
-<div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
-<div class="earthquakeList">
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
+<div id="container" class="earthquakeList">
     <div class="leftArea">
         <div class="titArea">
             <div class="selectArea">
@@ -151,7 +163,7 @@
 
 
 
-<div class="earthquakeList">
+<div id="container" class="earthquakeList">
     <div class="leftArea" style="margin-top: 30px">
         <div class="titArea">
 
@@ -379,10 +391,10 @@
     });
 
 </script>
- <div class="container">
-      <!-- footer-->
-      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-      <!--// footer-------------------------------------------------->
-    </div>
+<div class="container-fluid px-0">
+	<!-- footer-->
+	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+	<!--// footer-------------------------------------------------->
+</div>
     </body>
     </html>

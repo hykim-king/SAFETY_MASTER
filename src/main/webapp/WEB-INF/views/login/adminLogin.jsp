@@ -13,6 +13,9 @@
 <link href="/assets/css/adminLogin.css" rel="stylesheet">
 </head>
 <body>
+	<div class="logo">
+        <img src="${CP}/assets/images/logo/3652.png" alt="서울365 안전포털" class="custom-logo-img">		
+    </div>
 	<div class="container admin-login-container">
 		<div class="card admin-login-card">
 			<div class="card-header admin-login-card-header">관리자 전용 로그인</div>

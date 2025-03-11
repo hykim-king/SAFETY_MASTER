@@ -2,6 +2,8 @@ package com.pcwk.ehr.waterlevel;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -15,28 +17,31 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/waterlevel")
 public class WaterLevelController {
+
+	final Logger log = LoggerFactory.getLogger(getClass());
+
 	@Autowired
-    private final WaterLevelService waterLevelService;
+	private final WaterLevelService waterLevelService;
 
-    public WaterLevelController(WaterLevelService waterLevelService) {
-        this.waterLevelService = waterLevelService;
-    }
-    
-    @GetMapping("/view/all")
-    public String showWaterLevelPage(Model model) {
-        List<WaterLevel> waterLevels = waterLevelService.getWaterLevelsState();
+	public WaterLevelController(WaterLevelService waterLevelService) {
+		this.waterLevelService = waterLevelService;
+	}
 
-        model.addAttribute("waterLevels", waterLevels);
-        return "waterlevel/waterlevel";  
-    }
-    
-    @GetMapping("/recent/{wlObsCd}")
-    @ResponseBody
-    public List<WaterLevel> getRecentWaterLevels(@PathVariable("wlObsCd") int wlObsCd) {
-        return waterLevelService.getRecentWaterLevels(wlObsCd);
-    }
-    
-    @GetMapping("/view")
+	@GetMapping("/view/all")
+	public String showWaterLevelPage(Model model) {
+		List<WaterLevel> waterLevels = waterLevelService.getWaterLevelsState();
+
+		model.addAttribute("waterLevels", waterLevels);
+		return "waterlevel/waterlevel";
+	}
+
+	@GetMapping("/recent/{wlObsCd}")
+	@ResponseBody
+	public List<WaterLevel> getRecentWaterLevels(@PathVariable("wlObsCd") int wlObsCd) {
+		return waterLevelService.getRecentWaterLevels(wlObsCd);
+	}
+
+	@GetMapping("/view")
     public String showPagedWaterLevelPage(@RequestParam(name = "page", defaultValue = "1") int page, Model model) {
         int pageSize = 10;
         int totalRecords = waterLevelService.getTotalRecords();
@@ -59,17 +64,21 @@ public class WaterLevelController {
         model.addAttribute("showPrev", page > 1);
         model.addAttribute("showNext", page < totalPages);
         model.addAttribute("latestWaterLevels", latestWaterLevels);
+        
+        for(WaterLevel wl: pagedWaterLevels) {
+        	log.info("홍수 테스트" + wl.toString());
+        }
+        
+        
 
         return "waterlevel/waterlevel";
     
     }
-    
-    @GetMapping("/latest")
-    @ResponseBody
-    public List<WaterLevel> getLatestWaterLevels() {
-        return waterLevelService.getLatestWaterLevels();
-    }
+
+	@GetMapping("/latest")
+	@ResponseBody
+	public List<WaterLevel> getLatestWaterLevels() {
+		return waterLevelService.getLatestWaterLevels();
+	}
 
 }
-
-

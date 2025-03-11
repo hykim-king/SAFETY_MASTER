@@ -19,9 +19,11 @@
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
+
+
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->
@@ -85,20 +87,20 @@
 				</div>
 				<div class="col-2">
 					<button id="search_Btn" type="button" class="btn btn-success">검색</button>
-
+				</div>
+				<div class="container ps-0 pt-0 pb-1">
+					<p style="font-size: 14px;"
+						class="pt-2 mb-0 text-start text-dark">최근 업데이트
+						시간&nbsp:&nbsp${er_Bed_List[0].hviDt}</p>
 				</div>
 			</div>
 		</div>
 
-		<div style="margin-left: 250px;" class="container ps-0 pt-0 pb-1">
-			<p style="font-size: 14px;"
-				class="pt-2 mb-0 text-start text-dark">최근 업데이트
-				시간&nbsp:&nbsp${er_Bed_List[0].hviDt}</p>
-		</div>
+
 		<c:forEach var="er_bed" items="${er_Bed_List}">
-			<div class="container-fluid d-flex justify-content-center">
+			<div class="container-fluid d-flex justify-content-center mt-0">
 				<table class="table table-bordered border-dark text-center w-75"
-					style="table-layout: fixed;">
+					style="table-layout: fixed; max-width: 1320px;">
 
 					<thead>
 						<tr class="text-center table-success">
@@ -158,7 +160,7 @@
 
 
 
-	<div class="container">
+	<div class="container-fluid px-0">
 		<!-- footer-->
 		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 		<!--// footer-------------------------------------------------->

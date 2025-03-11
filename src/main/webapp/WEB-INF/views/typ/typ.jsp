@@ -6,13 +6,18 @@
   <title>태풍</title>
   <link rel="stylesheet" type="text/css" href="/assets/css/typ.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
+  
 </head>
+
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
 <div class="container">
-  <!-- header-->
-  <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-  <!--// header-------------------------------------------------->
-</div>
 <div class="earthquakeList">
   <div class="leftArea" style="margin-top: 45px">
     <div class="selectArea">
@@ -82,6 +87,8 @@
     </div>
   </div>
 </div>
+</div>
+
 
 <script src="/assets/js/typ/typ_page.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -227,10 +234,10 @@
 
 
 
- <div class="container">
-      <!-- footer-->
-      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-      <!--// footer-------------------------------------------------->
-    </div>
+	<div class="container-fluid px-0">
+		<!-- footer-->
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
+	</div>
 </body>
 </html>

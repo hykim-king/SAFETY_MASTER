@@ -16,12 +16,6 @@
 
 </head>
 <body>
-  <!-- 네비게이션 바 -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">재난 대처 퀴즈</a>
-    </div>
-  </nav>
 
   <div class="container">
     <div class="card quiz-card">

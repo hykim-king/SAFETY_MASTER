@@ -62,9 +62,18 @@
         margin: 0 15px; 
     }
 </style>
+
+
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
 	<div id="container" class="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+	
 		<div>
 			<h1 class="title">주요 재난 통계</h1>
 		</div>
@@ -91,9 +100,18 @@
 		<div class="chart-container">
 		    <canvas id="yearlyComparisonChart" width="800" height="500"></canvas>
 		</div>
-		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		
+
+
     </div>
-    <script>  		
+   
+</body>
+	<div class="container-fluid px-0">
+		<!-- footer-->
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
+	</div>
+ <script>  		
     //주간 통계
 	async function fetchWeeklyStats() {
             const response = await fetch('/accident-stats/data');
@@ -224,5 +242,4 @@
         fetchWeeklyStats();
         fetchMonthlyStats();
     </script>
-</body>
 </html>
