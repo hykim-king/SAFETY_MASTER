@@ -26,6 +26,8 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 <link href="/assets/css/header.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	
+	
 <!-- 제목 설정 -->
 <c:choose>
 	<c:when test="${board_div eq '10'}">
@@ -41,10 +43,18 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 <script src="/assets/js/jquery_3_7_1.js"></script>
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+		
 <body>
-	<div id="container" class="container">
-		<!-- header -->
+
+	<div class="">
+		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
+	<div class="wrapper">
+
 
 		<!-- main -->
 		<main class="container my-4">
@@ -168,8 +178,9 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 			</article>
 		</main>
 
-		<!-- footer -->
-		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+	<!-- footer-->
+      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+    <!--// footer-------------------------------------------------->
 	</div>
 
 	<!-- 스크립트 -->

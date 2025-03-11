@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				// 비밀번호 변경 성공 후 메인 페이지로 리디렉션
 				if (response.messageId === 1) {
 					setTimeout(function() {
-						window.location.href = "/main";  // 메인 페이지로 이동
+						window.location.href = "/login/login.do";  // 메인 페이지로 이동
 					}, 1000);  // 1초 후에 리디렉션
 				}
 			},

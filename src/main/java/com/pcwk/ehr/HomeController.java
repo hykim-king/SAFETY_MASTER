@@ -21,7 +21,7 @@ public class HomeController {
     @GetMapping("/main")
     public String home() {
         log.info("메인페이지 접근");
-        return "template/main"; 
+        return "redirect:/index"; 
     }
     
     // 로그아웃: 세션 무효화 후 로그인 페이지로 리다이렉트
@@ -32,6 +32,6 @@ public class HomeController {
             session.invalidate();
         }
         log.info("로그아웃 처리 완료");
-        return "redirect:/main"; // 로그인 페이지로 리다이렉트
+        return "redirect:/index"; // 로그인 페이지로 리다이렉트
     }
 }

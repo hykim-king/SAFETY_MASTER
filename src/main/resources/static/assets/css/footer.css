@@ -1,39 +1,99 @@
-#footer {
-    width: 100%; /* 전체 화면 너비 */
-    margin-top: 30px;
-    background-color: #2A3F5F;
-    color: #FFFFFF;
-    padding: 50px 0;
-    font-size: 16px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    left: 0;
-    right: 0;
-    overflow-x: hidden; /* 가로 스크롤 방지 */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* 부모 요소에 맞게 조정 */
-    max-width: 1200px; /* 내용이 과도하게 퍼지는 것을 방지 */
-    padding: 0 40px; /* 좌우 여백 */
+/* 페이지 전체를 감싸는 컨테이너 추가 */
+.wrapper {
+  min-height: 91vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-left {
-    text-align: left;
-    flex: 1;
+
+/* 콘텐츠 영역을 최대한 확장 */
+.container-fluid {
+  flex: 1;
+  padding: 0;
+  margin-top: 50px;
 }
 
-.footer-right {
-    text-align: right;
-    flex: 1;
+/* 푸터 스타일 */
+footer {
+  margin-top: auto; /* 이 부분이 푸터를 항상 최하단으로 밀어줌 */
+  background-color: #1b2c49;
+  color: #fff;
+  padding: 20px 10px;
+  text-align: center;
 }
 
-#footer p {
-    margin: 5px 0;
-    opacity: 0.9;
+/* 나머지 푸터 스타일은 동일 */
+.footer-top {
+  margin-bottom: 20px;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-top ul li {
+  margin: 0 15px;
+}
+
+.footer-top ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-top ul li a:hover {
+  color: #ffcc00;
+}
+
+.footer-line {
+  border: none;
+  border-top: 1px solid #2e4162;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+}
+
+.footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  font-size: 13px;
+  color: #bfcbdc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-info {
+  margin-bottom: 30px;
+}
+
+.footer-info p {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #bfcbdc;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #8fa0b0;
+  margin-top: 20px;
 }

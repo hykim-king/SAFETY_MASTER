@@ -5,9 +5,6 @@ import java.util.List;
 
 import com.pcwk.ehr.board.domain.BoardVO;
 import com.pcwk.ehr.cmn.BoardDTO;
-import com.pcwk.ehr.cmn.DTO;
-import com.pcwk.ehr.file.domain.FileVO;
-import com.pcwk.ehr.reply.domain.ReplyVO;
 
 public interface BoardService {
 		
@@ -22,4 +19,10 @@ public interface BoardService {
 	int doUpdate(BoardVO boardVO) throws SQLException;
 	
 	int getBoardSequence();
-}
+	
+	List<BoardVO> getLatestFiveBoard(String div);
+	
+	
+	
+	
+	}

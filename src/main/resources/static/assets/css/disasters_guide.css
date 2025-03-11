@@ -69,7 +69,8 @@ body {
     display: inline-block;
     position: absolute;
     width: 1653px;
-    height: 102.2%
+    height: 102.2%;
+    margin-left: 210px;
 }
 
 .imgbox{

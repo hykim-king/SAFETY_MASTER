@@ -59,12 +59,17 @@
         }
     </script>
 </head>
-<!-- header-->
-<div class="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-	<!--// header-------------------------------------------------->
+
+
 	
 <body class="checklist-body">
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+
     <div class="checklist-container mt-5 p-4 border rounded">
         <h1 class="checklist-title">재난 대피 물품 안내</h1>
 
@@ -173,7 +178,7 @@
         </div>
     </div>
 </body>
-	<div class="container">
+	<div class="container-fluid px-0">
 	<!-- footer-->
 	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 	<!--// footer-------------------------------------------------->

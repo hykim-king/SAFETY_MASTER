@@ -16,14 +16,16 @@
 <script src="/assets/js/jquery_3_7_1.js"></script>
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
-        <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->
+	</div>
 
+
+	<div id="container" class="container">
 		<!-- main-->
 		<main  class="container my-4 mx-1">
       		<article class="col-md-12">	     
@@ -138,7 +140,7 @@
 	                    <tr class="table-primary">
 	                        <th>보장항목</th>
 	                        <th>보장내용</th>
-	                        <th>보장금액</th>
+	                        <th>보장금액(만원)</th>
 	                    </tr>
 	                </thead>
 	                <tbody>
@@ -147,8 +149,8 @@
 	                            <c:forEach var="gr" items="${grnt}">
 	                                <tr>
 	                                    <td class="text-left">${gr.grntNm}</td>
-	                                    <td class="text-center">${gr.grntContent}</td>
-	                                    <td class="text-left">${gr.grntAmount}</td>
+	                                    <td class="text-left">${gr.grntContent}</td>
+	                                    <td class="text-center">${gr.grntAmount}</td>
 	                                </tr>
 	                            </c:forEach>
 	                        </c:when>
@@ -166,11 +168,13 @@
 	    </main>
 		<!--// main---------------------------------------------------->
 	    
+
+	</div>
+		<div class="container-fluid px-0">
 		<!-- footer-->
-	       <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 		<!--// footer-------------------------------------------------->
 	</div>
-	
     <!-- 사용자 정의 스크립트 -->
     <script src="/assets/js/pcwk.js"></script>
     <!-- Bootstrap JS -->

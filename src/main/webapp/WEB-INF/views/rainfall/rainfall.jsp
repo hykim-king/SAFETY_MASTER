@@ -18,19 +18,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/jquery_3_7_1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
     <style>
     #rf-container { 
     	display: flex;
-    	width: 1200px;
-    	margin:0 auto;
     	}
     #map { 
     	width: 50%; 
     	height: 600px; 
     	margin-top: 30px;
-    	padding: 0px 20px;
+    	padding-right: 20px;
     	}
 	#legend {
 	    position: absolute;
@@ -103,8 +100,6 @@
         height: 300px !important; /* 차트가 너무 커지는 문제 해결 */
     }
     .sourceText {
-	    position: absolute;
-	    left: 110px;
 	    font-size: 14px;
 	    color: darkgray ;
     }
@@ -149,32 +144,80 @@
 	    background: navy;
 	    color: white;
 	}
+	
+	#rainfallImage {
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 (필요할 경우) */
+}
+
 	#rainfallImage img{
-		width: 100%;
-	    height: 400px;
-	    margin-top: 200px;
+		max-width: 1320px;
 	}
-	#linebox{
-		position: absolute;
-		width: 1150px;
-		left: 120px;
-		margin: 20px;
+	.textbox{
+		margin-top: 50px;
 	}
-	#linebox h3{
+	.textbox h3{
 		margin-top: 20px;
 	}
 	.line{
 		border-top: 1px solid gray;
 		padding: 20px 0px;
 		margin-top: 20px;
-		}
+	}
 	
+	#rainfallImage {
+	    position: relative;
+	    width: 100%;
+	    overflow: hidden;
+	}
+
+	#rainfallImage::before, 
+	#rainfallImage::after {
+	    content: "";
+	    position: absolute;
+	    top: 0;
+	    height: 100%;
+	    width: 50%;
+	    z-index: -1;
+	}
+
+	#rainfallImage::before {
+	    left: 0;
+	    background-color: #F1F1F1; /* 왼쪽 배경색 (네이비톤) */
+	}
+
+	#rainfallImage::after {
+	    right: 0;
+	    background-color: #E3E1DE; /* 오른쪽 배경색 (밝은 네이비톤 또는 원하는 컬러) */
+	}
+
+	#rainfallImage {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    position: relative;
+	    overflow: hidden;
+	}
+
+	#rainfallImage img {
+	    max-width: 1320px;
+	    width: 100%;
+	    height: auto;
+	    z-index: 1;
+	}
+
     </style>
 </head>
+<!--  header -->
+<div id="" class="">
+	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+</div>
+<!--// header-------------------------------------------------->
 <body>
 
-<div id="container">
-<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+
+<div id="container" class="container" style="margin-bottom: 200px;">
 	<div id="rf-container">
 	    <!-- 지도 영역 -->
 	    <div id="map">
@@ -188,10 +231,10 @@
 	    	<h2>호우 특보현황</h2>	  
 				<c:choose>
 					<c:when test="${empty warnings}">
-					         <!-- 데이터가 없을 때 -->
-					         <div class="non-wl">					         
-					             <p><strong>⚠ 현재 발령중인 특보 현황이 없습니다.</strong></p>
-					         </div>
+				         <!-- 데이터가 없을 때 -->
+				         <div class="non-wl">					         
+				             <p><strong>⚠ 현재 발령중인 특보 현황이 없습니다.</strong></p>
+				         </div>
 					</c:when>
 					<c:otherwise>
 						 <div id="floodWarningTable">
@@ -252,38 +295,49 @@
 			</div>
 		</div>
 	</div>
-	    
-		<span class = "sourceText" >기상청 제공</span>
+	   
+	<div class = "sourceText">    
+		<span>기상청 제공</span>
+	</div>
 	
-		<div id="guRainfallContainer">
-		    <h2>자치구별 강수량
-			    <c:if test="${not empty guRainfall}">
-			       <span style="color: gray; font-size: 16px; margin-left: 20px; padding-left: 15px;">
-			            <c:out value="${guRainfall[0].regDt}" /> 기준
-			       </span>
-			   </c:if>		    
-		    </h2>
-		    <p id="lastUpdated"></p>
-		    <div class="tabs">
-		        <button class="tab-button active" data-type="1h">1시간 강수량</button>
-		        <button class="tab-button" data-type="24h">24시간 강수량</button>
-		        <button class="tab-button" data-type="48h">48시간 강수량</button>
-		    </div>
-		    <canvas id="rainfallChart"></canvas>
-		
-		</div>
+	<div id="guRainfallContainer">
+	    <h2>자치구별 강수량
+		    <c:if test="${not empty guRainfall}">
+		       <span style="color: gray; font-size: 16px; margin-left: 20px; padding-left: 15px;">
+		            <c:out value="${guRainfall[0].regDt}" /> 기준
+		       </span>
+		   </c:if>		    
+	    </h2>
+	    <p id="lastUpdated"></p>
+	    <div class="tabs">
+	        <button class="tab-button active" data-type="1h">1시간 강수량</button>
+	        <button class="tab-button" data-type="24h">24시간 강수량</button>
+	        <button class="tab-button" data-type="48h">48시간 강수량</button>
+	    </div>
+	    <canvas id="rainfallChart"></canvas>
 	
-		<div id="rainfallImage">
-			<img src="/assets/images/eun_bi/rainfall.png" alt="호우발생시행동요령">
-		</div>
-		<div id="linebox">
-			<h3>호우주의보  ·  호우경보 기준</h3>
-			<div class = "line">
-	            <span>· 호우주의보 : 3시간 누적강우량이 60mm 이상 예상되거나 12시간 누적강우량이 110mm 이상 예상될 때</span></br>
-	            <span>· 호우경보 : 3시간 누적강우량이 90mm 이상 예상되거나 12시간 누적강우량이 180mm 이상 예상될 때</span>
-	        </div>
-		</div>
+	</div>
+
 </div>
+<div id="rainfallImage">
+	<img src="/assets/images/eun_bi/rainfallBanner.png" alt="호우발생시행동요령">
+</div>
+
+<div id="container" class="container">
+	<div class="textbox">
+	<h3>호우주의보  ·  호우경보 기준</h3>
+		<div class = "line">
+	           <span>· 호우주의보 : 3시간 누적강우량이 60mm 이상 예상되거나 12시간 누적강우량이 110mm 이상 예상될 때</span></br>
+	           <span>· 호우경보 : 3시간 누적강우량이 90mm 이상 예상되거나 12시간 누적강우량이 180mm 이상 예상될 때</span>
+		</div>
+	</div>
+</div>
+
+	<div class="container-fluid px-0">
+		<!-- footer-->
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
+	</div>
 
 
 <script>

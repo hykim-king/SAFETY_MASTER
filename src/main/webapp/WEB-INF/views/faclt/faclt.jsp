@@ -49,13 +49,14 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 </script>
 </head>
 
-<!-- header-->
-<div class="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-	<!--// header-------------------------------------------------->
-</div>
-
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
+	
 	<div id="container" class="message">
 		<div id="state_sub">
 			<div class="stateWrap">
@@ -70,8 +71,7 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 			<p>민방위사태 발생 시 주민의 생명과 재산을 보호하기 위하여 정부 지원으로 설치 또는 공공용으로 지정된
 				대피시설입니다.</p>
 		</div>
-	</div>
-	<div class="listWrap">
+		<div class="listWrap">
 		<form action="#" class="search-form" name="userForm" id="userForm"
 			method="get">
 			<input type="hidden" name="pageNo" id="pageNo">
@@ -134,18 +134,21 @@ String pageHtml = StringUtil.renderingPager(maxNum, pageNo, pageSize, bottomCoun
 
 		</table>
 	</div>
-
-
+	
 	<br>
 	<%
 	out.print(pageHtml);
 	%>
+	</div>
+	
 
 
-	<div class="container">
-	<!-- footer-->
-	<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-	<!--// footer-------------------------------------------------->
+
+
+	<div class="container-fluid px-0">
+		<!-- footer-->
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
 	</div>
 	<script src="/assets/js/faclt/faclt_page.js"></script>
 </body>

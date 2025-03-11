@@ -1,152 +1,119 @@
-/* 전체 헤더 박스 스타일 (카드 형태) */
-.custom-header-box {
-    background-color: #fff;
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 15px 30px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    text-align: center; 
-    position: relative;
-    overflow: visible !important; 
+/*****************************************************
+ * (1) 상단 검은색 바 스타일
+ *****************************************************/
+body {
+  font-family: 'NanumSquare', sans-serif;
 }
 
-/* 로고 컨테이너 */
-.custom-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px; 
+.top-bar-black {
+  background-color: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  position: relative; /* z-index가 제대로 적용되도록 position 설정 */
+  z-index: 1000; /* 상단 바를 가장 위로 올리기 */
+  border-bottom: 1px solid #e0e0e0; /* 연한 회색 라인 추가 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
 }
 
-/* 로고 크기 조정 */
+.top-bar-content {
+  text-align: right;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.top-bar-content .right-info a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-bar-content .right-info a:hover {
+  text-decoration: underline;
+}
+
+/*****************************************************
+ * (2) 메인 네이비 바 스타일
+ *****************************************************/
+.nav-bar-navy {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  position: relative; /* z-index 적용을 위해 position 설정 */
+  z-index: 999; /* 네이비 바가 상단 바 아래로 나오도록 설정 */
+  border-bottom: 1px solid #e0e0e0; /* 연한 회색 라인 추가 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+}
+
 .custom-logo-img {
-    height: 60px; 
-    width: auto;
-    transition: transform 0.3s ease-in-out;
+  height: 50px;
+  /* 필요에 따라 크기 조절 */
 }
 
-/* 마우스 오버 시 로고 확대 효과 */
-.custom-logo-img:hover {
-    transform: scale(1.1);
+/* 네비게이션 메뉴 */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav .nav-link {
+  color: rgb(64, 0, 64);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+}
+/* 마우스 오버 시 텍스트 컬러만 변경 */
+.main-nav .nav-link:hover {
+  color: #1F2F56;
+  font-weight: 900;
 }
 
-/* 네비게이션 스타일 */
-.custom-navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+/*****************************************************
+ * 드롭다운 메뉴
+ *****************************************************/
+.custom-dropdown {
+  position: relative;
 }
-
-/* 메뉴 리스트 중앙 정렬 */
-.custom-nav-pills {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 40px;
-}
-
-/* ✅ 네모 상자 제거 및 줄바꿈 방지 */
-.custom-nav-item {
-    list-style-type: none;
-    position: relative;
-    white-space: nowrap; /* ✅ 글씨 줄바꿈 방지 */
-}
-
-/* 메뉴 항목 스타일 */
-.custom-nav-link {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    padding: 10px 15px;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-}
-
-/* 마우스 오버 효과 */
-.custom-nav-link:hover {
-    color: #0056b3;
-}
-
-
-/* 드롭다운 메뉴 스타일 */
 .custom-dropdown-menu {
-    position: absolute; 
-    top: 100%;
-    left: 0;
-    min-width: 150px;
-    z-index: 1000;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-    list-style: none;
-    white-space: nowrap; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  min-width: 180px;
+
+  /* 처음에는 숨김 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }
 
-
-
-.custom-nav-item.custom-dropdown {
-    position: relative;
+.custom-dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.custom-dropdown-item:hover {
+  background-color: #f8f9fa;
 }
 
-/* 드롭다운 메뉴 애니메이션 */
-.custom-nav-item.custom-dropdown:hover .custom-dropdown-menu {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-}
-
-.custom-header-box {
-    position: relative;
-    height: auto; 
-}
-
-/* 드롭다운 메뉴 항목 스타일 */
-.custom-dropdown-menu .custom-dropdown-item {
-    padding: 10px 15px;
-    font-size: 16px;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: black;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    display: block;
-    text-decoration: none;
-}
-
-/* 드롭다운 메뉴 항목 마우스 오버 효과 */
-.custom-dropdown-menu .custom-dropdown-item:hover {
-    background-color: #0056b3;
-    color: #fff;
-}
-
-/* 반응형 디자인 */
-@media (max-width: 768px) {
-    .custom-header-box {
-        width: 95%;
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .custom-nav-pills {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .custom-nav-item {
-        display: block;
-        padding: 8px 0;
-    }
+/*****************************************************
+ * 반응형 (예시)
+ *****************************************************/
+@media (max-width: 992px) {
+  /* 모바일에서 메뉴가 세로로 나열되도록 */
+  .main-nav ul {
+    flex-direction: column;
+  }
+  .main-nav .nav-link {
+    padding: 0.5rem;
+  }
 }

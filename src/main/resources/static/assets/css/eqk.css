@@ -45,7 +45,7 @@ body {
 /* .earthquakeList 스타일 */
 .earthquakeList {
     display: flex;
-    margin: 20px;
+    width: 100%;
 }
 
 /* 왼쪽 영역 스타일 */

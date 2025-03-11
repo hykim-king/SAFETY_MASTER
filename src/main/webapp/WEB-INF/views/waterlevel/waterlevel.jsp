@@ -8,7 +8,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,18 +21,15 @@
     <script type="text/javascript" 
     		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=feb2e034645bde27f5e8d4d1e4bfc50c&libraries=services"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <style>
         #wl-container {
             display: flex;
-            width: 1200px;
-    		margin:0 auto;
         }
         #map {
             width: 50%;
             height: 650px;
             margin-top: 30px;
-            padding: 0px 20px;
+            padding-right: 20px;
         }
         
         #legend {
@@ -191,14 +188,13 @@
 		}
 		
 		#latestWaterLevels h2 {
-			margin-top: 80px;
+			margin-top: 50px;
 		}
 		
 		.sourceText {
-		    position: absolute;
-		    left: 110px;
 		    font-size: 14px;
 		    color: darkgray ;
+		    margin-left: 10px;
     	}
 		
 		#lastUpdated{
@@ -210,18 +206,23 @@
 		#lastUpdated table {
 		    width: 80%;
 		    margin: 0 auto;
-		}		
-		#waterlevelImage img{
-			width: 100%;
-			height: 400px;
-			margin-top: 100px;
-		} 
-		#linebox{
-			position: absolute;
-			left: 160px;
-			margin: 20px;
+		}			
+		
+		#waterlevelImage {
+   		 display: flex;
+   		 justify-content: center; /* 수평 중앙 정렬 */
+   		 align-items: center; /* 수직 중앙 정렬 (필요할 경우) */
 		}
-		#linebox h3{
+		
+		#waterlevelImage img{
+		max-width: 1320px;
+		} 
+		
+
+		.textbox{
+			margin-top: 50px;
+		}
+		.textbox h3{
 			margin-top: 20px;
 		}
 		.line{
@@ -230,13 +231,59 @@
 			margin-top: 20px;
 		}
 		
+		#waterlevelImage {
+		    position: relative;
+		    width: 100%;
+		    overflow: hidden;
+		}
+
+		#waterlevelImage::before, 
+		#waterlevelImage::after {
+		    content: "";
+		    position: absolute;
+		    top: 0;
+		    height: 100%;
+		    width: 50%;
+		    z-index: -1;
+		}
+		
+		#waterlevelImage::before {
+		    left: 0;
+		    background-color: #F1F1F1; /* 왼쪽 배경색 (네이비톤) */
+		}
+
+		#waterlevelImage::after {
+		    right: 0;
+		    background-color: #E3E1DE; /* 오른쪽 배경색 (밝은 네이비톤 또는 원하는 컬러) */
+		}
+
+		#waterlevelImage {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    position: relative;
+		    overflow: hidden;
+		}
+
+		#waterlevelImage img {
+		    max-width: 1320px;
+		    width: 100%;
+		    height: auto;
+		    z-index: 1;
+		}
+		
     </style>
 </head>
+<!--  header -->
+<div id="" class="">
+	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+</div>
+<!--// header-------------------------------------------------->
 
 <body>
-<div id="container">
-	<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-	<div id="wl-container">
+
+<div id="container" class="container">
+	<div id="wl-container" class="container">
 		<div id="map">
 			<div id="legend">
 		    	<img src="/assets/images/eun_bi/legend.png" alt="범례">
@@ -350,9 +397,11 @@
 	     
 	</div>
 	
-	<span class = "sourceText" >한강 홍수통제소 제공</span>
-
-	<div id="latestWaterLevels">
+	<div class = "sourceText">
+		<span>한강 홍수통제소 제공</span>
+	</div>
+	
+	<div id="latestWaterLevels" style="margin-bottom: 50px;">
 	   <h2>서울 권역 한강 관측소별 수위정보
 		   <c:if test="${not empty latestWaterLevels}">
 		       <span style="color: gray; font-size: 16px; margin-left: 20px; padding-left: 15px;">
@@ -383,21 +432,31 @@
 	    </table>
 	</div>
 	
-	<div id="waterlevelImage">
-		<img src="/assets/images/eun_bi/waterlevelW.png" alt="홍수발생시행동요령">
-	</div>
+</div>
+
+<div id="waterlevelImage">
+	<img src="/assets/images/eun_bi/waterlevelBanner.png" alt="홍수발생시행동요령">
+</div>
 	
-	<div id="linebox">
-		<h3>홍수주의보  ·  홍수경보 기준</h3>
+<div id="container" class="textbox container">
+	<div class="textbox">
+	<h3>홍수주의보  ·  홍수경보 기준</h3>
 		<div class = "line">
-            <span>· 홍수주의보 : 홍수특보를 발령하는 지점의 수위가 계속 상승하여 계획홍수량의 50%가 흐를 때의 수위를 초과할 것이 예상되는 경우. 제방·수문·교량 등에 대한 경계가 필요한 수위</span></br>
-            <span>· 홍수경보 : 홍수특보를 발령하는 지점의 수위가 계속 상승하여 계획홍수량의 70%가 흐를 때의 수위를 초과할 것이 예상되는 경우. 제방·수문·교량 등의 붕괴의 위험이 예상되는 수위</span></br>
-            <span>· 홍수주의보 · 경보의 기준이 되는 수위는 각 지점별로 별도 지정</span>		
-        </div>
+		          <span>· 홍수주의보 : 홍수특보를 발령하는 지점의 수위가 계속 상승하여 계획홍수량의 50%가 흐를 때의 수위를 초과할 것이 예상되는 경우. 제방·수문·교량 등에 대한 경계가 필요한 수위</span></br>
+		          <span>· 홍수경보 : 홍수특보를 발령하는 지점의 수위가 계속 상승하여 계획홍수량의 70%가 흐를 때의 수위를 초과할 것이 예상되는 경우. 제방·수문·교량 등의 붕괴의 위험이 예상되는 수위</span></br>
+		          <span>· 홍수주의보 · 경보의 기준이 되는 수위는 각 지점별로 별도 지정</span>		
+		</div>
 	</div>
+</div>
 
 	    
-</div>	 
+
+	<div class="container-fluid px-0">
+		<!-- footer-->
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
+	</div>
+ 
 	
     <script>
    	// 서울 권역 한강 관측소별 수위
@@ -562,6 +621,28 @@
 			);
         });
     }
+    
+    let isDataLoaded = false;
+
+    function fetchRainfallData(type) {
+        if (isDataLoaded) return; // 이미 데이터가 로드되었다면 중복 요청 방지
+        isDataLoaded = true;
+        
+        fetch("/rainfall/gurainfall")
+        .then(response => response.json())
+        .then(data => {
+            console.log("받은 데이터:", data);
+            // 데이터 로드가 정상적으로 완료된 경우에만 isDataLoaded를 다시 false로 변경
+            setTimeout(() => { isDataLoaded = false; }, 5000); // 5초 후 다시 요청 가능하게 변경
+        })
+        .catch(error => {
+            console.error("데이터 불러오기 오류:", error);
+            isDataLoaded = false; // 오류 발생 시 즉시 다시 요청 가능
+        });
+    } 
+
+
+	
     //관측소별 수위 그래프
     function drawChart(labels, levels, wrnWl, almWl) {
         var ctx = document.getElementById("waterLevelChart").getContext("2d");

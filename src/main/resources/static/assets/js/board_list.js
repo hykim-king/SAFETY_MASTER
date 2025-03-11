@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   function moveToReg() {
     console.log("moveToReg()");
-    if (confirm('등록 화면으로 이동 하시겠습니까?') == false)return;
+    //if (confirm('등록 화면으로 이동 하시겠습니까?') == false)return;
 		
     window.location.href = '/board/board_reg_index.do?div='+div.value;
 }	

@@ -1,8 +1,7 @@
 /* 전체 컨테이너 스타일 */
 .container {
-	width: 1200px;
+	width: 1320px;
 	margin: auto;
-	padding: 20px;
 	border-radius: 10px;
 }
 

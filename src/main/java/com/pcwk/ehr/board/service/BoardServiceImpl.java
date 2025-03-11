@@ -19,10 +19,10 @@ import com.pcwk.ehr.reply.domain.ReplyVO;
 public class BoardServiceImpl implements BoardService {
 
 	final Logger log = LoggerFactory.getLogger(getClass());
-	
+
 	@Autowired
 	BoardMapper boardMapper;
-	
+
 	public BoardServiceImpl() {
 		super();
 		log.info("┌──────────────────────────┐");
@@ -30,13 +30,11 @@ public class BoardServiceImpl implements BoardService {
 		log.info("└──────────────────────────┘");
 	}
 
-
 	@Override
 	public List<BoardVO> doRetrieve(BoardDTO dto) {
 
 		return boardMapper.doRetrieve(dto);
 	}
-
 
 	@Override
 	public int doSave(BoardVO boardVO) throws SQLException {
@@ -44,26 +42,23 @@ public class BoardServiceImpl implements BoardService {
 		return boardMapper.doSave(boardVO);
 	}
 
-
 	@Override
 	public BoardVO doSelectOne(BoardVO boardVO) throws SQLException, NullPointerException {
 		log.info("┌──────────────────────────┐");
 		log.info("│ doReadCntUpdate()        │");
 		log.info("└──────────────────────────┘");
-		
+
 		int flag = boardMapper.doReadCntUpdate(boardVO);
 		log.info("flag:{}", flag);
-		
+
 		return boardMapper.doSelectOne(boardVO);
 	}
 
-
 	@Override
 	public int doDelete(BoardVO boardVO) throws SQLException {
-		
+
 		return boardMapper.doDelete(boardVO);
 	}
-
 
 	@Override
 	public int doUpdate(BoardVO boardVO) throws SQLException {
@@ -71,13 +66,15 @@ public class BoardServiceImpl implements BoardService {
 		return boardMapper.doUpdate(boardVO);
 	}
 
-
 	@Override
 	public int getBoardSequence() {
-		
+
 		return boardMapper.getBoardSequence();
 	}
 
-
+	@Override
+	public List<BoardVO> getLatestFiveBoard(String div) {
+		return boardMapper.getLatestFiveBoard(div);
+	}
 
 }

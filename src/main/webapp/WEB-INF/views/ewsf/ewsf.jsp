@@ -6,18 +6,22 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/ewsf.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <link href="/assets/css/header.css" rel="stylesheet">
     <style>
 
     </style>
 </head>
+
 <body>
+
+	<div class="">
+		<!-- header-->
+		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
+		<!--// header-------------------------------------------------->
+	</div>
 <div class="container">
-    <!-- header-->
-    <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-    <!--// header-------------------------------------------------->
-</div>
-<h3>자치구별 양수량</h3>
 <div class="topArea">
+<h3>자치구별 양수량</h3>
     <ul>
         <%--선택시 그래프와 표로 변경--%>
         <li><a id="showGraph" href="#">그래프</a></li>
@@ -50,6 +54,8 @@
         </c:forEach>
     </tbody>
 </table>
+
+</div>
 
 
 <script>
@@ -144,10 +150,10 @@
 </script>
 
 
- <div class="container">
-      <!-- footer-->
-      <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
-      <!--// footer-------------------------------------------------->
-    </div>
+	<div class="container-fluid px-0">
+		<!-- footer-->
+		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
+		<!--// footer-------------------------------------------------->
+	</div>
 </body>
 </html>

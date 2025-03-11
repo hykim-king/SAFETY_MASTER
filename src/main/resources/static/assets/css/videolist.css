@@ -12,6 +12,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 20px;
+    margin-right: 50px;
 }
 
 .search-bar form {
@@ -134,3 +135,12 @@ hr {
     color: white;
     border-radius: 4px;
 }
+
+/* 제목 스타일 */
+.heading-title {
+    font-size: 30px; 
+    font-weight: bold; 
+    margin-top: 30px;
+    margin-left: 50px;
+}
+

@@ -74,19 +74,19 @@
 
 <body>
 
-	<div id="container" class="container">
+	<div class="">
 		<!-- header-->
 		<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 		<!--// header-------------------------------------------------->
 	</div>
-
 
 	<!-- main-->
 	<main>
 
 
 		<div class="container">
-			<div class="row">
+			<div class="row pt-5">
+				<div class="col-1"></div>
 				<div class="col-5 ps-4">
 					<div class="card border-secondary h-100">
 						<img style="cursor: pointer;"
@@ -115,7 +115,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-7 ps-4">
+				<div class="col-6 ps-4">
 					<div id="map" class="border rounded border-secondary"
 						style="width: 590px; height: 650px;"></div>
 
@@ -134,7 +134,7 @@
 
 		</div>
 
-		<div class="container px-5">
+		<div class="container pe-5 pt-5" style="padding-left: 132px">
 			<ul class="nav nav-tabs pt-1 justify-content-start" id="myTab"
 				role="tablist">
 				<li class="nav-item" role="presentation">
@@ -248,9 +248,9 @@
 
 		</div>
 
-		<div class="container">
+		<div class="container mt-4">
 			<div class="d-flex justify-content-end">
-				<button type="button" class="btn btn-outline-primary me-4"
+				<button type="button" class="btn btn-outline-primary" style="margin-right: 33px;"
 					onclick="window.location.href='${CP}/er_medi_inst/list'">목록</button>
 			</div>
 		</div>
@@ -264,7 +264,7 @@
 
 
 
-	<div class="container">
+	<div class="container-fluid px-0">
 		<!-- footer-->
 		<jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
 		<!--// footer-------------------------------------------------->

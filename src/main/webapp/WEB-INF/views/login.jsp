@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="CP" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,7 +12,11 @@
     <link href="/assets/css/login.css" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
+	<div class="logo">
+        <img style="cursor: pointer;" src="${CP}/assets/images/logo/3652.png" alt="서울365 안전포털" class="custom-logo-img" onclick="location.href='${CP}/index'">		
+    </div>
+	
+    <div class="login-container text-center">
         <h2>로그인</h2>
         <!-- 로그인 폼 -->
         <form action="login.do" method="POST">
